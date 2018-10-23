@@ -1,0 +1,58 @@
+[2018-10-22T17:33:20.602Z] info: Node Server running at port:5000
+[2018-10-22T17:33:24.174Z] info:  ip= ::1  method= GET  route= / 
+[2018-10-22T17:33:25.819Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-22T17:34:07.050Z] info: Node Server running at port:5000
+[2018-10-22T17:34:10.613Z] info:  ip= ::1  method= GET  route= / 
+[2018-10-22T17:34:11.651Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-22T17:34:40.511Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-22T17:34:42.579Z] info:  ip= ::1  method= GET  route= /about 
+[2018-10-22T17:34:43.220Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-22T17:34:51.721Z] info:  ip= ::1  method= GET  route= /hospital 
+[2018-10-22T17:34:52.084Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-22T17:34:57.423Z] info:  ip= ::1  method= GET  route= /education 
+[2018-10-22T17:34:57.751Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-22T17:35:00.763Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-22T17:35:03.718Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-22T17:35:05.053Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-22T17:35:05.975Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-22T17:35:06.740Z] info:  ip= ::1  method= GET  route= /contact 
+[2018-10-22T17:35:07.326Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-22T17:39:00.685Z] info: Node Server running at port:5000
+[2018-10-22T17:39:00.783Z] info:  ip= ::1  method= GET  route= / 
+[2018-10-22T17:39:01.587Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-22T17:40:57.504Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-22T17:43:56.209Z] info: Node Server running at port:5000
+[2018-10-22T17:43:58.768Z] info:  ip= ::1  method= GET  route= / 
+[2018-10-22T17:43:59.515Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-22T17:44:00.191Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-22T17:45:20.191Z] info:  ip= ::1  method= GET  route= /about 
+[2018-10-22T17:45:20.922Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-22T17:45:21.041Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-22T17:47:52.002Z] info: Node Server running at port:5000
+[2018-10-22T17:47:54.217Z] info:  ip= ::1  method= GET  route= / 
+[2018-10-22T17:47:54.967Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-22T17:47:55.520Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-22T17:51:54.741Z] info:  ip= ::1  method= GET  route= / 
+[2018-10-22T17:51:55.515Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-22T17:51:56.084Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-22T17:55:48.841Z] info: Node Server running at port:5000
+[2018-10-22T17:55:50.316Z] info:  ip= ::1  method= GET  route= /about 
+[2018-10-22T17:55:51.066Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-22T17:55:51.246Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-22T17:57:05.443Z] info:  ip= ::1  method= GET  route= / 
+[2018-10-22T17:57:06.162Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-22T17:57:06.766Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-22T17:58:04.134Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-22T17:58:40.515Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-22T17:59:05.000Z] info:  ip= ::1  method= GET  route= /about 
+[2018-10-22T17:59:05.635Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-22T17:59:05.870Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-22T17:59:08.058Z] info:  ip= ::1  method= GET  route= /hospital 
+[2018-10-22T17:59:08.777Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-22T17:59:08.876Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-22T17:59:13.338Z] info:  ip= ::1  method= GET  route= /education 
+[2018-10-22T17:59:14.067Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-22T17:59:14.157Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-22T17:59:16.553Z] info:  ip= ::1  method= GET  route= / 
+[2018-10-22T17:59:17.292Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-22T17:59:17.596Z] info:  ip= ::1  method= GET  route= * 
