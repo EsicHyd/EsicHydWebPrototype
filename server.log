@@ -310,3 +310,21 @@
 [2018-10-23T16:15:56.589Z] info:  ip= ::1  method= GET  route= * 
 =======
 >>>>>>> c2b735d1b2ff3c94b8a2154e2a60bfd5e66167a1
+[2018-10-24T05:56:05.643Z] info: Node Server running at port:5000
+[2018-10-24T05:56:17.202Z] info:  ip= ::1  method= GET  route= / 
+[2018-10-24T05:56:37.424Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-24T05:58:10.191Z] info:  ip= ::1  method= GET  route= / 
+[2018-10-24T05:58:21.515Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-24T05:58:30.202Z] info:  ip= ::1  method= GET  route= / 
+[2018-10-24T05:58:31.894Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-24T06:03:42.354Z] info:  ip= ::1  method= GET  route= / 
+[2018-10-24T06:03:45.069Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-24T06:05:29.971Z] info: Node Server running at port:5000
+[2018-10-24T06:06:12.019Z] info:  ip= ::1  method= GET  route= / 
+[2018-10-24T06:06:17.676Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-24T06:09:09.821Z] info: Node Server running at port:5000
+[2018-10-24T06:09:12.422Z] info:  ip= ::1  method= GET  route= / 
+[2018-10-24T06:09:38.817Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-24T06:10:28.738Z] info: Node Server running at port:5000
+[2018-10-24T06:10:33.750Z] info:  ip= ::1  method= GET  route= / 
+[2018-10-24T06:10:36.333Z] info:  ip= ::1  method= GET  route= * 
