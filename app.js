@@ -179,6 +179,11 @@ app.get('/course', function (request, response) {
   response.render('pages/course.ejs');
   log("", getIp(request), request.method, request.route.path);
 })
+
+app.get('/admission', function (request, response) {
+  response.render('pages/course.ejs');
+  log("", getIp(request), request.method, request.route.path);
+})
 //hospital services
 app.get('/gs', function (request, response) {
 
