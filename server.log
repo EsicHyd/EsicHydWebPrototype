@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [2018-10-24T06:15:50.305Z] info: Node Server running at port:5000
 [2018-10-24T06:15:53.457Z] info:  ip= ::1  method= GET  route= / 
 [2018-10-24T06:15:54.446Z] info:  ip= ::1  method= GET  route= * 
@@ -26,3 +27,5 @@
 [2018-10-24T06:23:23.136Z] info:  ip= ::1  method= GET  route= * 
 [2018-10-24T06:23:46.588Z] info:  ip= ::1  method= GET  route= / 
 [2018-10-24T06:23:48.259Z] info:  ip= ::1  method= GET  route= * 
+=======
+>>>>>>> 183dabcb4da8e4775b963e3a24f12ab6ed66f633
