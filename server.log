@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [2018-10-22T08:47:47.070Z] info:  ip= ::1  method= GET  route= /about 
 [2018-10-22T08:48:03.107Z] info:  ip= ::1  method= GET  route= /hospital 
 [2018-10-22T08:48:08.213Z] info:  ip= ::1  method= GET  route= /gs 
@@ -307,3 +308,5 @@
 [2018-10-23T16:14:06.558Z] info:  ip= ::1  method= GET  route= * 
 [2018-10-23T16:15:53.962Z] info:  ip= ::1  method= GET  route= / 
 [2018-10-23T16:15:56.589Z] info:  ip= ::1  method= GET  route= * 
+=======
+>>>>>>> c2b735d1b2ff3c94b8a2154e2a60bfd5e66167a1
