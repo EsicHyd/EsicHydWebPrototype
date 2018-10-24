@@ -80,7 +80,7 @@ body {
   font-size: 14px;
   text-decoration: none;
   text-transform: uppercase;
-  background: #3c8a3c;
+  background: #8a251e;
   display: inline-block;
   padding: 16px 38px;
   border: 2px solid transparent;
@@ -93,8 +93,8 @@ body {
 
 .notfound a:hover {
   background-color: #fff;
-  border-color: #3c8a3c;
-  color: #3c8a3c;
+  border-color: #8a251e;
+  color: #8a251e;
 }
 
 @media only screen and (max-width: 480px) {
