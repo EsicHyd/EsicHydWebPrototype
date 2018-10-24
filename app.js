@@ -83,12 +83,29 @@ app.set('view engine', 'ejs');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
+const {Todo} = require('./models/imgschema');
 app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(bodyParser.json());
 app.use(methodOverride());
 
+
+
+//Image upload section
+
+app.post('/api/Upload', (req, res) => {
+  var todo =  new Todo({
+    text: req.body.text
+  });
+
+  todo.save().then((doc) =>{
+    res.send(doc);
+  }, (e) => {
+    res.status(400).send(e);
+  })
+});
+//image upload section end
 
 
 app.use(cors({ origin: true }));
@@ -123,6 +140,12 @@ function errLog(err, req, res, next) {
 
 app.get('/', function (request, response) {
   response.render("pages/index.ejs");
+  log("", getIp(request), request.method, request.route.path);
+});
+
+
+app.get('/imageupload', function (request, response) {
+  response.render("pages/imagesu.ejs");
   log("", getIp(request), request.method, request.route.path);
 });
 
@@ -386,7 +409,7 @@ app.post("/send", function (request, response) {
               <br>
               <p>To reply back to ${rotcc13(request.query.n)} please reply back to this email <a href="mailto:${rotcc13(request.query.e)}">${rotcc13(request.query.e)}</a></p>
               <p><em>This is an auto generated email.Please do not reply back to this email.</em></p>
-      
+
           </p>
           <p>Thanks and Regards,<br>
               Your ESIC Team.</p>
@@ -410,7 +433,7 @@ app.post("/send", function (request, response) {
           <p><em>The entire ESIC team looks forward to a very professional working relationship with you, and we ready to
               support you in any way possible to serve you better.</em></p>
           <p>Thank you for contacting us! We value your feedback/suggestions/complaint. To give your valued opinion please use this <a href="#">link</a>.<br><em>This is an auto generated email.Please do not reply back to this email.</em></p>
-          
+
           Thanks and Regards,<br>
           Your ESIC Team.
       </body>
@@ -473,5 +496,3 @@ app.listen(app.get('port'), process.env.IP, function () {
   // log("hello error", "", "", "", 'error');
 
 });
-
-
