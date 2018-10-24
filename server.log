@@ -1,0 +1,3 @@
+[2018-10-24T06:42:25.785Z] info: Node Server running at port:5000
+[2018-10-24T06:42:43.043Z] info:  ip= ::1  method= GET  route= / 
+[2018-10-24T06:42:46.419Z] info:  ip= ::1  method= GET  route= * 
