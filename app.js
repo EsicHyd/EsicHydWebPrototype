@@ -3,7 +3,7 @@ var app = express();
 // var ipa = require('ip');
 // var os = require('os');
 var winston = require('winston');
-
+const {mongoose} = require('./db/mongoose');
 const sgMail = require('@sendgrid/mail');
 const cors = require('cors');
 
@@ -98,9 +98,9 @@ app.post('/api/Upload', (req, res) => {
   var todo =  new Todo({
     text: req.body.text
   });
-
+  //console.log(req.body.text);
   todo.save().then((doc) =>{
-    res.send(doc);
+    res.redirect("/imageretreive");
   }, (e) => {
     res.status(400).send(e);
   })
@@ -141,6 +141,14 @@ function errLog(err, req, res, next) {
 app.get('/', function (request, response) {
   response.render("pages/index.ejs");
   log("", getIp(request), request.method, request.route.path);
+});
+
+app.get('/images', (req, res) => {
+  Todo.find().then((todos) => {
+    res.send({todos} );
+  }, (e) => {
+    res.status(400).send(e);
+  });
 });
 
 
