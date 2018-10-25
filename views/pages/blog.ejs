@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
+	<% var page = "blog"%>
 	<% include ../partials/header/head.ejs %>
-</head>
-<style>
-	.autocomplete {
+
+	<style>
+		.autocomplete {
   /*the container must be positioned relative:*/
   position: relative;
   display: inline-block;
@@ -29,19 +30,19 @@ input[type=submit] {
   cursor: pointer;
 }
 
-/*.autocomplete-items {
+.autocomplete-items {
   position: absolute;
   border: 1px solid #d4d4d4;
   border-bottom: none;
   border-top: none;
   z-index: 99;
   /*position the autocomplete items to be the same width as the container:*/
-  /*top: 100%;
+  top: 100%;
   left: 0;
   right: 0;
-}*/
+}
 
-/*.autocomplete-items div {
+.autocomplete-items div {
   padding: 10px;
   cursor: pointer;
   background-color: #fff; 
@@ -49,20 +50,22 @@ input[type=submit] {
 }
 
 .autocomplete-items div:hover {
-  when hovering an item:
+  /*when hovering an item:*/
   background-color: #e9e9e9; 
-}*/
+}
 
-/*.autocomplete-active {
-  when navigating through the items using the arrow keys:
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
   background-color: DodgerBlue !important; 
   color: #ffffff; 
-}*/
+}
 </style>
+</head>
+
 
 <body>
 
-	<% var page = "blog"%>
+
 	<% include ../partials/header/nav.ejs %>
 
 	<!-- Hero-area -->
@@ -96,24 +99,17 @@ input[type=submit] {
 
 			<!-- row -->
 			<div class="row">
-
-
 				<div id="aside" class="col-md-3">
 
 					<!-- search widget -->
 					<div class="widget search-widget">
 						<form autocomplete="off" action="/action_page.php">
-							<div class="autocomplete" style="width:300px;">
-							<input id="myinput" type="text" name="Search">
+							<div class="autocomplete" style="width:270px;">
+								<input id="myinput" type="text" name="mycountry" >
 							</div>
 							<button><i class="fa fa-search"></i></button>
-							<!--<div class="autocomplete" style="width:300px;">
-								<input id="myInput" type="text" name="myCountry" placeholder="Country">
-							  </div>-->
-							  <!--<input type="submit">
-						</form>-->
-					
-					
+							
+					</div>
 					<!-- /search widget -->
 
 					<!-- category widget -->
@@ -294,7 +290,7 @@ input[type=submit] {
 				<!-- /main blog -->
 
 				<!-- aside blog -->
-				
+
 				<!-- /aside blog -->
 
 			</div>
