@@ -31,19 +31,20 @@ Table OF Contents
 	General
 \*------------------------------------*/
 /* --- typography --- */
+/* Dean's message */
 body {
     font-family: 'Montserrat', sans-serif;
 	font-size: 15px;
     font-weight: 400;
-    color: #798696;
+    color: #85a7a7;
 	overflow-x:hidden;
 }
-
+/* DM Heading */
 h1,h2,h3,h4,h5,h6 {
 	margin-top: 12px;
 	margin-bottom: 15px;
 	font-weight: 600;
-	color: #374050;
+	color: #142c53;
 }
 
 h1 {
@@ -100,7 +101,7 @@ blockquote:before{
 	position:absolute;
 	left:0;
 	top:0;
-	color: #0ab112;
+	color: #8a251e;
 	width:40px;
 	height:40px;
 	line-height:40px;
@@ -162,7 +163,7 @@ blockquote:before{
 	position:relative;
 	display:inline-block;
 	padding:10px 30px;
-	background-color: #0ab112;
+	background-color: #8a251e;
 	border: 2px solid transparent;
 	border-radius: 40px;
 	color: #FFF;
@@ -172,8 +173,8 @@ blockquote:before{
 
 .main-button:hover , .main-button:focus {
 	background-color:#fff;
-	border: 2px solid #0ab112;
-	color:#0ab112;
+	border: 2px solid #8a251e;
+	color:#8a251e;
 }
 
 .main-button.icon-button:hover , .main-button.icon-button:focus {
@@ -214,7 +215,7 @@ textarea {
 }
 
 input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="number"]:focus, input[type="date"]:focus, input[type="url"]:focus, input[type="tel"]:focus, textarea:focus {
-	border-color:#0ab112;
+	border-color:#8a251e;
 }
 
 /*------------------------------------*\
@@ -277,7 +278,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	content:"";
 	display:block;
 	height:2px;
-	background-color:#0ab112;
+	background-color:#8a251e;
 	width:100%;
 	-webkit-transform: translateY(5px);
 	    -ms-transform: translateY(5px);
@@ -467,7 +468,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	border-radius: 50%;
 	font-size:30px;
 	border:1px solid #EBEBEB;
-	color:#0ab112;
+	color:#8a251e;
 }
 
 .feature-content {
@@ -517,7 +518,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 }
 
 .about-video:hover .play-icon {
-	color:#0ab112;
+	color:#8a251e;
 }
 
 @-webkit-keyframes play-animation {
@@ -549,7 +550,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	right:0;
 	bottom:0;
 	top:0;
-	background-color:#0ab112;
+	background-color:#8a251e;
 	opacity:0.7;
 }
 
@@ -580,7 +581,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	right:0;
 	bottom:0;
 	top:0;
-	background-color:#0ab112;
+	background-color:#8a251e;
 	opacity:0;
 	-webkit-transition:0.2s opacity;
 	transition:0.2s opacity;
@@ -634,11 +635,11 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 }
 
 .course .course-details .course-price.course-free {
-	color: green;
+	color: #8a251e;
 }
 
 .course .course-details .course-price.course-premium {
-	color: #0ab112;
+	color: #8a251e;
 }
 
 #courses .center-btn {
@@ -685,14 +686,14 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 }
 
 .footer-nav li a:hover , .footer-nav li a:focus {
-	color:#0ab112;
+	color:#8a251e;
 }
 
 .footer-nav li a:after {
 	content:"";
 	display:block;
 	height:2px;
-	background-color:#0ab112;
+	background-color:#8a251e;
 	width:100%;
 	-webkit-transform: translateY(5px);
 	    -ms-transform: translateY(5px);
@@ -785,7 +786,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 }
 
 .contact-details li i {
-	color: #0ab112;
+	color: #8a251e;
 	margin-right: 15px;
 	border: 1px solid #EBEBEB;
 	border-radius: 50%;
@@ -827,7 +828,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	top:0;
 	bottom:0;
 	right:0;
-	background-color:#0ab112;
+	background-color:#8a251e;
 	opacity:0;
 	-webkit-transition:0.2s opacity;
 	transition:0.2s opacity;
@@ -844,7 +845,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 }
 
 .single-blog .blog-meta .blog-meta-author > a {
-	color: #0ab112;
+	color: #8a251e;
 }
 
 .single-blog .blog-meta .blog-meta-comments {
@@ -891,7 +892,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 }
 
 .post-pagination .pages li:hover  , .post-pagination .pages li.active {
-	background-color: #0ab112;
+	background-color: #8a251e;
 	color:#FFF;
 }
 
@@ -913,7 +914,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 
 .pagination-next:hover  , .pagination-back:hover  {
 	color:#FFF;
-	background-color:#0ab112;
+	background-color:#8a251e;
 }
 
 .pagination-next:after {
@@ -955,7 +956,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 }
 
 .widget.search-widget .input:focus + button {
-	color:#0ab112;
+	color:#8a251e;
 }
 
 /*-- Category --*/
@@ -976,7 +977,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	width: 4px;
 	height: 4px;
 	border-radius: 50%;
-	background-color: #0ab112;
+	background-color: #8a251e;
 	margin-right:10px;
 }
 
@@ -1019,7 +1020,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	top:0;
 	bottom:0;
 	right:0;
-	background-color:#0ab112;
+	background-color:#8a251e;
 	opacity:0;
 	-webkit-transition:0.2s opacity;
 	transition:0.2s opacity;
@@ -1045,8 +1046,8 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 }
 
 .tags-widget .tag:hover {
-	background-color:#0ab112;
-	border-color:#0ab112;
+	background-color:#8a251e;
+	border-color:#8a251e;
 	color:#FFF;
 }
 
@@ -1071,7 +1072,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 }
 
 .blog-post-meta .blog-meta-author > a {
-	color: #0ab112;
+	color: #8a251e;
 }
 
 /* --- Blog Share --- */
@@ -1318,7 +1319,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	width:40px;
 	height:40px;
 	border: 1px solid #EBEBEB;
-    border-top: 1px solid #0ab112;
+    border-top: 1px solid #8a251e;
     border-radius: 50%;
 	-webkit-animation: 1s preloader linear infinite;
 	        animation: 1s preloader linear infinite;
