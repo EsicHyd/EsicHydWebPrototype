@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 
 <head>
 	<meta charset="utf-8">
@@ -92,10 +92,12 @@
 			<input type="file" name="image" />
 			<input type="submit" name="submit" id="btnSubmit" value="Upload" />
 </form> -->
-<form id="frmUploader" action="api/Upload/" method="post">
-	<input type="text" name="text" />
-	<input type="submit" name="submit" id="btnSubmit" value="Upload" />
-</form>
+<h1><%=title%></h1>
+<ul>
+<% images.forEach(function(image){ %>
+  <li><%= image.text %></li>
+<% }) %>
+</ul>
 </body>
 
 </html>
