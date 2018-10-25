@@ -764,3 +764,72 @@
 [2018-10-25T06:12:36.260Z] info:  ip= ::1  method= GET  route= * 
 [2018-10-25T06:15:36.599Z] info:  ip= ::1  method= GET  route= /blog 
 [2018-10-25T06:15:42.095Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-25T06:36:49.402Z] info: Node Server running at port:5000
+[2018-10-25T06:36:57.449Z] error:  ip= ::1  method= GET  route= /imageupload ReferenceError: D:\projects\EsicHydWebPrototype\views\pages\imagesu.ejs:99
+    97| 	<input type="submit" name="submit" id="btnSubmit" value="Upload" />
+    98| </form>
+ >> 99| <h1><%=title%></h1>
+    100| <ul>
+    101| <% images.forEach(function(user){ %>
+    102|   <li><%= images.text %></li>
+
+title is not defined
+    at eval (eval at compile (D:\projects\EsicHydWebPrototype\node_modules\ejs\lib\ejs.js:618:12), <anonymous>:11:25)
+    at returnedFn (D:\projects\EsicHydWebPrototype\node_modules\ejs\lib\ejs.js:653:17)
+    at tryHandleCache (D:\projects\EsicHydWebPrototype\node_modules\ejs\lib\ejs.js:251:36)
+    at View.exports.renderFile [as engine] (D:\projects\EsicHydWebPrototype\node_modules\ejs\lib\ejs.js:482:10)
+    at View.render (D:\projects\EsicHydWebPrototype\node_modules\express\lib\view.js:135:8)
+    at tryRender (D:\projects\EsicHydWebPrototype\node_modules\express\lib\application.js:640:10)
+    at Function.render (D:\projects\EsicHydWebPrototype\node_modules\express\lib\application.js:592:3)
+    at ServerResponse.render (D:\projects\EsicHydWebPrototype\node_modules\express\lib\response.js:1008:7)
+    at D:\projects\EsicHydWebPrototype\app.js:161:12
+    at Layer.handle [as handle_request] (D:\projects\EsicHydWebPrototype\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\projects\EsicHydWebPrototype\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (D:\projects\EsicHydWebPrototype\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (D:\projects\EsicHydWebPrototype\node_modules\express\lib\router\layer.js:95:5)
+    at D:\projects\EsicHydWebPrototype\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (D:\projects\EsicHydWebPrototype\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\projects\EsicHydWebPrototype\node_modules\express\lib\router\index.js:275:10)
+[2018-10-25T06:36:57.452Z] info:  ip= ::1  method= GET  route= /imageupload 
+[2018-10-25T06:37:00.219Z] error:  ip= ::1  method= GET  route= /images ReferenceError: D:\projects\EsicHydWebPrototype\views\pages\imagesu.ejs:101
+    99| <h1><%=title%></h1>
+    100| <ul>
+ >> 101| <% images.forEach(function(user){ %>
+    102|   <li><%= images.text %></li>
+    103| <% }) %>
+    104| </ul>
+
+images is not defined
+    at eval (eval at compile (D:\projects\EsicHydWebPrototype\node_modules\ejs\lib\ejs.js:618:12), <anonymous>:14:8)
+    at returnedFn (D:\projects\EsicHydWebPrototype\node_modules\ejs\lib\ejs.js:653:17)
+    at tryHandleCache (D:\projects\EsicHydWebPrototype\node_modules\ejs\lib\ejs.js:251:36)
+    at View.exports.renderFile [as engine] (D:\projects\EsicHydWebPrototype\node_modules\ejs\lib\ejs.js:482:10)
+    at View.render (D:\projects\EsicHydWebPrototype\node_modules\express\lib\view.js:135:8)
+    at tryRender (D:\projects\EsicHydWebPrototype\node_modules\express\lib\application.js:640:10)
+    at Function.render (D:\projects\EsicHydWebPrototype\node_modules\express\lib\application.js:592:3)
+    at ServerResponse.render (D:\projects\EsicHydWebPrototype\node_modules\express\lib\response.js:1008:7)
+    at Todo.find.then (D:\projects\EsicHydWebPrototype\app.js:151:9)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:189:7)
+[2018-10-25T06:37:00.526Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-25T06:37:23.397Z] info: Node Server running at port:5000
+[2018-10-25T06:37:26.211Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-25T06:38:04.727Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-25T06:43:36.924Z] info: Node Server running at port:5000
+[2018-10-25T06:43:40.923Z] info:  ip= ::1  method= GET  route= /imageupload 
+[2018-10-25T06:43:41.286Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-25T06:43:45.000Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-25T06:43:48.700Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-25T06:43:48.889Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-25T06:43:50.330Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-25T06:44:11.177Z] info: Node Server running at port:5000
+[2018-10-25T06:44:23.250Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-25T06:53:13.438Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-25T06:53:19.343Z] info:  ip= ::1  method= GET  route= /imageupload 
+[2018-10-25T06:53:19.525Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-25T06:53:24.417Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-25T06:58:15.503Z] info: Node Server running at port:5000
+[2018-10-25T06:58:17.831Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-25T06:58:18.535Z] info:  ip= ::1  method= GET  route= /imageupload 
+[2018-10-25T06:58:18.697Z] info:  ip= ::1  method= GET  route= * 
+[2018-10-25T06:58:20.208Z] info:  ip= ::1  method= GET  route= * 

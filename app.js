@@ -83,7 +83,7 @@ app.set('view engine', 'ejs');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
-const {Todo} = require('./models/imgschema');
+const {Myimages} = require('./models/imgschema');
 app.use(bodyParser.urlencoded({
   extended: true
 }));
@@ -91,21 +91,6 @@ app.use(bodyParser.json());
 app.use(methodOverride());
 
 
-
-//Image upload section
-
-app.post('/api/Upload', (req, res) => {
-  var todo =  new Todo({
-    text: req.body.text
-  });
-  //console.log(req.body.text);
-  todo.save().then((doc) =>{
-    res.redirect("/imageretreive");
-  }, (e) => {
-    res.status(400).send(e);
-  })
-});
-//image upload section end
 
 
 app.use(cors({ origin: true }));
@@ -136,6 +121,21 @@ function errLog(err, req, res, next) {
   res.status(500).send('Oops Something broke..!');
 }
 
+//Image upload section
+
+app.post('/api/Upload', (req, res) => {
+  var myimages =  new Myimages({
+    text: req.body.text
+  });
+  //console.log(req.body.text);
+  myimages.save().then((images) =>{
+    res.redirect('/images');
+  }, (e) => {
+    res.status(400).send(e);
+  })
+});
+//image upload section end
+
 
 
 app.get('/', function (request, response) {
@@ -144,8 +144,11 @@ app.get('/', function (request, response) {
 });
 
 app.get('/images', (req, res) => {
-  Todo.find().then((todos) => {
-    res.send({todos} );
+  Myimages.find().then((images) => {
+    res.render('pages/imagesret', {
+      title: 'Images',
+      images: images
+    } );
   }, (e) => {
     res.status(400).send(e);
   });

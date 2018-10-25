@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 
-const Myimages = mongoose.model('Myimages', {
+const Myvideos = mongoose.model('Myvideos', {
   text: {
     type: String,
     required: true,
@@ -10,4 +10,4 @@ const Myimages = mongoose.model('Myimages', {
   },
 });
 
-module.exports = {Myimages};
+module.exports = {Myvideos};
