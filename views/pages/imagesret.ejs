@@ -95,7 +95,9 @@
 <h1><%=title%></h1>
 <ul>
 <% images.forEach(function(image){ %>
-  <li><%= image.text %></li>
+  <li>Name:<%= image.name %></li>
+	<li>Link:<%= image.link %></li>
+	<li>Description:<%= image.text %></li>
 <% }) %>
 </ul>
 </body>

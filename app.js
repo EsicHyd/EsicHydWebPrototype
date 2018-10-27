@@ -7,7 +7,8 @@ const {mongoose} = require('./db/mongoose');
 const sgMail = require('@sendgrid/mail');
 const cors = require('cors');
 
-
+var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
 
 const { createLogger, format, transports } = require('winston');
 const { combine, timestamp, label, printf } = format;
@@ -15,6 +16,13 @@ const { combine, timestamp, label, printf } = format;
 const myMsg = printf(info => {
   return `[${info.timestamp}] ${info.level}: ${info.message}`;
 });
+
+//controller routes
+var imageController = require('./controllers/imageController');
+var videoController = require('./controllers/videoController');
+var documentController = require('./controllers/documentController');
+var notificationController = require('./controllers/notificationController');
+var userController = require('./controllers/userController');
 
 function log(msg, ip, method, route, level) {
   if (level == null) {
@@ -78,7 +86,11 @@ app.use(express.static(__dirname + '/public'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
-
+app.use(session({
+  secret: 'work hard',
+  resave: true,
+  saveUninitialized: false
+}));
 
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
@@ -123,36 +135,38 @@ function errLog(err, req, res, next) {
 
 //Image upload section
 
-app.post('/api/Upload', (req, res) => {
-  var myimages =  new Myimages({
-    text: req.body.text
-  });
-  //console.log(req.body.text);
-  myimages.save().then((images) =>{
-    res.redirect('/images');
-  }, (e) => {
-    res.status(400).send(e);
-  })
-});
+app.post('/api/imageUpload', imageController.imageupload);
+app.post('/api/videoUpload', videoController.videoupload);
+app.post('/api/documentUpload', documentController.documentupload);
+app.post('/api/notificationUpload', notificationController.eventupload);
 //image upload section end
 
+//user authentication
+app.get('/admin', function (req, res, next) {
+  return res.render('./pages/userlogin.ejs');
+});
 
+
+//POST route for updating data
+app.post('/admin', userController.user);
+
+// GET route after registering
+app.get('/profile', userController.userlogin);
+
+// GET for logout logout
+app.get('/logout', userController.logout);
+
+//user authentication end
 
 app.get('/', function (request, response) {
   response.render("pages/index.ejs");
   log("", getIp(request), request.method, request.route.path);
 });
 
-app.get('/images', (req, res) => {
-  Myimages.find().then((images) => {
-    res.render('pages/imagesret', {
-      title: 'Images',
-      images: images
-    } );
-  }, (e) => {
-    res.status(400).send(e);
-  });
-});
+app.get('/images', imageController.imageretreive);
+app.get('/videos', videoController.videoretreive);
+app.get('/documents', documentController.documentretreive);
+app.get('/events', notificationController.eventretreive);
 
 
 app.get('/imageupload', function (request, response) {
@@ -161,15 +175,34 @@ app.get('/imageupload', function (request, response) {
 });
 
 
+app.get('/videoupload', function (request, response) {
+  response.render("pages/videosu.ejs");
+  log("", getIp(request), request.method, request.route.path);
+});
+
+app.get('/documentupload', function (request, response) {
+  response.render("pages/documentu.ejs");
+  log("", getIp(request), request.method, request.route.path);
+});
+
+app.get('/notificationupload', function (request, response) {
+  response.render("pages/notificationu.ejs");
+  log("", getIp(request), request.method, request.route.path);
+});
+
+
+
 //===============================================================================
 //===============================================================================
 //===============================================================================
+
 app.get('/about', function (request, response) {
 
   response.render("pages/about.ejs");
   log("", getIp(request), request.method, request.route.path);
 
 });
+
 
 app.get('/blog', function (request, response) {
 
