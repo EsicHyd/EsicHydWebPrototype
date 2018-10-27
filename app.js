@@ -7,7 +7,8 @@ const {mongoose} = require('./db/mongoose');
 const sgMail = require('@sendgrid/mail');
 const cors = require('cors');
 
-
+var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
 
 const { createLogger, format, transports } = require('winston');
 const { combine, timestamp, label, printf } = format;
@@ -21,6 +22,7 @@ var imageController = require('./controllers/imageController');
 var videoController = require('./controllers/videoController');
 var documentController = require('./controllers/documentController');
 var notificationController = require('./controllers/notificationController');
+var userController = require('./controllers/userController');
 
 function log(msg, ip, method, route, level) {
   if (level == null) {
@@ -84,7 +86,11 @@ app.use(express.static(__dirname + '/public'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
-
+app.use(session({
+  secret: 'work hard',
+  resave: true,
+  saveUninitialized: false
+}));
 
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
@@ -135,7 +141,22 @@ app.post('/api/documentUpload', documentController.documentupload);
 app.post('/api/notificationUpload', notificationController.eventupload);
 //image upload section end
 
+//user authentication
+app.get('/admin', function (req, res, next) {
+  return res.render('./pages/userlogin.ejs');
+});
 
+
+//POST route for updating data
+app.post('/admin', userController.user);
+
+// GET route after registering
+app.get('/profile', userController.userlogin);
+
+// GET for logout logout
+app.get('/logout', userController.logout);
+
+//user authentication end
 
 app.get('/', function (request, response) {
   response.render("pages/index.ejs");
@@ -181,6 +202,7 @@ app.get('/about', function (request, response) {
   log("", getIp(request), request.method, request.route.path);
 
 });
+
 
 app.get('/blog', function (request, response) {
 
