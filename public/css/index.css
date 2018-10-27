@@ -1,0 +1,72 @@
+/* style for navbar */
+.dropdown {
+  float: left;
+  overflow: vi;
+}
+
+.dropdown .dropbtn {
+  /* font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 8px 10px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0; */
+}
+
+.dropbtn:focus,
+.dropbtn:hover {
+  /* color:rgba(255, 255, 255, 0.8); */
+}
+
+li .dropdown-content {
+  display: none;
+  position: absolute;
+  background: white;
+  min-width: 250px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black !important;
+  padding: 8px 10px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 15px;
+}
+
+
+/* li:hover .dropdown-content {
+  background-color: rgb(206, 26, 26);
+} */
+@media only screen and (min-width: 600px){
+  li:hover .dropdown-content {
+    display: block;
+  }
+}
+
+.logo{
+  color: white !important;
+}
+.logo:hover{
+  color: gray !important;
+}
+
+.navbar-brand .logo > img {
+  margin-top: 0px !important;
+  max-height: 100px !important;
+  padding-top: 0px !important;
+}
+.navbar-brand .logo {
+  padding-top: 0px !important; 
+  margin-top: 0px !important; 
+  display: inline-block;
+
+}

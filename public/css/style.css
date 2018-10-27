@@ -226,12 +226,17 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 }
 
 .navbar-brand .logo {
-	margin-top: 10px;
+	margin-top: 2px;
 	display: inline-block;
+	vertical-align: center !important;
+	line-height: 35px;
+	
 }
 
 .navbar-brand .logo > img {
-	max-height:40px;
+	max-height:50px;
+	/* line-height: 35px; */
+	/* vertical-align: center !important; */
 }
 
 @media only screen and (max-width: 767px) {
@@ -1340,6 +1345,6 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	height:18em !important;
 }
 
-.logo{
+/* .logo{
 	color: #fff !important;
-}
+} */
