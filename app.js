@@ -153,7 +153,7 @@ app.get('/imageupload', function (request, response) {
   log("", getIp(request), request.method, request.route.path);
 });
 
-<<<<<<< HEAD
+
 app.get('/videoupload', function (request, response) {
   response.render("pages/videosu.ejs");
   log("", getIp(request), request.method, request.route.path);
@@ -169,12 +169,12 @@ app.get('/notificationupload', function (request, response) {
   log("", getIp(request), request.method, request.route.path);
 });
 
-=======
+
 
 //===============================================================================
 //===============================================================================
 //===============================================================================
->>>>>>> 5ed4d77bfce77df1bc4a568ee164846954feb4ef
+
 app.get('/about', function (request, response) {
 
   response.render("pages/about.ejs");
