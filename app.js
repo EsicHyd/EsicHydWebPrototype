@@ -16,6 +16,12 @@ const myMsg = printf(info => {
   return `[${info.timestamp}] ${info.level}: ${info.message}`;
 });
 
+//controller routes
+var imageController = require('./controllers/imageController');
+var videoController = require('./controllers/videoController');
+var documentController = require('./controllers/documentController');
+var notificationController = require('./controllers/notificationController');
+
 function log(msg, ip, method, route, level) {
   if (level == null) {
     level = "info";
@@ -123,17 +129,10 @@ function errLog(err, req, res, next) {
 
 //Image upload section
 
-app.post('/api/Upload', (req, res) => {
-  var myimages =  new Myimages({
-    text: req.body.text
-  });
-  //console.log(req.body.text);
-  myimages.save().then((images) =>{
-    res.redirect('/images');
-  }, (e) => {
-    res.status(400).send(e);
-  })
-});
+app.post('/api/imageUpload', imageController.imageupload);
+app.post('/api/videoUpload', videoController.videoupload);
+app.post('/api/documentUpload', documentController.documentupload);
+app.post('/api/notificationUpload', notificationController.eventupload);
 //image upload section end
 
 
@@ -143,20 +142,29 @@ app.get('/', function (request, response) {
   log("", getIp(request), request.method, request.route.path);
 });
 
-app.get('/images', (req, res) => {
-  Myimages.find().then((images) => {
-    res.render('pages/imagesret', {
-      title: 'Images',
-      images: images
-    } );
-  }, (e) => {
-    res.status(400).send(e);
-  });
-});
+app.get('/images', imageController.imageretreive);
+app.get('/videos', videoController.videoretreive);
+app.get('/documents', documentController.documentretreive);
+app.get('/events', notificationController.eventretreive);
 
 
 app.get('/imageupload', function (request, response) {
   response.render("pages/imagesu.ejs");
+  log("", getIp(request), request.method, request.route.path);
+});
+
+app.get('/videoupload', function (request, response) {
+  response.render("pages/videosu.ejs");
+  log("", getIp(request), request.method, request.route.path);
+});
+
+app.get('/documentupload', function (request, response) {
+  response.render("pages/documentu.ejs");
+  log("", getIp(request), request.method, request.route.path);
+});
+
+app.get('/notificationupload', function (request, response) {
+  response.render("pages/notificationu.ejs");
   log("", getIp(request), request.method, request.route.path);
 });
 

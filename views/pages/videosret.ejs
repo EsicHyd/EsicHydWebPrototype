@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 
 <head>
 	<meta charset="utf-8">
@@ -89,15 +89,17 @@
 			}
 	</script>
 	<!-- <form id="frmUploader" enctype="multipart/form-data" action="api/Upload/" method="post">
-			<input type="file" name="image" />
+			<input type="file" name="video" />
 			<input type="submit" name="submit" id="btnSubmit" value="Upload" />
 </form> -->
-<form id="frmUploader" action="api/imageUpload/" method="post">
-	Name:<input type="text" name="name" />
-	Link<input type="text" name="link" />
-	Description<input type="text" name="text" />
-	<input type="submit" name="submit" id="btnSubmit" value="Upload" />
-</form>
+<h1><%=title%></h1>
+<ul>
+<% videos.forEach(function(video){ %>
+  <li>Name:<%= video.name %></li>
+	<li>Link:<%= video.link %></li>
+	<li>Description:<%= video.text %></li>
+<% }) %>
+</ul>
 </body>
 
 </html>
