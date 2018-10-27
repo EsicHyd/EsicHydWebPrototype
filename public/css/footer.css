@@ -1,0 +1,18 @@
+.footer-links a {
+  color: #556868 !important;
+  font-weight: 400;
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.footer-links a:hover {
+  
+  color: rgb(163, 0, 0) !important;
+}
+
+.footer-links p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #85a7a7;
+}

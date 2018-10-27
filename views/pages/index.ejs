@@ -43,7 +43,8 @@
 	<link href=" /css/responsive.css" rel="stylesheet"> -->
 	<!-- <script src=" /js/vendor/modernizr-2.8.3.min.js"></script> -->
 	<link rel="stylesheet" type="text/css" href="css/index.css">
-	
+	<link rel="stylesheet" type="text/css" href="css/footer.css">
+
 </head>
 
 <body>
@@ -82,9 +83,9 @@
 			<!-- Navigation -->
 			<nav id="nav">
 				<ul class="main-menu nav navbar-nav navbar-right">
-					<li><a href="/">Home</a></li>
+					<li><a class="anim" href="/">Home</a></li>
 					<li>
-						<a class="dropbtn" href="/about">About</a>
+						<a class="dropbtn anim" href="/about">About</a>
 						<div class="dropdown">
 							<div class="dropdown-content">
 								<a href="#">Admission</a>
@@ -98,7 +99,7 @@
 						</div>
 					</li>
 					<li>
-						<a class="dropbtn" href="/hospital">Services</a>
+						<a class="dropbtn anim" href="/hospital">Services</a>
 						<div class="dropdown">
 							<div class="dropdown-content">
 								<a href="/hospital#scd">Speciality Departments</a>
@@ -106,11 +107,8 @@
 							</div>
 						</div>
 					</li>
-
-
-
 					<li>
-						<a class="dropbtn" href="/education">Education</a>
+						<a class="dropbtn anim" href="/education">Education</a>
 						<div class="dropdown">
 							<div class="dropdown-content">
 								<a href="/course">Course</a>
@@ -125,40 +123,33 @@
 						</div>
 					</li>
 					<li>
-						<a class="dropbtn" href="/">Research</a>
+						<a class="dropbtn anim" href="/">Research</a>
 						<div class="dropdown">
 							<!-- <div class="dropdown-content">
-              <a href=""></a>
-              <a href=""></a>
-              <a href=""></a>
-              <a href=""></a>
-              <a href=""></a>
-              <a href=""></a>
-              <a href=""></a>
-              <a href=""></a>
-            </div> -->
+								<a href=""></a>
+								<a href=""></a>
+								<a href=""></a>
+								<a href=""></a>
+								<a href=""></a>
+								<a href=""></a>
+								<a href=""></a>
+								<a href=""></a>
+							</div> -->
 						</div>
 					</li>
 					<li>
-						<a class="dropbtn" href="/">Public Form</a>
+						<a class="dropbtn anim" href="/">Public Form</a>
 						<div class="dropdown">
 							<div class="dropdown-content">
 								<a href="#">Citizen Charter</a>
 								<a href="#">Body Donation</a>
-								<a href="#">Rules and Regulation/a>
-									<a href="#">Rti</a>
-									<a href="#">Gallery</a>
-									<!-- <a href=""></a>
-              <a href=""></a>
-              <a href=""></a> -->
+								<a href="#">Rules and Regulation</a>
+								<a href="#">Rti</a>
+								<a href="#">Gallery</a>
 							</div>
 						</div>
 					</li>
-
-
-					<li><a href="/contact">Contact</a></li>
-					<!-- <li><a href="blog.html">Blog</a></li>
-						<li><a href="contact.html">Contact</a></li> -->
+					<li><a class="anim" href="/contact">Contact</a></li>
 				</ul>
 			</nav>
 			<!-- /Navigation -->
@@ -941,103 +932,9 @@
 	<!-- /Contact CTA -->
 
 	<!-- Footer -->
-	<footer id="footer" class="section">
-
-		<!-- container -->
-		<div class="container">
-
-			<!-- row -->
-			<div class="row">
-
-				<!-- footer logo -->
-				<div class="col-md-4">
-					<div class="footer-logo">
-						<a class="logo" href="index.html">
-							<img src="./img/logo/web.png" alt="ESIC">ESIC
-						</a>
-					</div>
-				</div>
-				<!-- footer logo -->
-
-				<!-- footer nav -->
-				<div class="col-md-8">
-					<ul class="footer-nav">
-						<li><a href="/">Home</a></li>
-						<li><a href="/about">About</a></li>
-						<li><a href="#">Services</a></li>
-						<li><a href="/education">Education</a></li>
-						<li><a href="#">Research</a></li>
-						<li><a href="#">Public Forum</a></li>
-						<li><a href="/contact">Contact</a></li>
-					</ul>
-				</div>
-				<!-- /footer nav -->
-
-			</div>
-			<!-- /row -->
-
-			<!-- row -->
-			<div id="bottom-footer" class="row">
-
-				<!-- social -->
-				<div class="col-md-4 col-md-push-8">
-					<ul class="footer-social">
-						<li><a href="#" class="facebook"><i class="fab fa-facebook"></i></a></li>
-						<li><a href="#" class="twitter"><i class="fab fa-twitter"></i></a></li>
-						<li><a href="#" class="google-plus"><i class="fab fa-google-plus"></i></a></li>
-						<li><a href="#" class="instagram"><i class="fab fa-instagram"></i></a></li>
-						<li><a href="#" class="youtube"><i class="fab fa-youtube"></i></a></li>
-						<li><a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a></li>
-					</ul>
-				</div>
-				<!-- /social -->
-
-				<!-- copyright -->
-				<div class="col-md-8 col-md-pull-4">
-					<div class="footer-copyright">
-						<span>&copy; Copyright 2018. All Rights Reserved. | <a href="/">ESIC</a></span>
-					</div>
-				</div>
-				<!-- /copyright -->
-
-			</div>
-			<!-- row -->
-
-		</div>
-		<!-- /container -->
-
-	</footer>
+	<% include ../partials/footer/footer_index.ejs %>
 	<!-- /Footer -->
 
-	<!-- preloader -->
-	<div id='preloader'>
-		<div class='preloader'></div>
-	</div>
-	<!-- /preloader -->
-
-
-	<!-- jQuery Plugins -->
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
-	<script src="vendor/select2/select2.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-	<script>
-		$('.js-pscroll').each(function () {
-			var ps = new PerfectScrollbar(this);
-
-			$(window).on('resize', function () {
-				ps.update();
-			})
-		});
-
-
-	</script>
-	<!--===============================================================================================-->
-	<script src="js/table_main.js"></script>
-	<script src="js/jquery.counterup.min.js"></script>
-	<script src="js/wow.min.js"></script>
 
 </body>
 

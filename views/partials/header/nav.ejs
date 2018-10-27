@@ -20,27 +20,9 @@
     <!-- Navigation -->
     <nav id="nav">
       <ul class="main-menu nav navbar-nav navbar-right">
-
-        <!-- <li>
-          <a class="dropbtn" href="/">Sample</a>
-          <div class="dropdown">
-            <div class="dropdown-content">
-              <a href=""></a>
-              <a href=""></a>
-              <a href=""></a>
-              <a href=""></a>
-              <a href=""></a>
-              <a href=""></a>
-              <a href=""></a>
-              <a href=""></a>
-            </div>
-          </div>
-        </li> -->
-
-
-        <li><a href="/">Home</a></li>
+        <li><a class="anim" href="/">Home</a></li>
         <li>
-          <a class="dropbtn" href="/about">About</a>
+          <a class="dropbtn anim" href="/about">About</a>
           <div class="dropdown">
             <div class="dropdown-content">
               <a href="#">Admission</a>
@@ -54,7 +36,7 @@
           </div>
         </li>
         <li>
-          <a class="dropbtn" href="/hospital">Services</a>
+          <a class="dropbtn anim" href="/hospital">Services</a>
           <div class="dropdown">
             <div class="dropdown-content">
               <a href="/hospital#scd">Speciality Departments</a>
@@ -62,11 +44,8 @@
             </div>
           </div>
         </li>
-
-
-
         <li>
-          <a class="dropbtn" href="/education">Education</a>
+          <a class="dropbtn anim" href="/education">Education</a>
           <div class="dropdown">
             <div class="dropdown-content">
               <a href="/course">Course</a>
@@ -81,7 +60,7 @@
           </div>
         </li>
         <li>
-          <a class="dropbtn" href="/">Research</a>
+          <a class="dropbtn anim" href="/">Research</a>
           <div class="dropdown">
             <!-- <div class="dropdown-content">
               <a href=""></a>
@@ -96,27 +75,21 @@
           </div>
         </li>
         <li>
-          <a class="dropbtn" href="/">Public Form</a>
+          <a class="dropbtn anim" href="/">Public Form</a>
           <div class="dropdown">
             <div class="dropdown-content">
               <a href="#">Citizen Charter</a>
               <a href="#">Body Donation</a>
-              <a href="#">Rules and Regulation/a>
-                <a href="#">Rti</a>
-                <a href="#">Gallery</a>
-                <!-- <a href=""></a>
-              <a href=""></a>
-              <a href=""></a> -->
+              <a href="#">Rules and Regulation</a>
+              <a href="#">Rti</a>
+              <a href="#">Gallery</a>
             </div>
           </div>
         </li>
-
-
-        <li><a href="/contact">Contact</a></li>
+        <li><a class="anim" href="/contact">Contact</a></li>
       </ul>
     </nav>
     <!-- /Navigation -->
-
   </div>
 </header>
 
@@ -204,11 +177,30 @@
 
   li:hover .dropdown-content {
     /* background-color: rgb(206, 26, 26); */
+
   }
 
   @media only screen and (min-width: 600px) {
     li:hover .dropdown-content {
       display: block;
     }
+
+    li:hover .dropdown-content a:hover {
+      background-color: #8a251e !important;
+      border: 0px !important;
+      color: white !important;
+      /* text-s */
+      -webkit-box-shadow: 0 0 10px rgb(0, 0, 0);
+      -moz-box-shadow: 0 0 10px rgb(0, 0, 0);
+
+      -webkit-transform: translateY(5px);
+      -ms-transform: translateY(5px);
+      transform: translateY(5px);
+      opacity: 1;
+      -webkit-transition: 0.2s all;
+      transition: 0.2s all;
+    }
+
+
   }
 </style>

@@ -279,7 +279,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	background-color:transparent;
 }
 
-.main-menu li a:after {
+.main-menu li a.anim:after {
 	content:"";
 	display:block;
 	height:2px;
