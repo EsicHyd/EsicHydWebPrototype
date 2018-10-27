@@ -6,7 +6,6 @@ var winston = require('winston');
 const {mongoose} = require('./db/mongoose');
 const sgMail = require('@sendgrid/mail');
 const cors = require('cors');
-
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 
@@ -18,6 +17,7 @@ const myMsg = printf(info => {
 });
 
 //controller routes
+const loggercontroller = require('./controllers/loggercontroller');
 var imageController = require('./controllers/imageController');
 var videoController = require('./controllers/videoController');
 var documentController = require('./controllers/documentController');
@@ -160,7 +160,7 @@ app.get('/logout', userController.logout);
 
 app.get('/', function (request, response) {
   response.render("pages/index.ejs");
-  log("", getIp(request), request.method, request.route.path);
+  loggercontroller.logg("", getIp(request), request.method, request.route.path);
 });
 
 app.get('/images', imageController.imageretreive);
@@ -169,26 +169,14 @@ app.get('/documents', documentController.documentretreive);
 app.get('/events', notificationController.eventretreive);
 
 
-app.get('/imageupload', function (request, response) {
-  response.render("pages/imagesu.ejs");
-  log("", getIp(request), request.method, request.route.path);
-});
+app.get('/imageupload', imageController.imageload);
 
 
-app.get('/videoupload', function (request, response) {
-  response.render("pages/videosu.ejs");
-  log("", getIp(request), request.method, request.route.path);
-});
+app.get('/videoupload', videoController.videoload);
 
-app.get('/documentupload', function (request, response) {
-  response.render("pages/documentu.ejs");
-  log("", getIp(request), request.method, request.route.path);
-});
+app.get('/documentupload', documentController.documentload);
 
-app.get('/notificationupload', function (request, response) {
-  response.render("pages/notificationu.ejs");
-  log("", getIp(request), request.method, request.route.path);
-});
+app.get('/notificationupload', notificationController.eventload);
 
 
 
