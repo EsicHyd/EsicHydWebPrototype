@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	
+
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,7 +41,61 @@
 	<link rel="stylesheet" type="text/css" href="css/table_main.css">
 	<link href="css/plugins.css" rel="stylesheet">
 	<link href=" /css/responsive.css" rel="stylesheet">
-	<script src=" /js/vendor/modernizr-2.8.3.min.js"></script>
+	<!-- <script src=" /js/vendor/modernizr-2.8.3.min.js"></script> -->
+	<style>
+		/* style for navbar */
+		.dropdown {
+			float: left;
+			overflow: vi;
+		}
+	
+		.dropdown .dropbtn {
+			/* font-size: 12px;
+				font-weight: 800;
+				letter-spacing: 1px;
+				text-transform: uppercase;    
+				border: none;
+				outline: none;
+				color: white;
+				padding: 8px 10px;
+				background-color: inherit;
+				font-family: inherit;
+				margin: 0; */
+		}
+	
+		.dropbtn:focus,
+		.dropbtn:hover {
+			/* color:rgba(255, 255, 255, 0.8); */
+		}
+	
+		li .dropdown-content {
+			display: none;
+			position: absolute;
+			background: white;
+			min-width: 250px;
+			box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+			z-index: 1;
+		}
+	
+		.dropdown-content a {
+			float: none;
+			color: black !important;
+			padding: 8px 10px;
+			text-decoration: none;
+			display: block;
+			text-align: left;
+			font-size: 15px;
+		}
+	
+	
+		li:hover .dropdown-content {
+			/* background-color: rgb(206, 26, 26); */
+		}
+	
+		li:hover .dropdown-content {
+			display: block;
+		}
+	</style>
 </head>
 
 <body>
@@ -81,11 +135,79 @@
 			<nav id="nav">
 				<ul class="main-menu nav navbar-nav navbar-right">
 					<li><a href="/">Home</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="/hospital">Services</a></li>
-					<li><a href="/education">Education</a></li>
-					<li><a href="#">Research</a></li>
-					<li><a href="#">Public Forum</a></li>
+					<li>
+						<a class="dropbtn" href="/about">About</a>
+						<div class="dropdown">
+							<div class="dropdown-content">
+								<a href="#">Admission</a>
+								<a href="#">Faculty</a>
+								<a href="#">Commities</a>
+								<a href="#">Awards and honors</a>
+								<a href="#">Press media</a>
+								<a href="#">University and Govt.</a>
+								<a href="#">Infrastructure</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<a class="dropbtn" href="/hospital">Services</a>
+						<div class="dropdown">
+							<div class="dropdown-content">
+								<a href="/hospital#scd">Speciality Departments</a>
+								<a href="/hospital#sss">Services</a>
+							</div>
+						</div>
+					</li>
+
+
+
+					<li>
+						<a class="dropbtn" href="/education">Education</a>
+						<div class="dropdown">
+							<div class="dropdown-content">
+								<a href="/course">Course</a>
+								<a href="/admission">Admission</a>
+								<a href="/student_zone">Student Zone </a>
+								<a href="/conference">Conference/CME</a>
+								<a href="/upcoming_event">Upcoming Event</a>
+								<!-- <a href="">Commitee</a> -->
+								<a href="/training">Training</a>
+								<a href="/journal_esi">Journal</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<a class="dropbtn" href="/">Research</a>
+						<div class="dropdown">
+							<!-- <div class="dropdown-content">
+              <a href=""></a>
+              <a href=""></a>
+              <a href=""></a>
+              <a href=""></a>
+              <a href=""></a>
+              <a href=""></a>
+              <a href=""></a>
+              <a href=""></a>
+            </div> -->
+						</div>
+					</li>
+					<li>
+						<a class="dropbtn" href="/">Public Form</a>
+						<div class="dropdown">
+							<div class="dropdown-content">
+								<a href="#">Citizen Charter</a>
+								<a href="#">Body Donation</a>
+								<a href="#">Rules and Regulation/a>
+									<a href="#">Rti</a>
+									<a href="#">Gallery</a>
+									<!-- <a href=""></a>
+              <a href=""></a>
+              <a href=""></a> -->
+							</div>
+						</div>
+					</li>
+
+
 					<li><a href="/contact">Contact</a></li>
 					<!-- <li><a href="blog.html">Blog</a></li>
 						<li><a href="contact.html">Contact</a></li> -->
@@ -739,9 +861,9 @@
 					<!--<div class="feature">
 						<i class="feature-icon fa fa-flask"></i>
 						<div class="feature-content">-->
-							<h4>Questions</h4>
-							<p>Answer</p>
-						<!--</div>-->
+					<h4>Questions</h4>
+					<p>Answer</p>
+					<!--</div>-->
 					<!--</div>-->
 				</div>
 				<!-- /feature -->
@@ -751,9 +873,9 @@
 					<!--<div class="feature">
 						<i class="feature-icon fa fa-users"></i>
 						<div class="feature-content">-->
-							<h4>Questions</h4>
-							<p>Answer</p>
-						<!--</div>-->
+					<h4>Questions</h4>
+					<p>Answer</p>
+					<!--</div>-->
 					<!--</div>-->
 				</div>
 				<!-- /feature -->
@@ -763,9 +885,9 @@
 					<!--<div class="feature">
 						<i class="feature-icon fa fa-comments"></i>
 						<div class="feature-content">-->
-							<h4>Questions</h4>
-							<p>Answer</p>
-						<!--</div>-->
+					<h4>Questions</h4>
+					<p>Answer</p>
+					<!--</div>-->
 					<!--</div>-->
 				</div>
 				<!-- /feature -->
@@ -791,68 +913,68 @@
 		<!-- Backgound Image -->
 		<div class="bg-image bg-parallax overlay" style="background-image:url(./img/cta2-background.jpg)"></div>
 		<!-- Backgound Image -->
-		 <!--FUN FACT AREA AREA-->
-		 <section class="fun-fact-area center white relative padding-100-70" id="fact">
-				<div class="area-bg" data-stellar-background-ratio="0.6"></div>
-				<div class="container">
-				  <div class="row">
+		<!--FUN FACT AREA AREA-->
+		<section class="fun-fact-area center white relative padding-100-70" id="fact">
+			<div class="area-bg" data-stellar-background-ratio="0.6"></div>
+			<div class="container">
+				<div class="row">
 					<div class="col-md-3 col-sm-6 col-xs-12">
-					  <div class="single-fun-fact mb30 wow fadeInUp" data-wow-delay="0.1s">
-						<h1 class="white-text"><span class="counter">20</span>k</h1>
-						<h5 class="white-text">Patients Treated</h5>
-					  </div>
+						<div class="single-fun-fact mb30 wow fadeInUp" data-wow-delay="0.1s">
+							<h1 class="white-text"><span class="counter">20</span>k</h1>
+							<h5 class="white-text">Patients Treated</h5>
+						</div>
 					</div>
 					<div class="col-md-3 col-sm-6 col-xs-12">
-					  <div class="single-fun-fact mb30 wow fadeInUp" data-wow-delay="0.2s">
-						<h1 class="white-text"><span class="counter">530</span></h1>
-						<h5 class="white-text">Doctors available</h5>
-					  </div>
+						<div class="single-fun-fact mb30 wow fadeInUp" data-wow-delay="0.2s">
+							<h1 class="white-text"><span class="counter">530</span></h1>
+							<h5 class="white-text">Doctors available</h5>
+						</div>
 					</div>
 					<div class="col-md-3 col-sm-6 col-xs-12">
-					  <div class="single-fun-fact mb30 wow fadeInUp" data-wow-delay="0.3s">
-						<h1 class="white-text"><span class="counter">60</span></h1>
-						<h5 class="white-text">Facilities Provided</h5>
-					  </div>
+						<div class="single-fun-fact mb30 wow fadeInUp" data-wow-delay="0.3s">
+							<h1 class="white-text"><span class="counter">60</span></h1>
+							<h5 class="white-text">Facilities Provided</h5>
+						</div>
 					</div>
 					<div class="col-md-3 col-sm-6 col-xs-12">
-					  <div class="single-fun-fact mb30 wow fadeInUp" data-wow-delay="0.4s">
-						<h1 class="white-text"><span class="counter">15</span>k</h1>
-						<h5 class="white-text">Students Enrollments</h5>
-					  </div>
+						<div class="single-fun-fact mb30 wow fadeInUp" data-wow-delay="0.4s">
+							<h1 class="white-text"><span class="counter">15</span>k</h1>
+							<h5 class="white-text">Students Enrollments</h5>
+						</div>
 					</div>
-				  </div>
 				</div>
-			  </section>
-			  <!--FUN FACT AREA AREA END-->
+			</div>
+		</section>
+		<!--FUN FACT AREA AREA END-->
 		<!--<section class="fun-fact-area center white relative padding-100-70" id="fact">
 		<div class="area-bg" data-stellar-background-ratio="0.6"></div>
 		<!--container -->
 		<!--<div class="container">-->
 
-			<!-- row -->
-			<!--<div class="row">-->
+		<!-- row -->
+		<!--<div class="row">-->
 
-				<!--<div class="col-md-3 col-sm-6 col-xs-12" position="relative" ; left="50px" ;>
+		<!--<div class="col-md-3 col-sm-6 col-xs-12" position="relative" ; left="50px" ;>
 					<div class="single-fun-fact mb30 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
 						<h1 class="white-text">
 						<span class="counter">20</span>K</h1>
 						<h5 class="white-text">Patients Treated</h5>
 					</div>
 				</div>-->
-				<!--<div class="col-md-3 col-sm-6 col-xs-12">
+		<!--<div class="col-md-3 col-sm-6 col-xs-12">
 						<div class="single-fun-fact mb30 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
 					<h1 class="white-text">
 						<span class="counter">20</span>K</h1>
 					<h5 class="white-text">Patients Treated</h5>
 				</div>-->
-			<!--</div>
+		<!--</div>
 				<div class="col-md-3 col-sm-6 col-xs-12">
 						<div class="single-fun-fact mb30 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
 					<h1 class="white-text">
 						<span class="counter">20</span>K</h1>
 					<h5 class="white-text">Patients Treated</h5>
 				</div>-->
-			   <!--</div>
+		<!--</div>
 				<div class="col-md-3 col-sm-6 col-xs-12">
 						<div class="single-fun-fact mb30 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
 					<h1 class="white-text">
@@ -861,12 +983,12 @@
 				</div>
 			</div>-->
 
-			<!--</div>
+		<!--</div>
 			<!-- /row -->
 
 		<!--</div>
 		<!-- /container -->
-	<!--</div>-->
+		<!--</div>-->
 	</div>
 	<!-- /Contact CTA -->
 

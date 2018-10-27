@@ -160,6 +160,10 @@ app.get('/imageupload', function (request, response) {
   log("", getIp(request), request.method, request.route.path);
 });
 
+
+//===============================================================================
+//===============================================================================
+//===============================================================================
 app.get('/about', function (request, response) {
 
   response.render("pages/about.ejs");
@@ -213,7 +217,6 @@ app.get('/course', function (request, response) {
   response.render('pages/course.ejs');
   log("", getIp(request), request.method, request.route.path);
 })
-
 app.get('/admission', function (request, response) {
   response.render('pages/admission.ejs');
   log("", getIp(request), request.method, request.route.path);
@@ -242,6 +245,10 @@ app.get('/journal_esi', function (request, response) {
   response.render('pages/journal_esi.ejs');
   log("", getIp(request), request.method, request.route.path);
 })
+//===============================================================================
+//===============================================================================
+//===============================================================================
+
 //hospital services
 app.get('/gs', function (request, response) {
 
