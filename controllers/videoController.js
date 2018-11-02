@@ -15,7 +15,7 @@ User.findById(req.session.userId)
         err.status = 400;
         return res.redirect('/admin');
       } else {
-        loggercontroller.logg("", getIp(request), request.method, request.route.path);
+        loggercontroller.logg("", loggercontroller.getIp(req), req.method, req.route.path);
         return res.render('./../views/pages/videosu')
       }
     }

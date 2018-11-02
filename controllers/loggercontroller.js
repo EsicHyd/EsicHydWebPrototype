@@ -6,7 +6,8 @@ const { promisify } = require('util');
 const myMsg = printf(info => {
   return `[${info.timestamp}] ${info.level}: ${info.message}`;
 });
-function getIp(req) {
+module.exports = {
+  getIp:function getIp(req) {
   var ip = (req.headers['x-forwarded-for'] || '').split(',').pop() ||
     req.connection.remoteAddress ||
     req.socket.remoteAddress ||
@@ -16,7 +17,7 @@ function getIp(req) {
   }
   return ip;
 }
-
+}
 module.exports = {
 logg:function logg(msg, ip, method, route, level) {
   if (level == null) {
