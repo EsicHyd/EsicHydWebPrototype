@@ -22,7 +22,7 @@ var imageController = require('./controllers/imageController');
 var videoController = require('./controllers/videoController');
 var documentController = require('./controllers/documentController');
 var notificationController = require('./controllers/notificationController');
-var userController = require('./controllers/userController');
+var userController = require('./controllers/usercontroller');
 
 function log(msg, ip, method, route, level) {
   if (level == null) {
