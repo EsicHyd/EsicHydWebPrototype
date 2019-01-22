@@ -1,31 +1,29 @@
 {
-  "name": "esichyd",
+  "name": "esic-web",
   "version": "1.0.0",
-  "description": "Website made for Esic Hyderabad by the students HITAM using NodeJs",
+  "description": "Esic website",
   "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Paritosh and others!",
-  "license": "ISC",
   "dependencies": {
     "@sendgrid/mail": "^6.3.1",
-    "bcrypt": "^3.0.2",
     "body-parser": "^1.18.3",
-    "connect-mongo": "^2.0.1",
-    "cors": "^2.8.4",
-    "dns": "^0.2.2",
+    "cors": "^2.8.5",
     "ejs": "^2.6.1",
-    "express": "^4.16.3",
-    "express-session": "^1.15.6",
-    "ip": "^1.1.5",
+    "express": "^4.16.4",
     "method-override": "^3.0.0",
-    "moment": "^2.22.2",
-    "mongodb": "^3.1.6",
-    "mongoose": "^5.3.6",
-    "nodemon": "^1.18.4",
-    "os": "^0.1.1",
-    "util": "^0.11.0",
     "winston": "^3.1.0"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EsicHyd/EsicHydWebPrototype.git"
+  },
+  "author": "Paritosh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EsicHyd/EsicHydWebPrototype/issues"
+  },
+  "homepage": "https://github.com/EsicHyd/EsicHydWebPrototype#readme"
 }

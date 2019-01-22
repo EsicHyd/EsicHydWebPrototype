@@ -1,13 +1,9 @@
 var express = require('express');
 var app = express();
-// var ipa = require('ip');
-// var os = require('os');
 var winston = require('winston');
-const {mongoose} = require('./db/mongoose');
 const sgMail = require('@sendgrid/mail');
 const cors = require('cors');
-var session = require('express-session');
-var MongoStore = require('connect-mongo')(session);
+
 
 const { createLogger, format, transports } = require('winston');
 const { combine, timestamp, label, printf } = format;
@@ -18,11 +14,7 @@ const myMsg = printf(info => {
 
 //controller routes
 const loggercontroller = require('./controllers/loggercontroller');
-var imageController = require('./controllers/imageController');
-var videoController = require('./controllers/videoController');
-var documentController = require('./controllers/documentController');
-var notificationController = require('./controllers/notificationController');
-var userController = require('./controllers/usercontroller');
+
 
 function log(msg, ip, method, route, level) {
   if (level == null) {
@@ -77,8 +69,7 @@ const logger = createLogger({
 
 const { promisify } = require('util');
 
-const dns = require('dns');
-const lookup = promisify(dns.lookup);
+
 
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
@@ -86,16 +77,11 @@ app.use(express.static(__dirname + '/public'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
-app.use(session({
-  secret: 'work hard',
-  resave: true,
-  saveUninitialized: false
-}));
+
 
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
-const {Myimages} = require('./models/imgschema');
 app.use(bodyParser.urlencoded({
   extended: true
 }));
@@ -133,13 +119,6 @@ function errLog(err, req, res, next) {
   res.status(500).send('Oops Something broke..!');
 }
 
-//Image upload section
-
-app.post('/api/imageUpload', imageController.imageupload);
-app.post('/api/videoUpload', videoController.videoupload);
-app.post('/api/documentUpload', documentController.documentupload);
-app.post('/api/notificationUpload', notificationController.eventupload);
-//image upload section end
 
 //user authentication
 app.get('/admin', function (req, res, next) {
@@ -147,14 +126,6 @@ app.get('/admin', function (req, res, next) {
 });
 
 
-//POST route for updating data
-app.post('/admin', userController.user);
-
-// GET route after registering
-app.get('/profile', userController.userlogin);
-
-// GET for logout logout
-app.get('/logout', userController.logout);
 
 //user authentication end
 
@@ -163,20 +134,8 @@ app.get('/', function (request, response) {
   loggercontroller.logg("", getIp(request), request.method, request.route.path);
 });
 
-app.get('/images', imageController.imageretreive);
-app.get('/videos', videoController.videoretreive);
-app.get('/documents', documentController.documentretreive);
-app.get('/events', notificationController.eventretreive);
 
 
-app.get('/imageupload', imageController.imageload);
-
-
-app.get('/videoupload', videoController.videoload);
-
-app.get('/documentupload', documentController.documentload);
-
-app.get('/notificationupload', notificationController.eventload);
 
 
 
