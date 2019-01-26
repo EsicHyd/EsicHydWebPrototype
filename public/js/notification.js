@@ -28,7 +28,7 @@ function timeConverter(UNIX_timestamp) {
     return smallTime;
 }
 
-$.get('http://esiadm.herokuapp.com/readNotif', function (request, status, headers) {
+$.get('https://esiadm.herokuapp.com/readNotif', function (request, status, headers) {
     // alert(JSON.stringify({ request, status, headers }));
     // console.log({ request, status, headers });
     setNotif(request);

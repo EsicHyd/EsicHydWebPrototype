@@ -110,7 +110,7 @@ function setImg(docObjects, link, nums = null) {
     }
 }
 
-function initTemplate(link = 'http://esiadm.herokuapp.com') {
+function initTemplate(link = 'https://esiadm.herokuapp.com') {
     $.get(`${link}/getFileByTag/img/all`, function (request, status, headers) {
         // alert(JSON.stringify({ request, status, headers }));
         // console.log({ request, status, headers });
