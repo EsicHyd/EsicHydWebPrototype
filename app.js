@@ -1,9 +1,10 @@
+var { env } = require('./config/config');
+
 var express = require('express');
 var app = express();
 var winston = require('winston');
 const sgMail = require('@sendgrid/mail');
 const cors = require('cors');
-
 
 const { createLogger, format, transports } = require('winston');
 const { combine, timestamp, label, printf } = format;
@@ -13,62 +14,7 @@ const myMsg = printf(info => {
 });
 
 //controller routes
-const loggercontroller = require('./controllers/loggercontroller');
-
-
-function log(msg, ip, method, route, level) {
-  if (level == null) {
-    level = "info";
-  }
-  var message = "";
-  if (ip != null && ip != "") {
-    message = ` ip= ${ip} `;
-  }
-  if (method != null && method != "") {
-    message += ` method= ${method} `;
-  }
-  if (route != null && route != "") {
-    message += ` route= ${route} `;
-  }
-  message += msg;
-  logger.log(level, message);
-}
-
-const myCustomLevels = {
-  levels: {
-    error: 0,
-    warn: 1,
-    info: 2,
-    verbose: 3,
-    debug: 4,
-    silly: 5
-  },
-  colors: {
-    error: 'red',
-    warn: 'yellow',
-    info: 'green',
-    verbose: 'blue',
-    debug: 'cyan',
-    silly: 'white'
-  }
-};
-winston.addColors(myCustomLevels.colors);
-
-const logger = createLogger({
-  levels: myCustomLevels.levels,
-  format: format.combine(
-    timestamp(),
-    myMsg
-  ),
-  transports: [
-    new winston.transports.Console(),
-    new winston.transports.File({ filename: 'server.log' }),
-    new winston.transports.File({ filename: 'error.log', level: 'error' })
-  ]
-});
-
-const { promisify } = require('util');
-
+const { log } = require('./controllers/loggercontroller');
 
 
 app.set('port', (process.env.PORT || 5000));
@@ -116,296 +62,716 @@ function rotcc13(str) {
 
 function errLog(err, req, res, next) {
   log(err.stack, getIp(req), req.method, req.route.path, 'error');
-  res.status(500).send('Oops Something broke..!');
+  var er = { msg: err.message, status: 500 };
+  res.status(500).render('pages/err', er);
 }
 
 
-//user authentication
-app.get('/admin', function (req, res, next) {
-  return res.render('./pages/userlogin.ejs');
+//===============================================================================
+//===============================================================================
+
+app.get('/', function (req, res) {
+  res.render("pages/index.ejs");
+  log("", getIp(req), req.method, req.route.path);
+});
+
+app.get('/about', function (req, res) {
+  res.render("pages/about.ejs");
+  log("", getIp(req), req.method, req.route.path);
+});
+
+
+app.get('/blog', function (req, res) {
+
+  res.render("pages/blog.ejs");
+  log("", getIp(req), req.method, req.route.path);
+
+
+});
+//===============================================================================
+//===============================================================================
+//images gallery
+
+
+app.get('/gallery', function (req, res) {
+  var queryTag = req.query.qtag;
+
+  if (queryTag == null || queryTag == undefined || queryTag == "") {
+    queryTag = 'all';
+  }
+  var data = {
+    linkAPI: process.env.API_URI,
+    pathtag: queryTag,
+    typeData: 'img',
+    page: 'Image Gallery - ESIC Hyderabad',
+    imagepath: './img/header-background.jpg',
+    tags: [
+      "Public form","Image Gallery"
+    ]
+  }
+  res.render("pages/gallery-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
+//===============================================================================
+//===============================================================================
+//documents
+app.get('/doc', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+    pathtag: 'docTag',
+    type: 'doc',
+    page: 'doc template - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+    tags: [
+      "tag1", "tag2", "lastTag"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
+
+app.get('/PressMedia.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+    pathtag: 'PressMedia',
+    type: 'doc',
+    page: 'Press Media - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+    tags: [
+      "About", "Press Media"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
 });
 
 
 
-//user authentication end
 
-app.get('/', function (request, response) {
-  response.render("pages/index.ejs");
-  loggercontroller.logg("", getIp(request), request.method, request.route.path);
+app.get('/AnnualReport.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+    pathtag: 'AnnualReport',
+    type: 'doc',
+    page: 'Annual Report - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+    tags: [
+      "tag1", "tag2", "Annual Report"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
 });
 
 
 
+
+app.get('/University.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+    pathtag: 'University',
+    type: 'doc',
+    page: 'University and Govt. Approval - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+    tags: [
+      "About", "University and Govt. Approval"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
+
+
+
+
+app.get('/Admission.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+    pathtag: 'Admission',
+    type: 'doc',
+    page: 'Admission - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+    tags: [
+      "Education", "Admission"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
+
+
+
+
+app.get('/Courses.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+    pathtag: 'Courses',
+    type: 'doc',
+    page: 'Courses - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+    tags: [
+      "tag1", "tag2", "Courses"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
+
+
+
+
+app.get('/StudentZone.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+    pathtag: 'StudentZone',
+    type: 'doc',
+    page: 'Student Zone - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+    tags: [
+      "Education", "Student Zone"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
+
+
+
+
+app.get('/Conference.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+    pathtag: 'Conference',
+    type: 'doc',
+    page: 'CME and Conference - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+    tags: [
+      "Education", "CME and Conference"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
+
+
+
+
+app.get('/Training.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+    pathtag: 'Training',
+    type: 'doc',
+    page: 'Training - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+    tags: [
+      "Education", "Training"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
+
+
+
+
+app.get('/JournalESI.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+    pathtag: 'JournalESI',
+    type: 'doc',
+    page: 'Journal ESI - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+    tags: [
+      "Education", "Journal ESI"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
+
+
+
+
+app.get('/Research.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+    pathtag: 'Research',
+    type: 'doc',
+    page: 'Research and Development - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+    tags: [
+      "Research and Development"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
+
+
+
+
+app.get('/CitizenCharter.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+    pathtag: 'CitizenCharter',
+    type: 'doc',
+    page: 'Citizen Charter - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+    tags: [
+      "Public Forum", "Citizen Charter"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
+
+
+
+
+app.get('/BodyDonation.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+    pathtag: 'BodyDonation',
+    type: 'doc',
+    page: 'Body Donation - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+    tags: [
+      "Public Forum", "Body Donation"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
+
+
+
+
+app.get('/RulesRegulation.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+    pathtag: 'RulesRegulation',
+    type: 'doc',
+    page: 'Rules and Regulation - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+    tags: [
+      "Public Forum", "Rules and Regulation"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
+
+
+
+
+app.get('/BioWasteManagement.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+    pathtag: 'BioWasteManagement',
+    type: 'doc',
+    page: 'Bio Medical Waste Management - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+    tags: [
+      "Public Forum", "Bio Medical Waste Management"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
+
+
+
+
+app.get('/RTI.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+    pathtag: 'RTI',
+    type: 'doc',
+    page: 'RTI - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+    tags: [
+      "Public Forum", "RTI"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
+
+
+
+
+app.get('/Administrations.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+    pathtag: 'Administrations',
+    type: 'doc',
+    page: 'Administrations - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+    tags: [
+      "About", "Administrations"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
+
+
+app.get('/Admission.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+    pathtag: 'Admission',
+    type: 'doc',
+    page: 'Admission - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+    tags: [
+      "tag1", "tag2", "Admission"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
+
+
+
+
+app.get('/University.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+    pathtag: 'University',
+    type: 'doc',
+    page: 'University and Govt. Approval - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+    tags: [
+      "tag1", "tag2", "University and Govt. Approval"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
+
+
+
+
+app.get('/Awards.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+    pathtag: 'Awards',
+    type: 'doc',
+    page: 'Awards and honors - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+    tags: [
+      "About", "Awards and honors"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
+
+
+
+
+app.get('/Infrastrutcure.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+    pathtag: 'Infrastrutcure',
+    type: 'doc',
+    page: 'Infrastrutcure - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+    tags: [
+      "About", "Infrastrutcure"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
+
+
+
+
+app.get('/Events.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+    pathtag: 'Events',
+    type: 'doc',
+    page: 'Upcoming Events - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+    tags: [
+      "Education", "Upcoming Events"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
+
+
+
+
+app.get('/Publication.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+    pathtag: 'Publication',
+    type: 'doc',
+    page: 'Publication - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+    tags: [
+      "Research and Development", "Publication"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
 
 
 
 //===============================================================================
 //===============================================================================
-//===============================================================================
 
-app.get('/about', function (request, response) {
+// app.get('/blogp', function (req, res) {
 
-  response.render("pages/about.ejs");
-  log("", getIp(request), request.method, request.route.path);
+//   res.render("pages/blog-post.ejs");
+//   log("", getIp(req), req.method, req.route.path);
 
-});
+// });
 
+app.get('/contact', function (req, res) {
 
-app.get('/blog', function (request, response) {
-
-  response.render("pages/blog.ejs");
-  log("", getIp(request), request.method, request.route.path);
-
+  res.render("pages/contact.ejs");
+  log("", getIp(req), req.method, req.route.path);
 
 });
 
-app.get('/blogp', function (request, response) {
+app.get('/hospital', function (req, res) {
 
-  response.render("pages/blog-post.ejs");
-  log("", getIp(request), request.method, request.route.path);
-
-});
-
-app.get('/contact', function (request, response) {
-
-  response.render("pages/contact.ejs");
-  log("", getIp(request), request.method, request.route.path);
-
-});
-
-app.get('/hospital', function (request, response) {
-
-  response.render('pages/hospital.ejs');
-  log("", getIp(request), request.method, request.route.path);
+  res.render('pages/hospital.ejs');
+  log("", getIp(req), req.method, req.route.path);
 
 
 });
 
-app.get('/hospital1', function (request, response) {
+app.get('/hospital1', function (req, res) {
 
-  response.render('pages/hospital.1.ejs');
-  log("", getIp(request), request.method, request.route.path);
+  res.render('pages/hospital.1.ejs');
+  log("", getIp(req), req.method, req.route.path);
 
 
 });
 
-app.get('/education', function (request, response) {
-  response.render('pages/education.ejs');
-  log("", getIp(request), request.method, request.route.path);
+app.get('/education', function (req, res) {
+  res.render('pages/education.ejs');
+  log("", getIp(req), req.method, req.route.path);
 });
-app.get('/course', function (request, response) {
-  response.render('pages/course.ejs');
-  log("", getIp(request), request.method, request.route.path);
+app.get('/course', function (req, res) {
+  res.render('pages/course.ejs');
+  log("", getIp(req), req.method, req.route.path);
 })
-app.get('/admission', function (request, response) {
-  response.render('pages/admission.ejs');
-  log("", getIp(request), request.method, request.route.path);
+app.get('/admission', function (req, res) {
+  res.render('pages/admission.ejs');
+  log("", getIp(req), req.method, req.route.path);
 })
-app.get('/student_zone', function (request, response) {
-  response.render('pages/student_zone.ejs');
-  log("", getIp(request), request.method, request.route.path);
+app.get('/student_zone', function (req, res) {
+  res.render('pages/student_zone.ejs');
+  log("", getIp(req), req.method, req.route.path);
 })
-app.get('/conference', function (request, response) {
-  response.render('pages/conference.ejs');
-  log("", getIp(request), request.method, request.route.path);
+app.get('/conference', function (req, res) {
+  res.render('pages/conference.ejs');
+  log("", getIp(req), req.method, req.route.path);
 })
-app.get('/upcoming_events', function (request, response) {
-  response.render('pages/upcoming_events.ejs');
-  log("", getIp(request), request.method, request.route.path);
+app.get('/upcoming_events', function (req, res) {
+  res.render('pages/upcoming_events.ejs');
+  log("", getIp(req), req.method, req.route.path);
 })
-app.get('/committee', function (request, response) {
-  response.render('pages/committee.ejs');
-  log("", getIp(request), request.method, request.route.path);
+app.get('/committee', function (req, res) {
+  res.render('pages/committee.ejs');
+  log("", getIp(req), req.method, req.route.path);
 })
-app.get('/training', function (request, response) {
-  response.render('pages/training.ejs');
-  log("", getIp(request), request.method, request.route.path);
+app.get('/training', function (req, res) {
+  res.render('pages/training.ejs');
+  log("", getIp(req), req.method, req.route.path);
 })
-app.get('/journal_esi', function (request, response) {
-  response.render('pages/journal_esi.ejs');
-  log("", getIp(request), request.method, request.route.path);
+app.get('/journal_esi', function (req, res) {
+  res.render('pages/journal_esi.ejs');
+  log("", getIp(req), req.method, req.route.path);
 })
-//===============================================================================
 //===============================================================================
 //===============================================================================
 
 //hospital services
-app.get('/gs', function (request, response) {
+app.get('/gs', function (req, res) {
 
-  response.render('pages/gs.ejs');
-  log("", getIp(request), request.method, request.route.path);
-
-});
-app.get('/gm', function (request, response) {
-
-  response.render('pages/gm.ejs');
-  log("", getIp(request), request.method, request.route.path);
+  res.render('pages/services/gs.ejs');
+  log("", getIp(req), req.method, req.route.path);
 
 });
-app.get('/og', function (request, response) {
+app.get('/gm', function (req, res) {
 
-  response.render('pages/og.ejs');
-  log("", getIp(request), request.method, request.route.path);
-
-});
-app.get('/pml', function (request, response) {
-
-  response.render('pages/pml.ejs');
-  log("", getIp(request), request.method, request.route.path);
+  res.render('pages/services/gm.ejs');
+  log("", getIp(req), req.method, req.route.path);
 
 });
-app.get('/dmt', function (request, response) {
+app.get('/og', function (req, res) {
 
-  response.render('pages/dmt.ejs');
-  log("", getIp(request), request.method, request.route.path);
-
-});
-app.get('/pdt', function (request, response) {
-
-  response.render('pages/pdt.ejs');
-  log("", getIp(request), request.method, request.route.path);
+  res.render('pages/services/og.ejs');
+  log("", getIp(req), req.method, req.route.path);
 
 });
-app.get('/pct', function (request, response) {
+app.get('/pml', function (req, res) {
 
-  response.render('pages/pct.ejs');
-  log("", getIp(request), request.method, request.route.path);
-
-});
-app.get('/otp', function (request, response) {
-
-  response.render('pages/otp.ejs');
-  log("", getIp(request), request.method, request.route.path);
+  res.render('pages/services/pml.ejs');
+  log("", getIp(req), req.method, req.route.path);
 
 });
-app.get('/opl', function (request, response) {
+app.get('/dmt', function (req, res) {
 
-  response.render('pages/opl.ejs');
-  log("", getIp(request), request.method, request.route.path);
-
-});
-app.get('/ent', function (request, response) {
-
-  response.render('pages/ent.ejs');
-  log("", getIp(request), request.method, request.route.path);
+  res.render('pages/services/dmt.ejs');
+  log("", getIp(req), req.method, req.route.path);
 
 });
-app.get('/ats', function (request, response) {
+app.get('/pdt', function (req, res) {
 
-  response.render('pages/ats.ejs');
-  log("", getIp(request), request.method, request.route.path);
-
-});
-app.get('/rdd', function (request, response) {
-
-  response.render('pages/rdd.ejs');
-  log("", getIp(request), request.method, request.route.path);
+  res.render('pages/services/pdt.ejs');
+  log("", getIp(req), req.method, req.route.path);
 
 });
-app.get('/hmt', function (request, response) {
+app.get('/pct', function (req, res) {
 
-  response.render('pages/hmt.ejs');
-  log("", getIp(request), request.method, request.route.path);
-
-});
-app.get('/dtt', function (request, response) {
-
-  response.render('pages/dtt.ejs');
-  log("", getIp(request), request.method, request.route.path);
+  res.render('pages/services/pct.ejs');
+  log("", getIp(req), req.method, req.route.path);
 
 });
-app.get('/pst', function (request, response) {
+app.get('/otp', function (req, res) {
 
-  response.render('pages/pst.ejs');
-  log("", getIp(request), request.method, request.route.path);
-
-});
-app.get('/cbc', function (request, response) {
-
-  response.render('pages/cbc.ejs');
-  log("", getIp(request), request.method, request.route.path);
+  res.render('pages/services/otp.ejs');
+  log("", getIp(req), req.method, req.route.path);
 
 });
-app.get('/cpt', function (request, response) {
+app.get('/opl', function (req, res) {
 
-  response.render('pages/cpt.ejs');
-  log("", getIp(request), request.method, request.route.path);
-
-});
-app.get('/cmb', function (request, response) {
-
-  response.render('pages/cmb.ejs');
-  log("", getIp(request), request.method, request.route.path);
+  res.render('pages/services/opl.ejs');
+  log("", getIp(req), req.method, req.route.path);
 
 });
-app.get('/nulhs', function (request, response) {
+app.get('/ent', function (req, res) {
 
-  response.render('pages/nulhs.ejs');
-  log("", getIp(request), request.method, request.route.path);
-
-});
-app.get('/nus', function (request, response) {
-
-  response.render('pages/nus.ejs');
-  log("", getIp(request), request.method, request.route.path);
+  res.render('pages/services/ent.ejs');
+  log("", getIp(req), req.method, req.route.path);
 
 });
-app.get('/pds', function (request, response) {
+app.get('/ats', function (req, res) {
 
-  response.render('pages/pds.ejs');
-  log("", getIp(request), request.method, request.route.path);
-
-});
-app.get('/url', function (request, response) {
-
-  response.render('pages/url.ejs');
-  log("", getIp(request), request.method, request.route.path);
+  res.render('pages/services/ats.ejs');
+  log("", getIp(req), req.method, req.route.path);
 
 });
-app.get('/npl', function (request, response) {
+app.get('/rdd', function (req, res) {
 
-  response.render('pages/npl.ejs');
-  log("", getIp(request), request.method, request.route.path);
+  res.render('pages/services/rdd.ejs');
+  log("", getIp(req), req.method, req.route.path);
 
 });
-app.get('/cdl', function (request, response) {
+app.get('/hmt', function (req, res) {
 
-  response.render('pages/cdl.ejs');
-  log("", getIp(request), request.method, request.route.path);
+  res.render('pages/services/hmt.ejs');
+  log("", getIp(req), req.method, req.route.path);
+
+});
+app.get('/dtt', function (req, res) {
+
+  res.render('pages/services/dtt.ejs');
+  log("", getIp(req), req.method, req.route.path);
+
+});
+app.get('/pst', function (req, res) {
+
+  res.render('pages/services/pst.ejs');
+  log("", getIp(req), req.method, req.route.path);
+
+});
+app.get('/cbc', function (req, res) {
+
+  res.render('pages/services/cbc.ejs');
+  log("", getIp(req), req.method, req.route.path);
+
+});
+app.get('/cpt', function (req, res) {
+
+  res.render('pages/services/cpt.ejs');
+  log("", getIp(req), req.method, req.route.path);
+
+});
+app.get('/cmb', function (req, res) {
+
+  res.render('pages/services/cmb.ejs');
+  log("", getIp(req), req.method, req.route.path);
+
+});
+app.get('/nulhs', function (req, res) {
+
+  res.render('pages/services/nulhs.ejs');
+  log("", getIp(req), req.method, req.route.path);
+
+});
+app.get('/nus', function (req, res) {
+
+  res.render('pages/services/nus.ejs');
+  log("", getIp(req), req.method, req.route.path);
+
+});
+app.get('/pds', function (req, res) {
+
+  res.render('pages/services/pds.ejs');
+  log("", getIp(req), req.method, req.route.path);
+
+});
+app.get('/url', function (req, res) {
+
+  res.render('pages/services/url.ejs');
+  log("", getIp(req), req.method, req.route.path);
+
+});
+app.get('/npl', function (req, res) {
+
+  res.render('pages/services/npl.ejs');
+  log("", getIp(req), req.method, req.route.path);
+
+});
+app.get('/cdl', function (req, res) {
+
+  res.render('pages/services/cdl.ejs');
+  log("", getIp(req), req.method, req.route.path);
 
 });
 
 
 //mailer service
-app.post("/send", function (request, response) {
+app.post("/send", function (req, res) {
   var ap1 = "FT";
   var ap2 = "OBEsnUdNExXryjJybYuq4t";
   var ap3 = "r8SJp0fiib41Su5YeYdzSTc76pH0cqWoBPOStbVuM5N";
   var api = ap1 + "." + ap2 + "." + ap3;
   sgMail.setApiKey(rotcc13(api));
 
-  if (request.method !== "POST") {
-    response.send(405, "Invalid Request")
+  if (req.method !== "POST") {
+    res.send(405, "Invalid req")
   } else {
     const msg = {
       to: 'paritoshsrivastava9199@gmail.com',
-      // cc: rotcc13(request.query.e),
+      // cc: rotcc13(req.query.e),
       from: 'noreply@esichyd.org',
-      subject: 'Message from ' + rotcc13(request.query.n) + ' regarding ' + rotcc13(request.query.s),
+      subject: 'Message from ' + rotcc13(req.query.n) + ' regarding ' + rotcc13(req.query.s),
       html: `<html>
       <head>
       </head>
       <body>
           <p>Hello Admin</p>
-          <p>You have a new message from a ${rotcc13(request.query.n)} regarding ${rotcc13(request.query.s)}.</p>
+          <p>You have a new message from a ${rotcc13(req.query.n)} regarding ${rotcc13(req.query.s)}.</p>
           <p>
-              <em><strong>Name:</strong></em> ${rotcc13(request.query.n)}<br>
-              <em><strong>Subject:</strong></em> ${rotcc13(request.query.s)}<br>
-              <em><strong>Email:</strong></em> ${rotcc13(request.query.e)}<br>
+              <em><strong>Name:</strong></em> ${rotcc13(req.query.n)}<br>
+              <em><strong>Subject:</strong></em> ${rotcc13(req.query.s)}<br>
+              <em><strong>Email:</strong></em> ${rotcc13(req.query.e)}<br>
               <strong><em>Message:</em></strong><br>
-              ${request.query.m}
+              ${req.query.m}
               <br>
-              <p>To reply back to ${rotcc13(request.query.n)} please reply back to this email <a href="mailto:${rotcc13(request.query.e)}">${rotcc13(request.query.e)}</a></p>
+              <p>To reply back to ${rotcc13(req.query.n)} please reply back to this email <a href="mailto:${rotcc13(req.query.e)}">${rotcc13(req.query.e)}</a></p>
               <p><em>This is an auto generated email.Please do not reply back to this email.</em></p>
 
           </p>
@@ -413,21 +779,21 @@ app.post("/send", function (request, response) {
               Your ESIC Team.</p>
       </body>
       </html>`
-      // texdt: rotcc13(request.query.n) + " Email: " + rotcc13(request.query.e) + " Phone: " + rotcc13(request.query.p) + " Message: " + rotcc13(request.query.m),
-      // html: "<strong>" + rotcc13(request.query.n) + "</strong><br>Email: " + rotcc13(request.query.e) + " <br>Phone: " + rotcc13(request.query.p) + " <br><h5>Message: </h5>" + rotcc13(request.query.m),
+      // texdt: rotcc13(req.query.n) + " Email: " + rotcc13(req.query.e) + " Phone: " + rotcc13(req.query.p) + " Message: " + rotcc13(req.query.m),
+      // html: "<strong>" + rotcc13(req.query.n) + "</strong><br>Email: " + rotcc13(req.query.e) + " <br>Phone: " + rotcc13(req.query.p) + " <br><h5>Message: </h5>" + rotcc13(req.query.m),
     };
 
     const msg_ack = {
-      to: rotcc13(request.query.e),
-      // cc: rotcc13(request.query.e),
+      to: rotcc13(req.query.e),
+      // cc: rotcc13(req.query.e),
       from: 'noreply@esichyd.org',
-      subject: 'Noreply: Message from Esic regarding ' + rotcc13(request.query.s),
+      subject: 'Noreply: Message from Esic regarding ' + rotcc13(req.query.s),
       html: `<html>
       <head>
       </head>
       <body>
-          <p>Dear ${rotcc13(request.query.n)}</p>
-          <p>Thank you for your message regarding ${rotcc13(request.query.s)}. Resolving your issues and answering questions are a top priority for us. A member of our support team will follow up with you today to resolve your inquiry.</p>
+          <p>Dear ${rotcc13(req.query.n)}</p>
+          <p>Thank you for your message regarding ${rotcc13(req.query.s)}. Resolving your issues and answering questions are a top priority for us. A member of our support team will follow up with you today to resolve your inquiry.</p>
           <p><em>The entire ESIC team looks forward to a very professional working relationship with you, and we ready to
               support you in any way possible to serve you better.</em></p>
           <p>Thank you for contacting us! We value your feedback/suggestions/complaint. To give your valued opinion please use this <a href="#">link</a>.<br><em>This is an auto generated email.Please do not reply back to this email.</em></p>
@@ -443,43 +809,43 @@ app.post("/send", function (request, response) {
 
         sgMail.send(msg_ack).then(function () {
           b = 1;
-          response.send({ success: true });
-          response.end();
+          res.send({ success: true });
+          res.end();
           return { success: true };
-          // response.send(rotcc13(request.query.n)+" Email: "+rotcc13(request.query.e)+" Phone: "+rotcc13(request.query.p)+" Message: "+rotcc13(request.query.m));
+          // res.send(rotcc13(req.query.n)+" Email: "+rotcc13(req.query.e)+" Phone: "+rotcc13(req.query.p)+" Message: "+rotcc13(req.query.m));
         }).catch(function (err) {
           b = 0;
           console.log(err);
-          response.send({ success: false });
-          response.end();
+          res.send({ success: false });
+          res.end();
         });
 
 
         // b = 1;
-        // response.send({ success: true });
-        // response.end();
+        // res.send({ success: true });
+        // res.end();
         // return { success: true };
-        // response.send(rotcc13(request.query.n)+" Email: "+rotcc13(request.query.e)+" Phone: "+rotcc13(request.query.p)+" Message: "+rotcc13(request.query.m));
+        // res.send(rotcc13(req.query.n)+" Email: "+rotcc13(req.query.e)+" Phone: "+rotcc13(req.query.p)+" Message: "+rotcc13(req.query.m));
       }).catch(function (err) {
         b = 0;
         console.log(err);
-        response.send({ success: false });
-        response.end();
+        res.send({ success: false });
+        res.end();
       });
 
     } catch (err) {
       // console.log(err);
-      // response.send("mail not sent! Server err: "+err);
+      // res.send("mail not sent! Server err: "+err);
     }
-    // response.send("yo!");
+    // res.send("yo!");
   }
 });
 
 
-app.get('*', function (request, response) {
+app.get('*', function (req, res) {
 
-  response.render("pages/404.ejs");
-  log("", getIp(request), request.method, request.route.path);
+  res.render("pages/404.ejs");
+  log("", getIp(req), req.method, req.route.path);
 
 });
 

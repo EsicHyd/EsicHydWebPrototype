@@ -23,6 +23,7 @@
 
 li .dropdown-content {
   display: none;
+  border-radius: 8px;
   position: absolute;
   background: white;
   min-width: 250px;
@@ -54,13 +55,14 @@ li:hover .dropdown-content {
   li:hover .dropdown-content a:hover {
     background-color: #8a251e !important;
     border: 0px !important;
+    border-radius: 8px;
     color: white !important;
     /* text-s */
-    -webkit-box-shadow: 0 0 10px rgb(0, 0, 0);
-    -moz-box-shadow: 0 0 10px rgb(0, 0, 0);
-    -webkit-transform: translateY(5px);
-    -ms-transform: translateY(5px);
-    transform: translateY(5px);
+    -webkit-box-shadow: 0 0 5px rgb(0, 0, 0);
+    -moz-box-shadow: 0 0 5px rgb(0, 0, 0);
+    -webkit-transform: translateY(-1px);
+    -ms-transform: translateY(-1px);
+    transform: translateY(-1px);
     opacity: 1;
     -webkit-transition: 0.2s all;
     transition: 0.2s all;

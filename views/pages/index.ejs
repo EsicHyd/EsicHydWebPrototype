@@ -21,15 +21,7 @@
 
 	<!-- Custom stlylesheet -->
 	<link type="text/css" rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-	 crossorigin="anonymous">
 
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
 
 	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
 	<!--===============================================================================================-->
@@ -44,6 +36,41 @@
 	<!-- <script src=" /js/vendor/modernizr-2.8.3.min.js"></script> -->
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<link rel="stylesheet" type="text/css" href="css/footer.css">
+	<link rel="stylesheet" href="css/image-grid.css">
+	<style>
+		.center-text {
+			text-align: center;
+		}
+
+		.gallery-hidden {
+			display: none;
+		}
+
+		
+		/* .width-auto {
+			width: 100%;
+			height: auto;
+		} */
+
+		/* .course-img {
+			vertical-align: middle;
+			text-align: center;
+			overflow: hidden;
+			max-width: 260px;
+			max-height: 260px;
+			width: 100%;
+			height: auto;
+		} */
+
+		/* .img-fluid-gallery {
+			max-height: 100%;
+			max-width: 100%;
+			width: auto;
+			height: auto;
+			vertical-align: middle;
+		} */
+	</style>
+
 
 </head>
 
@@ -88,13 +115,13 @@
 						<a class="dropbtn anim" href="/about">About</a>
 						<div class="dropdown">
 							<div class="dropdown-content">
-								<a href="#">Admission</a>
+								<a href="/Administrations.docs">Administration</a>
 								<a href="#">Faculty</a>
 								<a href="#">Commities</a>
-								<a href="#">Awards and honors</a>
-								<a href="#">Press media</a>
-								<a href="#">University and Govt.</a>
-								<a href="#">Infrastructure</a>
+								<a href="/Awards.docs">Awards and honors</a>
+								<a href="/PressMedia.docs">Press media</a>
+								<a href="/University.docs">University and Govt.</a>
+								<a href="/Infrastrutcure.docs">Infrastructure</a>
 							</div>
 						</div>
 					</li>
@@ -112,40 +139,41 @@
 						<div class="dropdown">
 							<div class="dropdown-content">
 								<a href="/course">Course</a>
-								<a href="/admission">Admission</a>
-								<a href="/student_zone">Student Zone </a>
-								<a href="/conference">Conference/CME</a>
-								<a href="/upcoming_event">Upcoming Event</a>
+								<a href="/Admission.docs">Admission</a>
+								<a href="/StudentZone.docs">Student Zone </a>
+								<a href="/Conference.docs">Conference/CME</a>
+								<a href="/Events.docs">Upcoming Event</a>
 								<!-- <a href="">Commitee</a> -->
-								<a href="/training">Training</a>
-								<a href="/journal_esi">Journal</a>
+								<a href="/Training.docs">Training</a>
+								<a href="/JournalESI.docs">Journal</a>
 							</div>
 						</div>
 					</li>
 					<li>
-						<a class="dropbtn anim" href="/">Research</a>
+						<a class="dropbtn anim" href="/Research.docs">Research</a>
 						<div class="dropdown">
-							<!-- <div class="dropdown-content">
-								<a href=""></a>
-								<a href=""></a>
-								<a href=""></a>
-								<a href=""></a>
-								<a href=""></a>
-								<a href=""></a>
-								<a href=""></a>
-								<a href=""></a>
-							</div> -->
+							<div class="dropdown-content">
+								<a href="/Publication.docs">Publication</a>
+								<!-- <a href=""></a>
+							<a href=""></a>
+							<a href=""></a>
+							<a href=""></a>
+							<a href=""></a>
+							<a href=""></a>
+							<a href=""></a> -->
+							</div>
 						</div>
 					</li>
 					<li>
-						<a class="dropbtn anim" href="/">Public Form</a>
+						<a class="dropbtn anim" href="/">Public Forum</a>
 						<div class="dropdown">
 							<div class="dropdown-content">
-								<a href="#">Citizen Charter</a>
-								<a href="#">Body Donation</a>
-								<a href="#">Rules and Regulation</a>
-								<a href="#">Rti</a>
-								<a href="#">Gallery</a>
+								<a href="/CitizenCharter.docs">Citizen Charter</a>
+								<a href="/BodyDonation.docs">Body Donation</a>
+								<a href="/RulesRegulation.docs">Rules and Regulation</a>
+								<a href="/BioWasteManagement.docs">Rti</a>
+								<a href="/BioWasteManagement.docs">Bio Waste Management</a>
+								<a href="/gallery">Gallery</a>
 							</div>
 						</div>
 					</li>
@@ -175,9 +203,9 @@
 						<a class="main-button icon-button" href="/about">About Us!</a>
 					</div>
 
-					
+
 					<div class="col-md-4">
-						
+
 					</div>
 
 
@@ -204,9 +232,11 @@
 						<div class="col-md-6">
 							<h3>Dean's message</h3>
 							<p class="lead">Education is the foundation upon which we build our future.</p>
-							<p>No vel facete sententiae, quodsi dolores no quo, pri ex tamquam interesset necessitatibus. Te denique
-								cotidieque delicatissimi sed. Eu doming epicurei duo. Sit ea perfecto deseruisse theophrastus. At sed malis
-								hendrerit, elitr deseruisse in sit, sit ei facilisi mediocrem.</p>
+							<p>Better education is very necessary for all to go ahead in the life and get success. It develops confidence
+								and helps building personality of a person. Primary education prepares the base which helps throughout the
+								life, secondary education prepares the path for further study and higher secondary education prepares the
+								ultimate path of the future and whole life. Our good or bad education decides that which type of person we
+								would be in the future.</p>
 						</div>
 
 						<div class="col-md-5 col-md-offset-1">
@@ -219,308 +249,10 @@
 
 					</div>
 				</div>
-
-
-				<!-- <div class="col-md-6">
-					<div class="section-header">
-						<h2>Welcome to Esic</h2>
-						<p class="lead">Libris vivendo eloquentiam ex ius, nec id splendide abhorreant.</p>
-					</div>
-
-				
-					<div class="feature">
-						<i class="feature-icon fa fa-flask"></i>
-						<div class="feature-content">
-							<h4>Online Courses </h4>
-							<p>Ceteros fuisset mei no, soleat epicurei adipiscing ne vis. Et his suas veniam nominati.</p>
-						</div>
-					</div>
-					
-
-					<div class="feature">
-						<i class="feature-icon fa fa-users"></i>
-						<div class="feature-content">
-							<h4>Expert Teachers</h4>
-							<p>Ceteros fuisset mei no, soleat epicurei adipiscing ne vis. Et his suas veniam nominati.</p>
-						</div>
-					</div>
-					
-
-
-					<div class="feature">
-						<i class="feature-icon fa fa-comments"></i>
-						<div class="feature-content">
-							<h4>Community</h4>
-							<p>Ceteros fuisset mei no, soleat epicurei adipiscing ne vis. Et his suas veniam nominati.</p>
-						</div>
-					</div>
-					
-
-				</div> -->
-
-				<!-- <div class="col-md-6">
-					<div class="about-img">
-						<img src="./img/about.png" alt="">
-					</div>
-				</div> -->
-
-				<!-- <div class="col-md-12"> -->
-				<!-- <div class="section-header" id="about-us">
-						<br><br><br><br>
-						<h2>About Us</h2>
-						<p class="lead">Bacon ipsum dolor amet pork chop pork belly spare ribs strip steak tri-tip ball tip. Porchetta
-							venison ribeye, cow shoulder ham hock jerky. Porchetta pork chop tenderloin venison, tail pastrami kielbasa
-							leberkas cupim ribeye drumstick. Flank swine alcatra prosciutto corned beef salami burgdoggen, biltong beef ball
-							tip doner shankle. Buffalo alcatra bacon corned beef salami. Beef jowl cow, burgdoggen shank buffalo spare ribs
-							pork chop.
-
-							Hamburger turducken leberkas boudin fatback, pork loin shank tongue doner sirloin drumstick filet mignon pork
-							cupim sausage. Jowl bacon short ribs, ribeye prosciutto beef pork chop shank tongue swine. Swine tri-tip
-							turducken pig shankle t-bone. Landjaeger alcatra bresaola,</p>
-
-					</div>
-
-					<div class="center-btn">
-						<a class="main-button icon-button" href="/about">About Us</a>
-					</div> -->
-
-
-				<!-- feature -->
-				<!-- <div class="feature">
-						<i class="feature-icon fa fa-flask"></i>
-						<div class="feature-content">
-							<h4>Online Courses </h4>
-							<p>Ceteros fuisset mei no, soleat epicurei adipiscing ne vis. Et his suas veniam nominati.</p>
-						</div>
-					</div> -->
-				<!-- /feature -->
-
-				<!-- feature -->
-				<!-- <div class="feature">
-						<i class="feature-icon fa fa-users"></i>
-						<div class="feature-content">
-							<h4>Expert Teachers</h4>
-							<p>Ceteros fuisset mei no, soleat epicurei adipiscing ne vis. Et his suas veniam nominati.</p>
-						</div>
-					</div> -->
-				<!-- /feature -->
-
-				<!-- feature -->
-				<!-- <div class="feature">
-						<i class="feature-icon fa fa-comments"></i>
-						<div class="feature-content">
-							<h4>Community</h4>
-							<p>Ceteros fuisset mei no, soleat epicurei adipiscing ne vis. Et his suas veniam nominati.</p>
-						</div>
-					</div> -->
-				<!-- /feature -->
-
-				<!-- </div> col-lg-12-end line 183 -->
-
 				<div class="col-md-12">
 					<div class="section-header" id="about-us">
-						<br><br><br><br>
+						<br><br>
 						<h2>Notification</h2>
-
-
-
-						<!-- <div class="table100 ver1 m-b-110">
-							<div class="table100-head">
-								<table>
-									<thead>
-										<tr class="row100 head">
-											<th class="cell100 column1">Class name</th>
-											<th class="cell100 column2">Type</th>
-											<th class="cell100 column3">Hours</th>
-											<th class="cell100 column4">Trainer</th>
-											<th class="cell100 column5">Spots</th>
-										</tr>
-									</thead>
-								</table>
-							</div>
-
-							<div class="table100-body js-pscroll">
-								<table>
-									<tbody>
-										<tr class="row100 body">
-											<td class="cell100 column1">Like a butterfly</td>
-											<td class="cell100 column2">Boxing</td>
-											<td class="cell100 column3">9:00 AM - 11:00 AM</td>
-											<td class="cell100 column4">Aaron Chapman</td>
-											<td class="cell100 column5">10</td>
-										</tr>
-
-										<tr class="row100 body">
-											<td class="cell100 column1">Mind & Body</td>
-											<td class="cell100 column2">Yoga</td>
-											<td class="cell100 column3">8:00 AM - 9:00 AM</td>
-											<td class="cell100 column4">Adam Stewart</td>
-											<td class="cell100 column5">15</td>
-										</tr>
-
-										<tr class="row100 body">
-											<td class="cell100 column1">Crit Cardio</td>
-											<td class="cell100 column2">Gym</td>
-											<td class="cell100 column3">9:00 AM - 10:00 AM</td>
-											<td class="cell100 column4">Aaron Chapman</td>
-											<td class="cell100 column5">10</td>
-										</tr>
-
-										<tr class="row100 body">
-											<td class="cell100 column1">Wheel Pose Full Posture</td>
-											<td class="cell100 column2">Yoga</td>
-											<td class="cell100 column3">7:00 AM - 8:30 AM</td>
-											<td class="cell100 column4">Donna Wilson</td>
-											<td class="cell100 column5">15</td>
-										</tr>
-
-										<tr class="row100 body">
-											<td class="cell100 column1">Playful Dancer's Flow</td>
-											<td class="cell100 column2">Yoga</td>
-											<td class="cell100 column3">8:00 AM - 9:00 AM</td>
-											<td class="cell100 column4">Donna Wilson</td>
-											<td class="cell100 column5">10</td>
-										</tr>
-
-										<tr class="row100 body">
-											<td class="cell100 column1">Zumba Dance</td>
-											<td class="cell100 column2">Dance</td>
-											<td class="cell100 column3">5:00 PM - 7:00 PM</td>
-											<td class="cell100 column4">Donna Wilson</td>
-											<td class="cell100 column5">20</td>
-										</tr>
-
-										<tr class="row100 body">
-											<td class="cell100 column1">Cardio Blast</td>
-											<td class="cell100 column2">Gym</td>
-											<td class="cell100 column3">5:00 PM - 7:00 PM</td>
-											<td class="cell100 column4">Randy Porter</td>
-											<td class="cell100 column5">10</td>
-										</tr>
-
-										<tr class="row100 body">
-											<td class="cell100 column1">Pilates Reformer</td>
-											<td class="cell100 column2">Gym</td>
-											<td class="cell100 column3">8:00 AM - 9:00 AM</td>
-											<td class="cell100 column4">Randy Porter</td>
-											<td class="cell100 column5">10</td>
-										</tr>
-
-										<tr class="row100 body">
-											<td class="cell100 column1">Supple Spine and Shoulders</td>
-											<td class="cell100 column2">Yoga</td>
-											<td class="cell100 column3">6:30 AM - 8:00 AM</td>
-											<td class="cell100 column4">Randy Porter</td>
-											<td class="cell100 column5">15</td>
-										</tr>
-
-										<tr class="row100 body">
-											<td class="cell100 column1">Yoga for Divas</td>
-											<td class="cell100 column2">Yoga</td>
-											<td class="cell100 column3">9:00 AM - 11:00 AM</td>
-											<td class="cell100 column4">Donna Wilson</td>
-											<td class="cell100 column5">20</td>
-										</tr>
-
-										<tr class="row100 body">
-											<td class="cell100 column1">Virtual Cycle</td>
-											<td class="cell100 column2">Gym</td>
-											<td class="cell100 column3">8:00 AM - 9:00 AM</td>
-											<td class="cell100 column4">Randy Porter</td>
-											<td class="cell100 column5">20</td>
-										</tr>
-
-										<tr class="row100 body">
-											<td class="cell100 column1">Like a butterfly</td>
-											<td class="cell100 column2">Boxing</td>
-											<td class="cell100 column3">9:00 AM - 11:00 AM</td>
-											<td class="cell100 column4">Aaron Chapman</td>
-											<td class="cell100 column5">10</td>
-										</tr>
-
-										<tr class="row100 body">
-											<td class="cell100 column1">Mind & Body</td>
-											<td class="cell100 column2">Yoga</td>
-											<td class="cell100 column3">8:00 AM - 9:00 AM</td>
-											<td class="cell100 column4">Adam Stewart</td>
-											<td class="cell100 column5">15</td>
-										</tr>
-
-										<tr class="row100 body">
-											<td class="cell100 column1">Crit Cardio</td>
-											<td class="cell100 column2">Gym</td>
-											<td class="cell100 column3">9:00 AM - 10:00 AM</td>
-											<td class="cell100 column4">Aaron Chapman</td>
-											<td class="cell100 column5">10</td>
-										</tr>
-
-										<tr class="row100 body">
-											<td class="cell100 column1">Wheel Pose Full Posture</td>
-											<td class="cell100 column2">Yoga</td>
-											<td class="cell100 column3">7:00 AM - 8:30 AM</td>
-											<td class="cell100 column4">Donna Wilson</td>
-											<td class="cell100 column5">15</td>
-										</tr>
-
-										<tr class="row100 body">
-											<td class="cell100 column1">Playful Dancer's Flow</td>
-											<td class="cell100 column2">Yoga</td>
-											<td class="cell100 column3">8:00 AM - 9:00 AM</td>
-											<td class="cell100 column4">Donna Wilson</td>
-											<td class="cell100 column5">10</td>
-										</tr>
-
-										<tr class="row100 body">
-											<td class="cell100 column1">Zumba Dance</td>
-											<td class="cell100 column2">Dance</td>
-											<td class="cell100 column3">5:00 PM - 7:00 PM</td>
-											<td class="cell100 column4">Donna Wilson</td>
-											<td class="cell100 column5">20</td>
-										</tr>
-
-										<tr class="row100 body">
-											<td class="cell100 column1">Cardio Blast</td>
-											<td class="cell100 column2">Gym</td>
-											<td class="cell100 column3">5:00 PM - 7:00 PM</td>
-											<td class="cell100 column4">Randy Porter</td>
-											<td class="cell100 column5">10</td>
-										</tr>
-
-										<tr class="row100 body">
-											<td class="cell100 column1">Pilates Reformer</td>
-											<td class="cell100 column2">Gym</td>
-											<td class="cell100 column3">8:00 AM - 9:00 AM</td>
-											<td class="cell100 column4">Randy Porter</td>
-											<td class="cell100 column5">10</td>
-										</tr>
-
-										<tr class="row100 body">
-											<td class="cell100 column1">Supple Spine and Shoulders</td>
-											<td class="cell100 column2">Yoga</td>
-											<td class="cell100 column3">6:30 AM - 8:00 AM</td>
-											<td class="cell100 column4">Randy Porter</td>
-											<td class="cell100 column5">15</td>
-										</tr>
-
-										<tr class="row100 body">
-											<td class="cell100 column1">Yoga for Divas</td>
-											<td class="cell100 column2">Yoga</td>
-											<td class="cell100 column3">9:00 AM - 11:00 AM</td>
-											<td class="cell100 column4">Donna Wilson</td>
-											<td class="cell100 column5">20</td>
-										</tr>
-
-										<tr class="row100 body">
-											<td class="cell100 column1">Virtual Cycle</td>
-											<td class="cell100 column2">Gym</td>
-											<td class="cell100 column3">8:00 AM - 9:00 AM</td>
-											<td class="cell100 column4">Randy Porter</td>
-											<td class="cell100 column5">20</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</div> -->
 
 						<br>
 
@@ -538,28 +270,8 @@
 							</div>
 
 							<div class="table100-body js-pscroll">
-								<table>
+								<table id="table-notif-content">
 									<tbody>
-										<tr class="row100 body">
-											<td class="cell100 column1">25/10/18</td>
-											<td class="cell100 column2">Admissions open Admissions open Jowl bacon short ribs, ribeye prosciutto beef
-												pork chop shank</td>
-											<td class="cell100 column3"><a href="#"><i class="fas fa-external-link-alt"></i></a></td>
-										</tr>
-
-										<tr class="row100 body">
-											<td class="cell100 column1">26/10/18</td>
-											<td class="cell100 column2">Admissions open</td>
-											<td class="cell100 column3"><a href="#"><i class="fas fa-external-link-alt"></i></a></td>
-
-										</tr>
-
-										<tr class="row100 body">
-											<td class="cell100 column1">27/10/18</td>
-											<td class="cell100 column2">Admissions open</td>
-											<td class="cell100 column3"><a href="#"><i class="fas fa-external-link-alt"></i></a></td>
-										</tr>
-
 
 									</tbody>
 								</table>
@@ -568,298 +280,18 @@
 
 					</div>
 
-					<div>
+					<!-- <div>
 						<a class="main-button center-btn icon-button" href="/notification">All Notifications</a>
-					</div>
-
-				</div>
-
-				<!-- <div class="col-md-6">
-					<div class="about-img">
-						<img src="./img/about.png" alt="">
-					</div>
-				</div> -->
-
-			</div>
-			<!-- row -->
-
-		</div>
-		<!-- container -->
-	</div>
-	<!-- /About -->
-
-	<!-- Courses -->
-	<div id="courses" class="section">
-
-		<!-- container -->
-		<div class="container">
-
-			<!-- row -->
-			<div class="row">
-				<div class="section-header text-center">
-					<h2>Explore Our Gallery</h2>
-					<p class="lead">Libris vivendo eloquentiam ex ius, nec id splendide abhorreant.</p>
-				</div>
-			</div>
-			<!-- /row -->
-
-			<!-- courses -->
-			<div id="courses-wrapper">
-
-				<!-- row -->
-				<div class="row">
-
-					<!-- single course -->
-					<div class="col-md-3 col-sm-6 col-xs-6">
-						<div class="course">
-							<a href="#" class="course-img">
-								<img src="./img/course01.jpg" alt="">
-								<i class="course-link-icon fas fa-camera"></i>
-							</a>
-							<a class="course-title" href="#">Intro</a>
-							<div class="course-details">
-								<span class="course-category">Type</span>
-								<span class="course-price course-free">Date</span>
-							</div>
-						</div>
-					</div>
-					<!-- /single course -->
-
-					<!-- single course -->
-					<div class="col-md-3 col-sm-6 col-xs-6">
-						<div class="course">
-							<a href="#" class="course-img">
-								<img src="./img/course02.jpg" alt="">
-								<i class="course-link-icon fas fa-camera"></i>
-							</a>
-							<a class="course-title" href="#">Intro</a>
-							<div class="course-details">
-								<span class="course-category">Type</span>
-								<span class="course-price course-free">Date</span>
-							</div>
-						</div>
-					</div>
-					<!-- /single course -->
-
-					<!-- single course -->
-					<div class="col-md-3 col-sm-6 col-xs-6">
-						<div class="course">
-							<a href="#" class="course-img">
-								<img src="./img/course03.jpg" alt="">
-								<i class="course-link-icon fas fa-camera"></i>
-							</a>
-							<a class="course-title" href="#">Intro</a>
-							<div class="course-details">
-								<span class="course-category">Type</span>
-								<span class="course-price course-free">Date</span>
-							</div>
-						</div>
-					</div>
-					<!-- /single course -->
-
-					<div class="col-md-3 col-sm-6 col-xs-6">
-						<div class="course">
-							<a href="#" class="course-img">
-								<img src="./img/course04.jpg" alt="">
-								<i class="course-link-icon fas fa-camera"></i>
-							</a>
-							<a class="course-title" href="#">Intro</a>
-							<div class="course-details">
-								<span class="course-category">Type</span>
-								<span class="course-price course-free">Date</span>
-							</div>
-						</div>
-					</div>
-					<!-- /single course -->
-
-				</div>
-				<!-- /row -->
-
-				<!-- row -->
-				<div class="row">
-
-					<!-- single course -->
-					<!-- <div class="col-md-3 col-sm-6 col-xs-6">
-						<div class="course">
-							<a href="#" class="course-img">
-								<img src="./img/course05.jpg" alt="">
-								<i class="course-link-icon fas fa-camera"></i>
-							</a>
-							<a class="course-title" href="#">Intro</a>
-							<div class="course-details">
-								<span class="course-category">Type</span>
-								<span class="course-price course-free">Date</span>
-							</div>
-						</div>
 					</div> -->
-					<!-- /single course -->
 
-					<!-- single course -->
-					<!-- <div class="col-md-3 col-sm-6 col-xs-6">
-						<div class="course">
-							<a href="#" class="course-img">
-								<img src="./img/course06.jpg" alt="">
-								<i class="course-link-icon fas fa-camera"></i>
-							</a>
-							<a class="course-title" href="#">Intro</a>
-							<div class="course-details">
-								<span class="course-category">Type</span>
-								<span class="course-price course-free">Date</span>
-							</div>
-						</div>
-					</div> -->
-					<!-- /single course -->
-
-					<!-- single course -->
-					<!-- <div class="col-md-3 col-sm-6 col-xs-6">
-						<div class="course">
-							<a href="#" class="course-img">
-								<img src="./img/course07.jpg" alt="">
-								<i class="course-link-icon fas fa-camera"></i>
-							</a>
-							<a class="course-title" href="#">Intro</a>
-							<div class="course-details">
-								<span class="course-category">Type</span>
-								<span class="course-price course-free">Date</span>
-							</div>
-						</div>
-					</div> -->
-					<!-- /single course -->
-
-
-					<!-- single course -->
-					<!-- <div class="col-md-3 col-sm-6 col-xs-6">
-						<div class="course">
-							<a href="#" class="course-img">
-								<img src="./img/course08.jpg" alt="">
-								<i class="course-link-icon fas fa-camera"></i>
-							</a>
-							<a class="course-title" href="#">Intro</a>
-							<div class="course-details">
-								<span class="course-category">Type</span>
-								<span class="course-price course-free">Date</span>
-							</div>
-						</div>
-					</div> -->
-					<!-- /single course -->
-
-				</div>
-				<!-- /row -->
-
-			</div>
-			<!-- /courses -->
-
-			<div class="row">
-				<div class="center-btn">
-					<a class="main-button icon-button" href="#">View More</a>
 				</div>
 			</div>
 
 		</div>
-		<!-- container -->
-
 	</div>
-	<!-- /Courses -->
 
-	<!-- Call To Action -->
 	<div id="cta" class="section">
-
-		<!-- Backgound Image -->
-		<div class="bg-image bg-parallax overlay" style="background-image:url(./img/cta1-background.jpg)"></div>
-		<!-- /Backgound Image -->
-
-		<!-- container -->
-		<div class="container">
-
-			<!-- row -->
-			<div class="row">
-
-				<div class="col-md-6">
-					<h2 class="white-text">Ceteros fuisset mei no, soleat epicurei adipiscing ne vis.</h2>
-					<p class="lead white-text">Ceteros fuisset mei no, soleat epicurei adipiscing ne vis. Et his suas veniam nominati.</p>
-					<a class="main-button icon-button" href="#">Get Started!</a>
-				</div>
-
-			</div>
-			<!-- /row -->
-
-		</div>
-		<!-- /container -->
-
-	</div>
-	<!-- /Call To Action -->
-
-	<!-- Why us -->
-	<div id="why-us" class="section">
-
-		<!-- container -->
-		<div class="container">
-
-			<!-- row -->
-			<div class="row">
-				<div class="section-header text-center">
-					<h2>FAQ's</h2>
-					<p class="lead">Frequently Answered Questions</p>
-				</div>
-
-				<!-- feature -->
-				<div class="col-md-4">
-					<!--<div class="feature">
-						<i class="feature-icon fa fa-flask"></i>
-						<div class="feature-content">-->
-					<h4>Questions</h4>
-					<p>Answer</p>
-					<!--</div>-->
-					<!--</div>-->
-				</div>
-				<!-- /feature -->
-
-				<!-- feature -->
-				<div class="col-md-4">
-					<!--<div class="feature">
-						<i class="feature-icon fa fa-users"></i>
-						<div class="feature-content">-->
-					<h4>Questions</h4>
-					<p>Answer</p>
-					<!--</div>-->
-					<!--</div>-->
-				</div>
-				<!-- /feature -->
-
-				<!-- feature -->
-				<div class="col-md-4">
-					<!--<div class="feature">
-						<i class="feature-icon fa fa-comments"></i>
-						<div class="feature-content">-->
-					<h4>Questions</h4>
-					<p>Answer</p>
-					<!--</div>-->
-					<!--</div>-->
-				</div>
-				<!-- /feature -->
-
-			</div>
-			<!-- /row -->
-
-			<hr class="section-hr">
-
-			<!-- row -->
-
-			<!-- /row -->
-
-		</div>
-		<!-- /container -->
-
-	</div>
-	<!-- /Why us -->
-
-	<!-- Contact CTA -->
-	<div id="contact-cta" class="section">
-
-		<!-- Backgound Image -->
 		<div class="bg-image bg-parallax overlay" style="background-image:url(./img/cta2-background.jpg)"></div>
-		<!-- Backgound Image -->
-		<!--FUN FACT AREA AREA-->
 		<section class="fun-fact-area center white relative padding-100-70" id="fact">
 			<div class="area-bg" data-stellar-background-ratio="0.6"></div>
 			<div class="container">
@@ -891,57 +323,49 @@
 				</div>
 			</div>
 		</section>
-		<!--FUN FACT AREA AREA END-->
-		<!--<section class="fun-fact-area center white relative padding-100-70" id="fact">
-		<div class="area-bg" data-stellar-background-ratio="0.6"></div>
-		<!--container -->
-		<!--<div class="container">-->
-
-		<!-- row -->
-		<!--<div class="row">-->
-
-		<!--<div class="col-md-3 col-sm-6 col-xs-12" position="relative" ; left="50px" ;>
-					<div class="single-fun-fact mb30 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-						<h1 class="white-text">
-						<span class="counter">20</span>K</h1>
-						<h5 class="white-text">Patients Treated</h5>
-					</div>
-				</div>-->
-		<!--<div class="col-md-3 col-sm-6 col-xs-12">
-						<div class="single-fun-fact mb30 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-					<h1 class="white-text">
-						<span class="counter">20</span>K</h1>
-					<h5 class="white-text">Patients Treated</h5>
-				</div>-->
-		<!--</div>
-				<div class="col-md-3 col-sm-6 col-xs-12">
-						<div class="single-fun-fact mb30 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-					<h1 class="white-text">
-						<span class="counter">20</span>K</h1>
-					<h5 class="white-text">Patients Treated</h5>
-				</div>-->
-		<!--</div>
-				<div class="col-md-3 col-sm-6 col-xs-12">
-						<div class="single-fun-fact mb30 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-					<h1 class="white-text">
-						<span class="counter">20</span>K</h1>
-					<h5 class="white-text">Patients Treated</h5>
-				</div>
-			</div>-->
-
-		<!--</div>
-			<!-- /row -->
-
-		<!--</div>
-		<!-- /container -->
-		<!--</div>-->
 	</div>
-	<!-- /Contact CTA -->
+	<div id="courses" class="section">
+		<div class="container">
+			<div class="row">
+				<div class="section-header text-center">
+					<h2>Explore Our Gallery</h2>
+					<!-- <p class="lead">Libris vivendo eloquentiam ex ius, nec id splendide abhorreant.</p> -->
+				</div>
+			</div>
+			<div class="grid gallery-index row">
+				<div class="col-lg-12">
 
-	<!-- Footer -->
+				</div>
+			</div>
+
+
+		</div>
+		<div class="row">
+			<div class="center-btn">
+				<a class="main-button icon-button" href="/gallery">View More</a>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<div id="contact-cta" class="section">
+		<div class="bg-image bg-parallax overlay" style="background-image:url(./img/cta2-background.jpg)"></div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center">
+					<h2 class="white-text">Contact Us</h2>
+					<p class="lead white-text">Some text here.</p>
+					<a class="main-button icon-button" href="#">Contact Us Now</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<% include ../partials/footer/footer_index.ejs %>
-	<!-- /Footer -->
-
+	<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+	<script src="js/notification.js"></script>
+	<script src="js/imageIndex.js"></script>
 
 </body>
 

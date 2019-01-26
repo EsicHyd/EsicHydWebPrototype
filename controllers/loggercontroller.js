@@ -19,7 +19,7 @@ module.exports = {
 }
 }
 module.exports = {
-logg:function logg(msg, ip, method, route, level) {
+log:function log(msg, ip, method, route, level) {
   if (level == null) {
     level = "info";
   }
