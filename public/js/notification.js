@@ -1,14 +1,40 @@
 function setNotif(notifs) {
-    document.querySelector('#table-notif-content tbody').innerHTML = "";
+    document.querySelector('.notif-scroll-container').innerHTML = "";
 
+    if(notifs.length == 0){
+        document.querySelector('.notif-scroll-container').innerHTML = `
+        <div class="row">
+        <div class="col-xs-12 text-center">
+            <br>
+            <br>
+            <br>
+            Notifications and alerts are currently not avaible! Please try again in a little bit.
+        </div>
+        </div>
+        `;
+    }
     for (var i = 0; i < notifs.length; i++) {
         notif = notifs[i];
-        document.querySelector('#table-notif-content tbody').innerHTML += `
-    <tr class="row100 body">
-    <td class="cell100 column1">${timeConverter(notif.createdOn)}</td>
-    <td class="cell100 column2">${notif.content}</td>
-    <td class="cell100 column3"><a href="${notif.link}" target="_blank"><i class="fas fa-external-link-alt">click here</i></a></td>
-    </tr>
+        var type = 'fa-bell';
+        (typeof notif.contentType != null && typeof notif.contentType != undefined) ? ((notif.contentType == 'event') ? (type = 'fa-calendar-day') : (null)) : (null);
+        document.querySelector('.notif-scroll-container').innerHTML += `
+
+        <div class="notif-element">
+			<div class="row p-t-10 p-b-10 p-l-10 p-r-10 m-t-12">
+		        <div class="col-xs-2 text-center p-t-10 text-symbol-notif">
+				    <i class="fas ${type} fs-25 "></i>
+			    </div>
+		        <div class="col-xs-10">
+				    <div class="date-event"><em>${timeConverter(notif.createdOn)}</em></div>
+					<div class="notif-content">
+                    ${notif.content}
+                    </div>
+                    <span class="link"><a href="${notif.link}" target="_blank">Click here</a></span>
+	    	    </div>
+		    </div>
+			<hr class="dark-hr">
+        </div>
+                                
     `;
     }
 
@@ -24,12 +50,13 @@ function timeConverter(UNIX_timestamp) {
     var min = a.getMinutes();
     var sec = a.getSeconds();
     var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec;
-    var smallTime = date+' '+month+' \''+ year;
+    var smallTime = date + ' ' + month + ' \'' + year;
     return smallTime;
 }
 
 $.get('https://esiadm.herokuapp.com/readNotif', function (request, status, headers) {
     // alert(JSON.stringify({ request, status, headers }));
+    // alert('hey');
     // console.log({ request, status, headers });
     setNotif(request);
 })
