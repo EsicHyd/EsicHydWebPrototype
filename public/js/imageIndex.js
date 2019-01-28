@@ -140,4 +140,4 @@ window.onload = function () {
 };
 
 
-initTemplate();
+// initTemplate();

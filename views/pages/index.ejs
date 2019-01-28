@@ -376,6 +376,11 @@
 	<script src="js/notification.js"></script>
 	<script src="js/imageIndex.js"></script>
 
+	<script>
+		var link = <%- JSON.stringify(link) %>;
+		initNotif(link);			
+		initTemplate(link);
+	</script>
 </body>
 
 </html>

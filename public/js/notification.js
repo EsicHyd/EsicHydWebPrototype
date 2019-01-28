@@ -53,13 +53,15 @@ function timeConverter(UNIX_timestamp) {
     var smallTime = date + ' ' + month + ' \'' + year;
     return smallTime;
 }
+function initNotif(link){
+    $.get(`${link}/readNotif`, function (request, status, headers) {
+        // alert(JSON.stringify({ request, status, headers }));
+        // alert('hey');
+        // console.log({ request, status, headers });
+        setNotif(request);
+    })
+}
 
-$.get('https://esiadm.herokuapp.com/readNotif', function (request, status, headers) {
-    // alert(JSON.stringify({ request, status, headers }));
-    // alert('hey');
-    // console.log({ request, status, headers });
-    setNotif(request);
-})
 // $.ajax({
 //     type: 'POST',
 //     url: 'url.do',

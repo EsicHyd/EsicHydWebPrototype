@@ -71,7 +71,10 @@ function errLog(err, req, res, next) {
 //===============================================================================
 
 app.get('/', function (req, res) {
-  res.render("pages/index.ejs");
+  var data = {
+    link: process.env.API_URI
+  }
+  res.render("pages/index",data);
   log("", getIp(req), req.method, req.route.path);
 });
 

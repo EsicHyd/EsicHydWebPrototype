@@ -1,13 +1,14 @@
 {
   "test": {
     "PORT": 5000,
-    "API_URI": "http://localhost:3000"
+    "API_URI": "http://localhost:5001"
   },
   "development": {
     "PORT": 5000,
-    "API_URI": "http://localhost:3000"
+    "API_URI": "http://localhost:5001"
   },
   "production": {
-    "API_URI": "https://esiadm.herokuapp.com"
+    "PORT": 5000,
+    "API_URI": "http://localhost:5001"
   }
 }
