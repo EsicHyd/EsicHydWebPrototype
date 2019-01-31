@@ -743,6 +743,42 @@ app.get('/cdl', function (req, res) {
   log("", getIp(req), req.method, req.route.path);
 
 });
+app.get('/pls', function (req, res) {
+
+  res.render('pages/services/pls.ejs');
+  log("", getIp(req), req.method, req.route.path);
+
+});
+app.get('/gel', function (req, res) {
+
+  res.render('pages/services/gel.ejs');
+  log("", getIp(req), req.method, req.route.path);
+
+});
+app.get('/ctv', function (req, res) {
+
+  res.render('pages/services/ctv.ejs');
+  log("", getIp(req), req.method, req.route.path);
+
+});
+app.get('/mol', function (req, res) {
+
+  res.render('pages/services/mol.ejs');
+  log("", getIp(req), req.method, req.route.path);
+
+});
+app.get('/sol', function (req, res) {
+
+  res.render('pages/services/sol.ejs');
+  log("", getIp(req), req.method, req.route.path);
+
+});
+app.get('/enl', function (req, res) {
+
+  res.render('pages/services/enl.ejs');
+  log("", getIp(req), req.method, req.route.path);
+
+});
 
 
 //mailer service
