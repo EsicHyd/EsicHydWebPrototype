@@ -73,6 +73,9 @@
 			height: auto;
 			vertical-align: middle;
 		} */
+		.justify-msg {
+		 		text-align: justify;
+		}
 	</style>
 
 
@@ -223,6 +226,8 @@
 							</div>
 						</div>
 					</div>
+
+
 				</div>
 			</div>
 		</div>
@@ -244,21 +249,15 @@
 
 
 						<div class="col-md-6">
-							<h3>Dean's message</h3>
-							<p class="lead">Education is the foundation upon which we build our future.</p>
-							<p>Better education is very necessary for all to go ahead in the life and get success. It develops confidence
-								and helps building personality of a person. Primary education prepares the base which helps throughout the
-								life, secondary education prepares the path for further study and higher secondary education prepares the
-								ultimate path of the future and whole life. Our good or bad education decides that which type of person we
-								would be in the future.</p>
+							<div class="random-class">	<h4>Dean's message</h4>
+								<p class="lead justify-msg w-100">Education is the foundation upon which we build our future.</p>
+								<p class="justify-msg w-100">ESIC Medical College strives to provide holistic and quality patient care with empathy to the insured persons through excellence in clinical care and patient service. The mission and vision of the institute is to provide a sense of trust, respect and security for the Patients, students and employees. High quality patient care is given utmost priority so that every Insured person (IP) is left with high levels of satisfaction. A comfortable learning environment is provided to the students to bring in excellence through innovations in teaching and learning along with quality research through professionalism and teamwork. The team is involved in moulding every student into a responsible, conscious and competent Indian Medical Graduate with noble qualities and to train them to look beyond medicine. The objective is to develop a paramount community of practice in the shared domain of the institute so as to encourage collective learning.</p>
+							</div>
 						</div>
 
-						<div class="col-md-5 col-md-offset-1">
+
+						<div class="col-md-5 col-md-offset-1"><br><br><br>
 							<iframe src="https://www.youtube.com/embed/s-LW5EXcKiI" class="about-video-dean" frameborder="0" allowfullscreen></iframe>
-							<!-- <a class="about-video" href="#">
-							<img src="./img/about-video.jpg" alt="">
-							<i class="play-icon fa fa-play"></i>
-						</a> -->
 						</div>
 
 					</div>
@@ -298,7 +297,7 @@
 
 		</div>
 	</div>
-	
+
 	<div id="cta" class="section">
 		<div class="bg-image bg-parallax overlay" style="background-image:url(./img/cta2-background.jpg)"></div>
 		<section class="fun-fact-area center white relative padding-100-70" id="fact">
@@ -306,7 +305,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-3 col-sm-6 col-xs-12">
-						<div class="single-fun-fact mb30 wow fadeInUp" data-wow-delay="0.1s">	
+						<div class="single-fun-fact mb30 wow fadeInUp" data-wow-delay="0.1s">
 							<h1 class="white-text"><span class="counter numscroller" data-min='0' data-max='20000' data-delay='5' data-increment='50'>20000</span></h1>
 							<h5 class="white-text">Patients Treated</h5>
 						</div>
@@ -333,12 +332,14 @@
 			</div>
 		</section>
 	</div>
+
+
 	<div id="courses" class="section">
 		<div class="container">
 			<div class="row">
 				<div class="section-header text-center">
 					<h2>Explore Our Gallery</h2>
-					<!-- <p class="lead">Libris vivendo eloquentiam ex ius, nec id splendide abhorreant.</p> -->
+					<p class="lead">Libris vivendo eloquentiam ex ius, nec id splendide abhorreant.</p>
 				</div>
 			</div>
 			<div class="grid gallery-index row">
@@ -355,6 +356,8 @@
 			</div>
 		</div>
 	</div>
+
+	
 	</div>
 
 	<div id="contact-cta" class="section">
@@ -372,7 +375,7 @@
 	</div>
 
 	<% include ../partials/footer/footer_index.ejs %>
-	
+
 	<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 	<script src="js/notification.js"></script>
 	<script src="js/imageIndex.js"></script>
@@ -382,11 +385,11 @@
 
 	<script>
 		var link = <%- JSON.stringify(link) %>;
-		initNotif(link);			
+		initNotif(link);
 		initTemplate(link);
 	</script>
 
-	
+
 </body>
 
 </html>
