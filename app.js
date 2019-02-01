@@ -223,15 +223,60 @@ app.get('/Courses.docs', function (req, res) {
 
 
 
-app.get('/StudentZone.docs', function (req, res) {
+app.get('/StudentZone_1YR.docs', function (req, res) {
   var data = {
     link: process.env.API_URI,
     pathtag: 'StudentZone',
     type: 'doc',
-    page: 'Student Zone - ESIC Hyderabad',
-    imagepath: './img/stz.jpeg',
+    page: '1st Year - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
     tags: [
-      "Education", "Student Zone"
+      "Education", "Student Zone", "1st Year"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
+
+app.get('/StudentZone_2YR.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+    pathtag: 'StudentZone',
+    type: 'doc',
+    page: '2st Year - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+    tags: [
+      "Education", "Student Zone", "2nd Year"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
+
+app.get('/StudentZone_3YR.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+    pathtag: 'StudentZone',
+    type: 'doc',
+    page: '3rd Year - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+    tags: [
+      "Education", "Student Zone", "3rd Year"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
+
+app.get('/StudentZone_4YR.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+    pathtag: 'StudentZone',
+    type: 'doc',
+    page: '4th Year - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+    tags: [
+      "Education", "Student Zone", "4th Year"
     ]
   }
   res.render("pages/data-template", data);
@@ -563,6 +608,10 @@ app.get('/education', function (req, res) {
   res.render('pages/education.ejs');
   log("", getIp(req), req.method, req.route.path);
 });
+app.get('/faculty_attendance', function (req, res) {
+  res.render('pages/faculty_attendance.ejs');
+  log("", getIp(req), req.method, req.route.path);
+});
 app.get('/course', function (req, res) {
   res.render('pages/course.ejs');
   log("", getIp(req), req.method, req.route.path);
@@ -573,6 +622,22 @@ app.get('/admission', function (req, res) {
 })
 app.get('/student_zone', function (req, res) {
   res.render('pages/student_zone.ejs');
+  log("", getIp(req), req.method, req.route.path);
+})
+app.get('/student_zone/1YR', function (req, res) {
+  res.render('pages/student_zone_1YR.ejs');
+  log("", getIp(req), req.method, req.route.path);
+})
+app.get('/student_zone/2YR', function (req, res) {
+  res.render('pages/student_zone_2YR.ejs');
+  log("", getIp(req), req.method, req.route.path);
+})
+app.get('/student_zone/3YR', function (req, res) {
+  res.render('pages/student_zone_3YR.ejs');
+  log("", getIp(req), req.method, req.route.path);
+})
+app.get('/student_zone/4YR', function (req, res) {
+  res.render('pages/student_zone_4YR.ejs');
   log("", getIp(req), req.method, req.route.path);
 })
 app.get('/conference', function (req, res) {
