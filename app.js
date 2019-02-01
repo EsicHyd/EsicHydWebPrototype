@@ -229,7 +229,7 @@ app.get('/StudentZone.docs', function (req, res) {
     pathtag: 'StudentZone',
     type: 'doc',
     page: 'Student Zone - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
+    imagepath: './img/stz.jpeg',
     tags: [
       "Education", "Student Zone"
     ]
@@ -409,7 +409,7 @@ app.get('/Administrations.docs', function (req, res) {
     pathtag: 'Administrations',
     type: 'doc',
     page: 'Administrations - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
+    imagepath: './img/admimg.jpg',
     tags: [
       "About", "Administrations"
     ]
@@ -479,7 +479,7 @@ app.get('/Infrastrutcure.docs', function (req, res) {
     pathtag: 'Infrastrutcure',
     type: 'doc',
     page: 'Infrastrutcure - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
+    imagepath: './img/infrastructure.jpg',
     tags: [
       "About", "Infrastrutcure"
     ]
@@ -595,6 +595,7 @@ app.get('/journal_esi', function (req, res) {
   res.render('pages/journal_esi.ejs');
   log("", getIp(req), req.method, req.route.path);
 })
+
 //===============================================================================
 //===============================================================================
 
@@ -779,6 +780,12 @@ app.get('/enl', function (req, res) {
   log("", getIp(req), req.method, req.route.path);
 
 });
+//public forum
+app.get('/publicforum', function (req, res) {
+  res.render('pages/publicforum.ejs');
+  log("", getIp(req), req.method, req.route.path);
+})
+
 
 
 //mailer service
