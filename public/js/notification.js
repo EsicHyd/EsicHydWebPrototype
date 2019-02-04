@@ -17,6 +17,7 @@ function setNotif(notifs) {
         notif = notifs[i];
         var type = 'fa-bell';
         (typeof notif.contentType != null && typeof notif.contentType != undefined) ? ((notif.contentType == 'event') ? (type = 'fa-calendar-day') : (null)) : (null);
+        if (notif.contentType == 'recrute') { continue; }
         document.querySelector('.notif-scroll-container').innerHTML += `
 
         <div class="notif-element">

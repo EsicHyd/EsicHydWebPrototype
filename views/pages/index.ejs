@@ -94,103 +94,8 @@
 	</i>
 	</a>-->
 	<!-- Header -->
-	<header id="header" class="transparent-nav">
-		<div class="container">
-
-			<div class="navbar-header">
-				<!-- Logo -->
-				<div class="navbar-brand">
-					<a class="logo" href="/">
-						<img src="./img/logo/web.png" alt="logo" style="text-color:white">
-						<!--<h6 class=white-text> ESIC</h6>-->
-					</a>
-				</div>
-				<!-- /Logo -->
-
-				<!-- Mobile toggle -->
-				<button class="navbar-toggle">
-					<span></span>
-				</button>
-				<!-- /Mobile toggle -->
-			</div>
-
-			<!-- Navigation -->
-			<nav id="nav">
-				<ul class="main-menu nav navbar-nav navbar-right">
-					<li><a class="anim" href="/">Home</a></li>
-					<li>
-						<a class="dropbtn anim" href="/about">About</a>
-						<div class="dropdown">
-							<div class="dropdown-content">
-								<a href="/Administrations.docs">Administration</a>
-								<a href="#">Faculty</a>
-								<a href="#">Commities</a>
-								<a href="/Awards.docs">Awards and honors</a>
-								<a href="/PressMedia.docs">Press media</a>
-								<a href="/University.docs">University and Govt.</a>
-								<a href="/Infrastrutcure.docs">Infrastructure</a>
-							</div>
-						</div>
-					</li>
-					<li>
-						<a class="dropbtn anim" href="/hospital">Services</a>
-						<div class="dropdown">
-							<div class="dropdown-content">
-								<a href="/hospital#scd">Speciality Departments</a>
-								<a href="/hospital#sss">Services</a>
-							</div>
-						</div>
-					</li>
-					<li>
-						<a class="dropbtn anim" href="/education">Education</a>
-						<div class="dropdown">
-							<div class="dropdown-content">
-								<a href="/course">Course</a>
-								<a href="/Admission.docs">Admission</a>
-								<a href="/StudentZone.docs">Student Zone </a>
-								<a href="/Conference.docs">Conference/CME</a>
-								<a href="/Events.docs">Upcoming Event</a>
-								<!-- <a href="">Commitee</a> -->
-								<a href="/Training.docs">Training</a>
-								<a href="/JournalESI.docs">Journal</a>
-							</div>
-						</div>
-					</li>
-					<li>
-						<a class="dropbtn anim" href="/Research.docs">Research</a>
-						<div class="dropdown">
-							<div class="dropdown-content">
-								<a href="/Publication.docs">Publication</a>
-								<!-- <a href=""></a>
-							<a href=""></a>
-							<a href=""></a>
-							<a href=""></a>
-							<a href=""></a>
-							<a href=""></a>
-							<a href=""></a> -->
-							</div>
-						</div>
-					</li>
-					<li>
-						<a class="dropbtn anim" href="/publicforum">Public Forum</a>
-						<div class="dropdown">
-							<div class="dropdown-content">
-								<a href="/CitizenCharter.docs">Citizen Charter</a>
-								<a href="/BodyDonation.docs">Body Donation</a>
-								<a href="/RulesRegulation.docs">Rules and Regulation</a>
-								<a href="/BioWasteManagement.docs">RTI</a>
-								<a href="/BioWasteManagement.docs">Bio Waste Management</a>
-								<a href="/gallery">Gallery</a>
-							</div>
-						</div>
-					</li>
-					<li><a class="anim" href="/contact">Contact</a></li>
-				</ul>
-			</nav>
-			<!-- /Navigation -->
-
-		</div>
-	</header>
+	<% include ../partials/header/nav_index %>
+	
 	<!-- /Header -->
 
 	<!-- Home -->
@@ -339,7 +244,7 @@
 			<div class="row">
 				<div class="section-header text-center">
 					<h2>Explore Our Gallery</h2>
-					<p class="lead">Libris vivendo eloquentiam ex ius, nec id splendide abhorreant.</p>
+					<!-- <p class="lead">Libris vivendo eloquentiam ex ius, nec id splendide abhorreant.</p> -->
 				</div>
 			</div>
 			<div class="grid gallery-index row">
@@ -348,12 +253,12 @@
 				</div>
 			</div>
 
-
-		</div>
-		<div class="row">
-			<div class="center-btn">
-				<a class="main-button icon-button" href="/gallery">View More</a>
+			<div class="row">
+				<div class="col-lg-12 center-btn">
+					<a class="main-button icon-button" href="/gallery">View More</a>
+				</div>
 			</div>
+
 		</div>
 	</div>
 
@@ -368,7 +273,7 @@
 				<div class="col-md-8 col-md-offset-2 text-center">
 					<h2 class="white-text">Contact Us</h2>
 					<p class="lead white-text">If you have any queries, feedback or suggestions then feel free to share them with us.</p>
-					<a class="main-button icon-button" href="#">Contact Us Now</a>
+					<a class="main-button icon-button" href="/contact">Contact Us Now</a>
 				</div>
 			</div>
 		</div>
