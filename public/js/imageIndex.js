@@ -120,7 +120,7 @@ function setImg(docObjects, link, nums = null) {
 }
 
 function initTemplate(link = 'https://esiadm.herokuapp.com') {
-    $.get(`${link}/getFileByTag/img/index`, function (request, status, headers) {
+    $.get(`${link}/getFileByTag/img/Index`, function (request, status, headers) {
         // alert(JSON.stringify({ request, status, headers }));
         // console.log({ request, status, headers });
         if (request.dataObj.length <= 8) {
