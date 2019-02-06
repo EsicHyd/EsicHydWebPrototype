@@ -128,12 +128,27 @@ app.get('/doc', function (req, res) {
 app.get('/RecruitAdv.docs', function (req, res) {
   var data = {
     link: process.env.API_URI,
-    pathtag: 'AdvertisingRecruitment',
+    pathtag: 'RecruitmentAdvertising',
     type: 'doc', contentTag: 'education',
     page: 'Advertising of Recruitment - ESIC Hyderabad',
     imagepath: './img/page-background.jpg',
     tags: [
       "Education", "Advertising of Recruitment"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
+
+app.get('/RecruitRes.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+    pathtag: 'RecruitmentResult',
+    type: 'doc', contentTag: 'education',
+    page: 'Advertising of Recruitment - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+    tags: [
+      "Education", "Results of Recruitment"
     ]
   }
   res.render("pages/data-template", data);
@@ -619,14 +634,24 @@ app.get('/faculty_attendance', function (req, res) {
   res.render('pages/faculty_attendance.ejs');
   log("", getIp(req), req.method, req.route.path);
 });
+
+app.get('/faculty', function (req, res) {
+  res.render('pages/faculty.ejs');
+  log("", getIp(req), req.method, req.route.path);
+});
 app.get('/course', function (req, res) {
   res.render('pages/course.ejs');
   log("", getIp(req), req.method, req.route.path);
-})
+});
 app.get('/student_zone', function (req, res) {
   res.render('pages/student_zone.ejs');
   log("", getIp(req), req.method, req.route.path);
-})
+});
+app.get('/listOfCandidate',function(req,res){
+  res.render('pages/candidateList.ejs');
+  log("", getIp(req), req.method, req.route.path);
+});
+
 
 //===============================================================================
 //===============================================================================
