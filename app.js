@@ -2,16 +2,8 @@ var { env } = require('./config/config');
 
 var express = require('express');
 var app = express();
-var winston = require('winston');
 const sgMail = require('@sendgrid/mail');
 const cors = require('cors');
-
-const { createLogger, format, transports } = require('winston');
-const { combine, timestamp, label, printf } = format;
-
-const myMsg = printf(info => {
-  return `[${info.timestamp}] ${info.level}: ${info.message}`;
-});
 
 //controller routes
 const { log } = require('./controllers/loggercontroller');
@@ -74,7 +66,7 @@ app.get('/', function (req, res) {
   var data = {
     link: process.env.API_URI
   }
-  res.render("pages/index",data);
+  res.render("pages/index", data);
   log("", getIp(req), req.method, req.route.path);
 });
 
@@ -84,13 +76,13 @@ app.get('/about', function (req, res) {
 });
 
 
-app.get('/blog', function (req, res) {
+// app.get('/blog', function (req, res) {
 
-  res.render("pages/blog.ejs");
-  log("", getIp(req), req.method, req.route.path);
+//   res.render("pages/blog.ejs");
+//   log("", getIp(req), req.method, req.route.path);
 
 
-});
+// });
 //===============================================================================
 //===============================================================================
 //images gallery
@@ -109,7 +101,7 @@ app.get('/gallery', function (req, res) {
     page: 'Image Gallery - ESIC Hyderabad',
     imagepath: './img/header-background.jpg',
     tags: [
-      "Public form","Image Gallery"
+      "Public form", "Image Gallery"
     ]
   }
   res.render("pages/gallery-template", data);
@@ -122,7 +114,7 @@ app.get('/doc', function (req, res) {
   var data = {
     link: process.env.API_URI,
     pathtag: 'docTag',
-    type: 'doc',
+    type: 'doc', contentTag: 'someTag',
     page: 'doc template - ESIC Hyderabad',
     imagepath: './img/page-background.jpg',
     tags: [
@@ -133,13 +125,137 @@ app.get('/doc', function (req, res) {
   log("", getIp(req), req.method, req.route.path);
 });
 
+app.get('/RecruitAdv.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+
+    pathtag: 'RecruitmentAdvertising',
+    type: 'doc', contentTag: 'education',
+    page: 'Advertising of Recruitment - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+>>>>>>> master
+    tags: [
+      "Education", "Advertising of Recruitment"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
+
+app.get('/RecruitRes.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+    pathtag: 'RecruitmentResult',
+    type: 'doc', contentTag: 'education',
+    page: 'Advertising of Recruitment - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+    tags: [
+      "Education", "Results of Recruitment"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
+
+app.get('/StudentResults.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+
+    pathtag: 'StudentResults',
+    type: 'doc', contentTag: 'education',
+    page: 'Results - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+>>>>>>> master
+    tags: [
+      "Education", "Student Zone", "Results"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
+
+app.get('/Schedules.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+    pathtag: 'StudentSchedules',
+    type: 'doc', contentTag: 'education',
+    page: 'Schedules - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+    tags: [
+      "Education", "Student Zone", "Schedules"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
+
+app.get('/StudentZone_1YR.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+    pathtag: 'StudentZone_Y1',
+    type: 'doc', contentTag: 'education',
+    page: '1st Year - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+    tags: [
+      "Education", "Student Zone", "1st Year"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
+
+app.get('/StudentZone_2YR.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+    pathtag: 'StudentZone_Y2',
+    type: 'doc', contentTag: 'education',
+    page: '2st Year - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+    tags: [
+      "Education", "Student Zone", "2nd Year"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
+
+app.get('/StudentZone_3YR.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+    pathtag: 'StudentZone_Y3',
+    type: 'doc', contentTag: 'education',
+    page: '3rd Year - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+    tags: [
+      "Education", "Student Zone", "3rd Year"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
+
+app.get('/StudentZone_4YR.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+    pathtag: 'StudentZone_Y4',
+    type: 'doc', contentTag: 'education',
+    page: '4th Year - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+    tags: [
+      "Education", "Student Zone", "4th Year"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
+
 app.get('/PressMedia.docs', function (req, res) {
   var data = {
     link: process.env.API_URI,
     pathtag: 'PressMedia',
-    type: 'doc',
+    type: 'doc', contentTag: 'about',
     page: 'Press Media - ESIC Hyderabad',
-    imagepath: './img/pm.jpg',
+    imagepath: './img/page-background.jpg',
     tags: [
       "About", "Press Media"
     ]
@@ -155,11 +271,11 @@ app.get('/AnnualReport.docs', function (req, res) {
   var data = {
     link: process.env.API_URI,
     pathtag: 'AnnualReport',
-    type: 'doc',
+    type: 'doc', contentTag: 'about',
     page: 'Annual Report - ESIC Hyderabad',
     imagepath: './img/page-background.jpg',
     tags: [
-      "tag1", "tag2", "Annual Report"
+      "About", "Annual Report"
     ]
   }
   res.render("pages/data-template", data);
@@ -173,9 +289,9 @@ app.get('/University.docs', function (req, res) {
   var data = {
     link: process.env.API_URI,
     pathtag: 'University',
-    type: 'doc',
+    type: 'doc', contentTag: 'about',
     page: 'University and Govt. Approval - ESIC Hyderabad',
-    imagepath: './img/uag.jpg',
+    imagepath: './img/page-background.jpg',
     tags: [
       "About", "University and Govt. Approval"
     ]
@@ -191,7 +307,7 @@ app.get('/Admission.docs', function (req, res) {
   var data = {
     link: process.env.API_URI,
     pathtag: 'Admission',
-    type: 'doc',
+    type: 'doc', contentTag: 'someTag',
     page: 'Admission - ESIC Hyderabad',
     imagepath: './img/page-background.jpg',
     tags: [
@@ -209,7 +325,7 @@ app.get('/Courses.docs', function (req, res) {
   var data = {
     link: process.env.API_URI,
     pathtag: 'Courses',
-    type: 'doc',
+    type: 'doc', contentTag: 'someTag',
     page: 'Courses - ESIC Hyderabad',
     imagepath: './img/page-background.jpg',
     tags: [
@@ -223,66 +339,6 @@ app.get('/Courses.docs', function (req, res) {
 
 
 
-app.get('/StudentZone_1YR.docs', function (req, res) {
-  var data = {
-    link: process.env.API_URI,
-    pathtag: 'StudentZone',
-    type: 'doc',
-    page: '1st Year - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
-    tags: [
-      "Education", "Student Zone", "1st Year"
-    ]
-  }
-  res.render("pages/data-template", data);
-  log("", getIp(req), req.method, req.route.path);
-});
-
-app.get('/StudentZone_2YR.docs', function (req, res) {
-  var data = {
-    link: process.env.API_URI,
-    pathtag: 'StudentZone',
-    type: 'doc',
-    page: '2st Year - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
-    tags: [
-      "Education", "Student Zone", "2nd Year"
-    ]
-  }
-  res.render("pages/data-template", data);
-  log("", getIp(req), req.method, req.route.path);
-});
-
-app.get('/StudentZone_3YR.docs', function (req, res) {
-  var data = {
-    link: process.env.API_URI,
-    pathtag: 'StudentZone',
-    type: 'doc',
-    page: '3rd Year - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
-    tags: [
-      "Education", "Student Zone", "3rd Year"
-    ]
-  }
-  res.render("pages/data-template", data);
-  log("", getIp(req), req.method, req.route.path);
-});
-
-app.get('/StudentZone_4YR.docs', function (req, res) {
-  var data = {
-    link: process.env.API_URI,
-    pathtag: 'StudentZone',
-    type: 'doc',
-    page: '4th Year - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
-    tags: [
-      "Education", "Student Zone", "4th Year"
-    ]
-  }
-  res.render("pages/data-template", data);
-  log("", getIp(req), req.method, req.route.path);
-});
-
 
 
 
@@ -290,7 +346,7 @@ app.get('/Conference.docs', function (req, res) {
   var data = {
     link: process.env.API_URI,
     pathtag: 'Conference',
-    type: 'doc',
+    type: 'doc', contentTag: 'someTag',
     page: 'CME and Conference - ESIC Hyderabad',
     imagepath: './img/conf.jpg',
     tags: [
@@ -308,7 +364,7 @@ app.get('/Training.docs', function (req, res) {
   var data = {
     link: process.env.API_URI,
     pathtag: 'Training',
-    type: 'doc',
+    type: 'doc', contentTag: 'someTag',
     page: 'Training - ESIC Hyderabad',
     imagepath: './img/training.jpg',
     tags: [
@@ -326,7 +382,7 @@ app.get('/JournalESI.docs', function (req, res) {
   var data = {
     link: process.env.API_URI,
     pathtag: 'JournalESI',
-    type: 'doc',
+    type: 'doc', contentTag: 'someTag',
     page: 'Journal ESI - ESIC Hyderabad',
     imagepath: './img/journal.jpg',
     tags: [
@@ -344,11 +400,26 @@ app.get('/Research.docs', function (req, res) {
   var data = {
     link: process.env.API_URI,
     pathtag: 'Research',
-    type: 'doc',
+    type: 'doc', contentTag: 'research',
     page: 'Research and Development - ESIC Hyderabad',
     imagepath: './img/rad.jpg',
     tags: [
-      "Research and Development"
+      "Research","Research and Development"
+    ]
+  }
+  res.render("pages/data-template", data);
+  log("", getIp(req), req.method, req.route.path);
+});
+
+app.get('/ResearchProg.docs', function (req, res) {
+  var data = {
+    link: process.env.API_URI,
+    pathtag: 'OrganisedResearchProgram',
+    type: 'doc', contentTag: 'research',
+    page: 'Organised Research Program - ESIC Hyderabad',
+    imagepath: './img/page-background.jpg',
+    tags: [
+      "Research","Organised Research Program"
     ]
   }
   res.render("pages/data-template", data);
@@ -362,7 +433,7 @@ app.get('/CitizenCharter.docs', function (req, res) {
   var data = {
     link: process.env.API_URI,
     pathtag: 'CitizenCharter',
-    type: 'doc',
+    type: 'doc', contentTag: 'public-forum',
     page: 'Citizen Charter - ESIC Hyderabad',
     imagepath: './img/ccr.jpg',
     tags: [
@@ -380,7 +451,7 @@ app.get('/BodyDonation.docs', function (req, res) {
   var data = {
     link: process.env.API_URI,
     pathtag: 'BodyDonation',
-    type: 'doc',
+    type: 'doc', contentTag: 'public-forum',
     page: 'Body Donation - ESIC Hyderabad',
     imagepath: './img/bd.jpg',
     tags: [
@@ -398,7 +469,7 @@ app.get('/RulesRegulation.docs', function (req, res) {
   var data = {
     link: process.env.API_URI,
     pathtag: 'RulesRegulation',
-    type: 'doc',
+    type: 'doc', contentTag: 'public-forum',
     page: 'Rules and Regulation - ESIC Hyderabad',
     imagepath: './img/rar.jpg',
     tags: [
@@ -416,7 +487,7 @@ app.get('/BioWasteManagement.docs', function (req, res) {
   var data = {
     link: process.env.API_URI,
     pathtag: 'BioWasteManagement',
-    type: 'doc',
+    type: 'doc', contentTag: 'public-forum',
     page: 'Bio Medical Waste Management - ESIC Hyderabad',
     imagepath: './img/admimg.jpg',
     tags: [
@@ -434,7 +505,7 @@ app.get('/RTI.docs', function (req, res) {
   var data = {
     link: process.env.API_URI,
     pathtag: 'RTI',
-    type: 'doc',
+    type: 'doc', contentTag: 'public-forum',
     page: 'RTI - ESIC Hyderabad',
     imagepath: './img/page-background.jpg',
     tags: [
@@ -448,49 +519,15 @@ app.get('/RTI.docs', function (req, res) {
 
 
 
-app.get('/Administrations.docs', function (req, res) {
+app.get('/Administration.docs', function (req, res) {
   var data = {
     link: process.env.API_URI,
     pathtag: 'Administrations',
-    type: 'doc',
+    type: 'doc', contentTag: 'about',
     page: 'Administrations - ESIC Hyderabad',
     imagepath: './img/adminis.jpg',
     tags: [
-      "About", "Administrations"
-    ]
-  }
-  res.render("pages/data-template", data);
-  log("", getIp(req), req.method, req.route.path);
-});
-
-
-app.get('/Admission.docs', function (req, res) {
-  var data = {
-    link: process.env.API_URI,
-    pathtag: 'Admission',
-    type: 'doc',
-    page: 'Admission - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
-    tags: [
-      "tag1", "tag2", "Admission"
-    ]
-  }
-  res.render("pages/data-template", data);
-  log("", getIp(req), req.method, req.route.path);
-});
-
-
-
-
-app.get('/University.docs', function (req, res) {
-  var data = {
-    link: process.env.API_URI,
-    pathtag: 'University',
-    type: 'doc',
-    page: 'University and Govt. Approval - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
-    tags: [
-      "tag1", "tag2", "University and Govt. Approval"
+      "About", "Administration"
     ]
   }
   res.render("pages/data-template", data);
@@ -504,7 +541,7 @@ app.get('/Awards.docs', function (req, res) {
   var data = {
     link: process.env.API_URI,
     pathtag: 'Awards',
-    type: 'doc',
+    type: 'doc', contentTag: 'about',
     page: 'Awards and honors - ESIC Hyderabad',
     imagepath: './img/award.jpg',
     tags: [
@@ -522,7 +559,7 @@ app.get('/Infrastrutcure.docs', function (req, res) {
   var data = {
     link: process.env.API_URI,
     pathtag: 'Infrastrutcure',
-    type: 'doc',
+    type: 'doc', contentTag: 'about',
     page: 'Infrastrutcure - ESIC Hyderabad',
     imagepath: './img/infrastructure.jpg',
     tags: [
@@ -540,7 +577,7 @@ app.get('/Events.docs', function (req, res) {
   var data = {
     link: process.env.API_URI,
     pathtag: 'Events',
-    type: 'doc',
+    type: 'doc', contentTag: 'someTag',
     page: 'Upcoming Events - ESIC Hyderabad',
     imagepath: './img/ue.jpg',
     tags: [
@@ -558,11 +595,11 @@ app.get('/Publication.docs', function (req, res) {
   var data = {
     link: process.env.API_URI,
     pathtag: 'Publication',
-    type: 'doc',
+    type: 'doc', contentTag: 'research',
     page: 'Publication - ESIC Hyderabad',
     imagepath: './img/rad.jpg',
     tags: [
-      "Research and Development", "Publication"
+      "Research", "Publication"
     ]
   }
   res.render("pages/data-template", data);
@@ -582,84 +619,43 @@ app.get('/Publication.docs', function (req, res) {
 // });
 
 app.get('/contact', function (req, res) {
-
   res.render("pages/contact.ejs");
   log("", getIp(req), req.method, req.route.path);
-
 });
-
 app.get('/hospital', function (req, res) {
-
   res.render('pages/hospital.ejs');
   log("", getIp(req), req.method, req.route.path);
-
-
 });
-
-app.get('/hospital1', function (req, res) {
-
-  res.render('pages/hospital.1.ejs');
-  log("", getIp(req), req.method, req.route.path);
-
-
-});
-
 app.get('/education', function (req, res) {
   res.render('pages/education.ejs');
+  log("", getIp(req), req.method, req.route.path);
+});
+app.get('/research', function (req, res) {
+  res.render('pages/research.ejs');
   log("", getIp(req), req.method, req.route.path);
 });
 app.get('/faculty_attendance', function (req, res) {
   res.render('pages/faculty_attendance.ejs');
   log("", getIp(req), req.method, req.route.path);
 });
+
+app.get('/faculty', function (req, res) {
+  res.render('pages/faculty.ejs');
+  log("", getIp(req), req.method, req.route.path);
+});
 app.get('/course', function (req, res) {
   res.render('pages/course.ejs');
   log("", getIp(req), req.method, req.route.path);
-})
-app.get('/admission', function (req, res) {
-  res.render('pages/admission.ejs');
-  log("", getIp(req), req.method, req.route.path);
-})
+});
 app.get('/student_zone', function (req, res) {
   res.render('pages/student_zone.ejs');
   log("", getIp(req), req.method, req.route.path);
-})
-app.get('/student_zone/1YR', function (req, res) {
-  res.render('pages/student_zone_1YR.ejs');
+});
+app.get('/listOfCandidate',function(req,res){
+  res.render('pages/candidateList.ejs');
   log("", getIp(req), req.method, req.route.path);
-})
-app.get('/student_zone/2YR', function (req, res) {
-  res.render('pages/student_zone_2YR.ejs');
-  log("", getIp(req), req.method, req.route.path);
-})
-app.get('/student_zone/3YR', function (req, res) {
-  res.render('pages/student_zone_3YR.ejs');
-  log("", getIp(req), req.method, req.route.path);
-})
-app.get('/student_zone/4YR', function (req, res) {
-  res.render('pages/student_zone_4YR.ejs');
-  log("", getIp(req), req.method, req.route.path);
-})
-app.get('/conference', function (req, res) {
-  res.render('pages/conference.ejs');
-  log("", getIp(req), req.method, req.route.path);
-})
-app.get('/upcoming_events', function (req, res) {
-  res.render('pages/upcoming_events.ejs');
-  log("", getIp(req), req.method, req.route.path);
-})
-app.get('/committee', function (req, res) {
-  res.render('pages/committee.ejs');
-  log("", getIp(req), req.method, req.route.path);
-})
-app.get('/training', function (req, res) {
-  res.render('pages/training.ejs');
-  log("", getIp(req), req.method, req.route.path);
-})
-app.get('/journal_esi', function (req, res) {
-  res.render('pages/journal_esi.ejs');
-  log("", getIp(req), req.method, req.route.path);
-})
+});
+
 
 //===============================================================================
 //===============================================================================
