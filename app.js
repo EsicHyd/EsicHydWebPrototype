@@ -139,7 +139,7 @@ app.get('/PressMedia.docs', function (req, res) {
     pathtag: 'PressMedia',
     type: 'doc',
     page: 'Press Media - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
+    imagepath: './img/pm.jpg',
     tags: [
       "About", "Press Media"
     ]
@@ -175,7 +175,7 @@ app.get('/University.docs', function (req, res) {
     pathtag: 'University',
     type: 'doc',
     page: 'University and Govt. Approval - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
+    imagepath: './img/uag.jpg',
     tags: [
       "About", "University and Govt. Approval"
     ]
@@ -292,7 +292,7 @@ app.get('/Conference.docs', function (req, res) {
     pathtag: 'Conference',
     type: 'doc',
     page: 'CME and Conference - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
+    imagepath: './img/conf.jpg',
     tags: [
       "Education", "CME and Conference"
     ]
@@ -310,7 +310,7 @@ app.get('/Training.docs', function (req, res) {
     pathtag: 'Training',
     type: 'doc',
     page: 'Training - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
+    imagepath: './img/training.jpg',
     tags: [
       "Education", "Training"
     ]
@@ -328,7 +328,7 @@ app.get('/JournalESI.docs', function (req, res) {
     pathtag: 'JournalESI',
     type: 'doc',
     page: 'Journal ESI - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
+    imagepath: './img/journal.jpg',
     tags: [
       "Education", "Journal ESI"
     ]
@@ -346,7 +346,7 @@ app.get('/Research.docs', function (req, res) {
     pathtag: 'Research',
     type: 'doc',
     page: 'Research and Development - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
+    imagepath: './img/rad.jpg',
     tags: [
       "Research and Development"
     ]
@@ -364,7 +364,7 @@ app.get('/CitizenCharter.docs', function (req, res) {
     pathtag: 'CitizenCharter',
     type: 'doc',
     page: 'Citizen Charter - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
+    imagepath: './img/ccr.jpg',
     tags: [
       "Public Forum", "Citizen Charter"
     ]
@@ -382,7 +382,7 @@ app.get('/BodyDonation.docs', function (req, res) {
     pathtag: 'BodyDonation',
     type: 'doc',
     page: 'Body Donation - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
+    imagepath: './img/bd.jpg',
     tags: [
       "Public Forum", "Body Donation"
     ]
@@ -400,7 +400,7 @@ app.get('/RulesRegulation.docs', function (req, res) {
     pathtag: 'RulesRegulation',
     type: 'doc',
     page: 'Rules and Regulation - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
+    imagepath: './img/rar.jpg',
     tags: [
       "Public Forum", "Rules and Regulation"
     ]
@@ -418,7 +418,7 @@ app.get('/BioWasteManagement.docs', function (req, res) {
     pathtag: 'BioWasteManagement',
     type: 'doc',
     page: 'Bio Medical Waste Management - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
+    imagepath: './img/admimg.jpg',
     tags: [
       "Public Forum", "Bio Medical Waste Management"
     ]
@@ -454,7 +454,7 @@ app.get('/Administrations.docs', function (req, res) {
     pathtag: 'Administrations',
     type: 'doc',
     page: 'Administrations - ESIC Hyderabad',
-    imagepath: './img/admimg.jpg',
+    imagepath: './img/adminis.jpg',
     tags: [
       "About", "Administrations"
     ]
@@ -506,7 +506,7 @@ app.get('/Awards.docs', function (req, res) {
     pathtag: 'Awards',
     type: 'doc',
     page: 'Awards and honors - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
+    imagepath: './img/award.jpg',
     tags: [
       "About", "Awards and honors"
     ]
@@ -542,7 +542,7 @@ app.get('/Events.docs', function (req, res) {
     pathtag: 'Events',
     type: 'doc',
     page: 'Upcoming Events - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
+    imagepath: './img/ue.jpg',
     tags: [
       "Education", "Upcoming Events"
     ]
@@ -560,7 +560,7 @@ app.get('/Publication.docs', function (req, res) {
     pathtag: 'Publication',
     type: 'doc',
     page: 'Publication - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
+    imagepath: './img/rad.jpg',
     tags: [
       "Research and Development", "Publication"
     ]
