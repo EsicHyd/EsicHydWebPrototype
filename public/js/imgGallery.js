@@ -35,7 +35,7 @@ function setImg(docObjects, link) {
                                 <div class="course">
                                     <a id="imgTag${i}" href="#" class="course-img img-thumbnailx hidden-gallery-toggle" data-toggle="modal"
                                         data-target="#myModal${i}">
-                                        <img src="${link + dc.path}" class=" img-fluid-gallery" alt="Gallery Image">
+                                        <img src="${link + dc.thumbnail}" class=" img-fluid-gallery" alt="Gallery Image">
                                         <i class="course-link-icon fa fa-camera"></i>
                                     </a>
                                 </div>

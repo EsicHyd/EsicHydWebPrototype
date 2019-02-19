@@ -8,7 +8,7 @@ function setDoc(docObjects,link) {
     docElement.innerHTML = "";
     if(docObjects.dataObj.length == 0){
         docElement.innerHTML = `
-        <div class="col-lg-8 col-sm-12">
+        <div class="col-lg-12 col-sm-12">
             <div class="center-text">
             <br><br>
                 <h4>No file found!</h4>

@@ -73,6 +73,9 @@
 			height: auto;
 			vertical-align: middle;
 		} */
+		.justify-msg {
+		 		text-align: justify;
+		}
 	</style>
 
 
@@ -91,110 +94,15 @@
 	</i>
 	</a>-->
 	<!-- Header -->
-	<header id="header" class="transparent-nav">
-		<div class="container">
-
-			<div class="navbar-header">
-				<!-- Logo -->
-				<div class="navbar-brand">
-					<a class="logo" href="/">
-						<img src="./img/logo/web.png" alt="logo" style="text-color:white">
-						<!--<h6 class=white-text> ESIC</h6>-->
-					</a>
-				</div>
-				<!-- /Logo -->
-
-				<!-- Mobile toggle -->
-				<button class="navbar-toggle">
-					<span></span>
-				</button>
-				<!-- /Mobile toggle -->
-			</div>
-
-			<!-- Navigation -->
-			<nav id="nav">
-				<ul class="main-menu nav navbar-nav navbar-right">
-					<li><a class="anim" href="/">Home</a></li>
-					<li>
-						<a class="dropbtn anim" href="/about">About</a>
-						<div class="dropdown">
-							<div class="dropdown-content">
-								<a href="/Administrations.docs">Administration</a>
-								<a href="#">Faculty</a>
-								<a href="#">Commities</a>
-								<a href="/Awards.docs">Awards and honors</a>
-								<a href="/PressMedia.docs">Press media</a>
-								<a href="/University.docs">University and Govt.</a>
-								<a href="/Infrastrutcure.docs">Infrastructure</a>
-							</div>
-						</div>
-					</li>
-					<li>
-						<a class="dropbtn anim" href="/hospital">Services</a>
-						<div class="dropdown">
-							<div class="dropdown-content">
-								<a href="/hospital#scd">Speciality Departments</a>
-								<a href="/hospital#sss">Services</a>
-							</div>
-						</div>
-					</li>
-					<li>
-						<a class="dropbtn anim" href="/education">Education</a>
-						<div class="dropdown">
-							<div class="dropdown-content">
-								<a href="/course">Course</a>
-								<a href="/Admission.docs">Admission</a>
-								<a href="/StudentZone.docs">Student Zone </a>
-								<a href="/Conference.docs">Conference/CME</a>
-								<a href="/Events.docs">Upcoming Event</a>
-								<!-- <a href="">Commitee</a> -->
-								<a href="/Training.docs">Training</a>
-								<a href="/JournalESI.docs">Journal</a>
-							</div>
-						</div>
-					</li>
-					<li>
-						<a class="dropbtn anim" href="/Research.docs">Research</a>
-						<div class="dropdown">
-							<div class="dropdown-content">
-								<a href="/Publication.docs">Publication</a>
-								<!-- <a href=""></a>
-							<a href=""></a>
-							<a href=""></a>
-							<a href=""></a>
-							<a href=""></a>
-							<a href=""></a>
-							<a href=""></a> -->
-							</div>
-						</div>
-					</li>
-					<li>
-						<a class="dropbtn anim" href="/publicforum">Public Forum</a>
-						<div class="dropdown">
-							<div class="dropdown-content">
-								<a href="/CitizenCharter.docs">Citizen Charter</a>
-								<a href="/BodyDonation.docs">Body Donation</a>
-								<a href="/RulesRegulation.docs">Rules and Regulation</a>
-								<a href="/BioWasteManagement.docs">RTI</a>
-								<a href="/BioWasteManagement.docs">Bio Waste Management</a>
-								<a href="/gallery">Gallery</a>
-							</div>
-						</div>
-					</li>
-					<li><a class="anim" href="/contact">Contact</a></li>
-				</ul>
-			</nav>
-			<!-- /Navigation -->
-
-		</div>
-	</header>
+	<% include ../partials/header/nav_index %>
+	
 	<!-- /Header -->
 
 	<!-- Home -->
 	<div id="home" class="hero-area">
 
 		<!-- Backgound Image -->
-		<div class="bg-image bg-parallax overlay" style="background-image:url(./img/header-background.jpg)"></div>
+		<div class="bg-image bg-parallax overlay" style="background-image:url(./img/home-bg.jpg)"></div>
 		<!-- /Backgound Image -->
 
 		<div class="home-wrapper" stylex="background:blue;">
@@ -223,6 +131,8 @@
 							</div>
 						</div>
 					</div>
+
+
 				</div>
 			</div>
 		</div>
@@ -244,21 +154,15 @@
 
 
 						<div class="col-md-6">
-							<h3>Dean's message</h3>
-							<p class="lead">Education is the foundation upon which we build our future.</p>
-							<p>Better education is very necessary for all to go ahead in the life and get success. It develops confidence
-								and helps building personality of a person. Primary education prepares the base which helps throughout the
-								life, secondary education prepares the path for further study and higher secondary education prepares the
-								ultimate path of the future and whole life. Our good or bad education decides that which type of person we
-								would be in the future.</p>
+							<div class="random-class">	<h4>Dean's message</h4>
+								<p class="lead justify-msg w-100">Education is the foundation upon which we build our future.</p>
+								<p class="justify-msg w-100">ESIC Medical College strives to provide holistic and quality patient care with empathy to the insured persons through excellence in clinical care and patient service. The mission and vision of the institute is to provide a sense of trust, respect and security for the Patients, students and employees. High quality patient care is given utmost priority so that every Insured person (IP) is left with high levels of satisfaction. A comfortable learning environment is provided to the students to bring in excellence through innovations in teaching and learning along with quality research through professionalism and teamwork. The team is involved in moulding every student into a responsible, conscious and competent Indian Medical Graduate with noble qualities and to train them to look beyond medicine. The objective is to develop a paramount community of practice in the shared domain of the institute so as to encourage collective learning.</p>
+							</div>
 						</div>
 
-						<div class="col-md-5 col-md-offset-1">
+
+						<div class="col-md-5 col-md-offset-1"><br><br><br>
 							<iframe src="https://www.youtube.com/embed/s-LW5EXcKiI" class="about-video-dean" frameborder="0" allowfullscreen></iframe>
-							<!-- <a class="about-video" href="#">
-							<img src="./img/about-video.jpg" alt="">
-							<i class="play-icon fa fa-play"></i>
-						</a> -->
 						</div>
 
 					</div>
@@ -298,7 +202,7 @@
 
 		</div>
 	</div>
-	
+
 	<div id="cta" class="section">
 		<div class="bg-image bg-parallax overlay" style="background-image:url(./img/cta2-background.jpg)"></div>
 		<section class="fun-fact-area center white relative padding-100-70" id="fact">
@@ -306,7 +210,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-3 col-sm-6 col-xs-12">
-						<div class="single-fun-fact mb30 wow fadeInUp" data-wow-delay="0.1s">	
+						<div class="single-fun-fact mb30 wow fadeInUp" data-wow-delay="0.1s">
 							<h1 class="white-text"><span class="counter numscroller" data-min='0' data-max='20000' data-delay='5' data-increment='50'>20000</span></h1>
 							<h5 class="white-text">Patients Treated</h5>
 						</div>
@@ -333,6 +237,8 @@
 			</div>
 		</section>
 	</div>
+
+
 	<div id="courses" class="section">
 		<div class="container">
 			<div class="row">
@@ -347,14 +253,16 @@
 				</div>
 			</div>
 
+			<div class="row">
+				<div class="col-lg-12 center-btn">
+					<a class="main-button icon-button" href="/gallery">View More</a>
+				</div>
+			</div>
 
 		</div>
-		<div class="row">
-			<div class="center-btn">
-				<a class="main-button icon-button" href="/gallery">View More</a>
-			</div>
-		</div>
 	</div>
+
+	
 	</div>
 
 	<div id="contact-cta" class="section">
@@ -365,14 +273,14 @@
 				<div class="col-md-8 col-md-offset-2 text-center">
 					<h2 class="white-text">Contact Us</h2>
 					<p class="lead white-text">If you have any queries, feedback or suggestions then feel free to share them with us.</p>
-					<a class="main-button icon-button" href="#">Contact Us Now</a>
+					<a class="main-button icon-button" href="/contact">Contact Us Now</a>
 				</div>
 			</div>
 		</div>
 	</div>
 
 	<% include ../partials/footer/footer_index.ejs %>
-	
+
 	<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 	<script src="js/notification.js"></script>
 	<script src="js/imageIndex.js"></script>
@@ -382,11 +290,11 @@
 
 	<script>
 		var link = <%- JSON.stringify(link) %>;
-		initNotif(link);			
+		initNotif(link);
 		initTemplate(link);
 	</script>
 
-	
+
 </body>
 
 </html>

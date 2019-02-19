@@ -3,39 +3,71 @@ const { createLogger, format, transports } = require('winston');
 const { combine, timestamp, label, printf } = format;
 const { promisify } = require('util');
 
+
+function timeConverter(UNIX_timestamp) {
+  var a = new Date(UNIX_timestamp);
+  var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  var year = a.getFullYear();
+  var month = months[a.getMonth()];
+  var date = (a.getDate()).toString();
+  var hour = (a.getHours()).toString();
+  var min = (a.getMinutes()).toString();
+  var sec = (a.getSeconds()).toString();
+
+
+  if (date.length == 1) {
+    date = '0' + date;
+  }
+  if (hour.length == 1) {
+    hour = '0' + hour;
+  }
+  if (min.length == 1) {
+    min = '0' + min;
+  }
+  if (sec.length == 1) {
+    sec = '0' + sec;
+  }
+
+  var time = date + '-' + month + '-' + year + ' T' + hour + ':' + min + ':' + sec;
+  // var smallTime = month + ' ' + date + ' \'' + year
+  return time;
+}
+
+
 const myMsg = printf(info => {
-  return `[${info.timestamp}] ${info.level}: ${info.message}`;
+  // return `[${info.timestamp}] ${info.level}: ${info.message}`;
+  return `[${timeConverter(Date.now())}] ${info.level}: ${info.message}`;
 });
 module.exports = {
-  getIp:function getIp(req) {
-  var ip = (req.headers['x-forwarded-for'] || '').split(',').pop() ||
-    req.connection.remoteAddress ||
-    req.socket.remoteAddress ||
-    req.connection.socket.remoteAddress;
-  if (ip.substr(0, 7) == "::ffff:") {
-    ip = ip.substr(7);
+  getIp: function getIp(req) {
+    var ip = (req.headers['x-forwarded-for'] || '').split(',').pop() ||
+      req.connection.remoteAddress ||
+      req.socket.remoteAddress ||
+      req.connection.socket.remoteAddress;
+    if (ip.substr(0, 7) == "::ffff:") {
+      ip = ip.substr(7);
+    }
+    return ip;
   }
-  return ip;
-}
 }
 module.exports = {
-log:function log(msg, ip, method, route, level) {
-  if (level == null) {
-    level = "info";
+  log: function log(msg, ip, method, route, level) {
+    if (level == null) {
+      level = "info";
+    }
+    var message = "";
+    if (ip != null && ip != "") {
+      message = ` ip= ${ip} `;
+    }
+    if (method != null && method != "") {
+      message += ` method= ${method} `;
+    }
+    if (route != null && route != "") {
+      message += ` route= ${route} `;
+    }
+    message += msg;
+    logger.log(level, message);
   }
-  var message = "";
-  if (ip != null && ip != "") {
-    message = ` ip= ${ip} `;
-  }
-  if (method != null && method != "") {
-    message += ` method= ${method} `;
-  }
-  if (route != null && route != "") {
-    message += ` route= ${route} `;
-  }
-  message += msg;
-  logger.log(level, message);
-}
 }
 const myCustomLevels = {
   levels: {

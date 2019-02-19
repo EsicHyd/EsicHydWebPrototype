@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% var page = "List of Candidate - ESIC Hyderabad"%>
+    <% include ../partials/header/head.ejs %>
+    <link rel="stylesheet" href="/css/education.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Puritan:400i" rel="stylesheet">
+    <style>
+        .notif-container {
+            max-width: 1330px !important;
+            max-height: 700px !important;
+        }
+
+        .modal-title {
+            display: inline-block;
+        }
+
+        .doc-dp {
+            max-height: 120px;
+            max-width: 100px;
+            height: auto;
+            width: 100%;
+            border-radius: 6px;
+        }
+
+        .pill-single {
+            padding-left: 2%;
+            font-size: 16px;
+            font-weight: 400;
+            padding-bottom: 4px;
+        }
+
+        .section-header {
+            font-size: 36px;
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+        }
+
+        .pill-single a {
+            color: #3b4453;
+        }
+
+        .pill-single a:hover {
+            color: #8a251e;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .center-text-sm {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <% include ../partials/footer/scroll.ejs %>
+
+    <% include ../partials/header/nav.ejs %>
+
+    <div class="hero-area section">
+        <div class="bg-image bg-parallax overlay" style="background-image:url(./img/page-background.jpg)"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 text-center">
+                    <ul class="hero-area-tree">
+                        <li><a href="/">Home</a></li>
+                        <li>About</li>
+                        <li>Faculty</li>
+                    </ul>
+                    <h1 class="white-text">Faculty</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="blog" class="section">
+        <div class="container">
+            <div class="row">
+                <div id="main" class="col-md-9">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <h2 id="scd" class="section-header">Departments:</h2>
+                            <hr>
+                            <!-- <div class="pill-single">
+                                  <span class="tb">>> </span>
+                                  <a href="/course">Course</a>
+                                </div> -->
+                            <div id="deptList">
+
+                            </div>
+                            <div id="deptModal">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% include ../partials/tags-education %>
+            </div>
+        </div>
+    </div>
+
+    <% include ../partials/footer/footer.ejs %>
+    <script src="js/faculty.js"></script>
+
+
+</body>
+
+</html>

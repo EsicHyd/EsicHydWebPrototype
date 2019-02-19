@@ -7,12 +7,21 @@
   <link rel="stylesheet" href="/css/education.css">
 
   <link href="https://fonts.googleapis.com/css?family=Puritan:400i" rel="stylesheet">
+  <style>
+  .iframeAebas{
+    max-width: 1500px;
+  }
+
+  .w-100{
+    width:100%;
+  }
+  </style>
 </head>
 
 <body>
-  	<!--scroll icon -->
-	<% include ../partials/footer/scroll.ejs %>
-	<!-- /scroll icons -->
+  <!--scroll icon -->
+  <% include ../partials/footer/scroll.ejs %>
+  <!-- /scroll icons -->
 
 
 
@@ -51,214 +60,28 @@
       <div class="row">
 
         <!-- main blog -->
-        <div id="main" class="col-md-9">
+        <div id="main" class="col-md-12">
 
           <!-- row -->
           <div class="row">
-
             <div class="col-md-12">
-              <!-- <h2>Hospital Services</h2>
-                <hr> -->
-              <!-- =================================================================== -->
-              <!--Start Content container -->
-                  <div class="contentCntr">
-              		  <!-- Start Slider banner-->
-               <div class="bannerCon">
-                       <!-- <div class="innertitle">Faculty Attendance</div>  </div> -->
-              <!--End Slider banner -->
-                 <!--Strat Leftt colmn  -->
-              <div class="leftContainer">
-                <div >
-                <iframe height="800px" width="1200px" src="http://esicmchyb.attendance.gov.in/submis/regemp"
-              sandbox="allow-same-origin allow-scripts allow-forms allow-pointer-lock allow-popups ">
+              <iframe height="800px" class="w-100 iframeAebas"  src="http://esicmchyb.attendance.gov.in/submis/regemp"
+                sandbox="allow-same-origin allow-scripts allow-forms allow-pointer-lock allow-popups ">
                 <p>Your browser does not support iframes.</p>
               </iframe>
-              </div>
-
-              <div class="clr"></div>
-            </div>``
-
-              <!-- ==================================================================== -->
-              <!-- <h2 id="stz" class="section-header">Student Zone:</h2>
-              <hr>
-              <div class="pill-single">
-                <span class="tb">>> </span>
-                <a href="/StudentZone_1YR.docs">Year 1</a>
-              </div>
-              <div class="pill-single">
-                <span class="tb">>> </span>
-                <a href="/StudentZone_2YR.docs">Year 2</a>
-              </div>
-              <div class="pill-single">
-                <span class="tb">>> </span>
-                <a href="/StudentZone_3YR.docs">Year 3</a>
-              </div>
-              <div class="pill-single">
-                <span class="tb">>> </span>
-                <a href="/StudentZone_4YR.docs">Year 4</a>
-							</div> -->
-							<!-- <div class="pill-single">
-								<span class="tb">>> </span>
-								<a href="/upcoming_events">Upcoming Events</a>
-							</div>
-							<div class="pill-single">
-								<span class="tb">>> </span>
-								<a href="/committee">Committee</a>
-							</div>
-							<div class="pill-single">
-								<span class="tb">>> </span>
-								<a href="/training">Training</a>
-							</div>
-							<div class="pill-single">
-								<span class="tb">>> </span>
-								<a href="/journal_esi">Journal Esi</a>
-							</div> -->
-              <br>
-              <!-- ==================================================================== -->
-             <!-- <h2 id="stzd" class="section-header">Documents</h2>
-              <hr>
-              <div class="pill-single">
-                <span class="tb">>> </span>
-                <a href="#">Results</a>
-              </div> -->
-
-              <!-- ==================================================================== -->
-
-             <!-- <h2 id="stza" class="section-header">Activities</h2>
-              <hr>
-              <div class="pill-single">
-                <span class="tb">>> </span>
-                <a href="#">Fresher's Day</a>
-              </div>
-							<div class="pill-single">
-                <span class="tb">>> </span>
-                <a href="#">Seminar & Quiz</a>
-              </div> -->
-
-              <!-- ==================================================================== -->
-
-              <!-- <span class="tb"></span> -->
             </div>
-
           </div>
-          <!-- /row -->
-
           <!-- row -->
-          <div class="row">
-
-            <!-- pagination -->
-            <div class="col-md-12">
-              <!-- <div class="post-pagination">
-                <a href="#" class="pagination-back pull-left">Back</a>
-                <ul class="pages">
-                  <li class="active">1</li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                </ul>
-                <a href="#" class="pagination-next pull-right">Next</a>
-              </div> -->
-            </div>
-            <!-- pagination -->
-
-          </div>
-          <!-- /row -->
-        </div>
-        <!-- /main blog -->
-
-        <!-- aside blog -->
-        <div id="aside" class="col-md-3">
-
-          <!-- search widget -->
-          <div class="widget search-widget">
-            <form>
-              <input class="input" type="text" name="search">
-              <button><i class="fa fa-search"></i></button>
-            </form>
-          </div>
-          <!-- /search widget -->
-
-          <!-- category widget -->
-          <div class="widget category-widget">
-            <h3>Categories</h3>
-            <a class="category" href="#stz">Years<span>18</span></a>
-            <a class="category" href="#stzd">Documents<span>6</span></a>
-						<a class="category" href="#stza">Activities<span>6</span></a>
-            <!-- <a class="category" href="#">Wordpress <span>24</span></a>
-            <a class="category" href="#">Html <span>78</span></a>
-            <a class="category" href="#">Business <span>36</span></a> -->
-          </div>
-          <!-- /category widget -->
-
-          <!-- posts widget -->
-          <div class="widget posts-widget">
-            <h3>Recents Posts</h3>
-
-            <!-- single posts -->
-            <div class="single-post">
-              <a class="single-post-img" href="blog-post.html">
-                <img src="./img/post01.jpg" alt="">
-              </a>
-              <a href="blog-post.html">Pro eu error molestie deserunt.</a>
-              <p><small>By : Editor --n .18 Oct, 2017</small></p>
-            </div>
-            <!-- /single posts -->
-
-            <!-- single posts -->
-            <div class="single-post">
-              <a class="single-post-img" href="blog-post.html">
-                <img src="./img/post02.jpg" alt="">
-              </a>
-              <a href="blog-post.html">Pro eu error molestie deserunt.</a>
-              <p><small>By : Editor --n .18 Oct, 2017</small></p>
-            </div>
-            <!-- /single posts -->
-
-            <!-- single posts -->
-            <div class="single-post">
-              <a class="single-post-img" href="blog-post.html">
-                <img src="./img/post03.jpg" alt="">
-              </a>
-              <a href="blog-post.html">Pro eu error molestie deserunt.</a>
-              <p><small>By : Editor --n .18 Oct, 2017</small></p>
-            </div>
-            <!-- /single posts -->
-
-          </div>
-          <!-- /posts widget -->
-
-          <!-- tags widget -->
-          <div class="widget tags-widget">
-            <h3>Tags</h3>
-            <a class="tag" href="#stz">Years</a>
-            <a class="tag" href="#stzd">Documents</a>
-						<a class="tag" href="#stza">Activities</a>
-            <!-- <a class="tag" href="#">Web</a>
-            <a class="tag" href="#">Photography</a>
-            <a class="tag" href="#">Css</a>
-            <a class="tag" href="#">Responsive</a>
-            <a class="tag" href="#">Wordpress</a>
-            <a class="tag" href="#">Html</a>
-            <a class="tag" href="#">Website</a>
-            <a class="tag" href="#">Business</a> -->
-          </div>
-          <!-- /tags widget -->
 
         </div>
-        <!-- /aside blog -->
+        <!-- container -->
 
       </div>
-      <!-- row -->
+      <!-- /Blog -->
 
-    </div>
-    <!-- container -->
+      <!-- Footer -->
 
-  </div>
-  <!-- /Blog -->
-
-  <!-- Footer -->
-
-  <% include ../partials/footer/footer.ejs %>
+      <% include ../partials/footer/footer.ejs %>
 
 </body>
 

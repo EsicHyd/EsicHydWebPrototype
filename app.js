@@ -128,7 +128,6 @@ app.get('/doc', function (req, res) {
 app.get('/RecruitAdv.docs', function (req, res) {
   var data = {
     link: process.env.API_URI,
-
     pathtag: 'RecruitmentAdvertising',
     type: 'doc', contentTag: 'education',
     page: 'Advertising of Recruitment - ESIC Hyderabad',
@@ -181,6 +180,7 @@ app.get('/Schedules.docs', function (req, res) {
     imagepath: './img/page-background.jpg',
     tags: [
       "Education", "Student Zone", "Schedules"
+
     ]
   }
   res.render("pages/data-template", data);
