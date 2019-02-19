@@ -158,6 +158,7 @@ app.get('/RecruitRes.docs', function (req, res) {
 app.get('/StudentResults.docs', function (req, res) {
   var data = {
     link: process.env.API_URI,
+
     pathtag: 'StudentResults',
     type: 'doc', contentTag: 'education',
     page: 'Results - ESIC Hyderabad',
@@ -179,6 +180,7 @@ app.get('/Schedules.docs', function (req, res) {
     imagepath: './img/page-background.jpg',
     tags: [
       "Education", "Student Zone", "Schedules"
+
     ]
   }
   res.render("pages/data-template", data);
@@ -344,7 +346,7 @@ app.get('/Conference.docs', function (req, res) {
     pathtag: 'Conference',
     type: 'doc', contentTag: 'someTag',
     page: 'CME and Conference - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
+    imagepath: './img/conf.jpg',
     tags: [
       "Education", "CME and Conference"
     ]
@@ -362,7 +364,7 @@ app.get('/Training.docs', function (req, res) {
     pathtag: 'Training',
     type: 'doc', contentTag: 'someTag',
     page: 'Training - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
+    imagepath: './img/training.jpg',
     tags: [
       "Education", "Training"
     ]
@@ -380,7 +382,7 @@ app.get('/JournalESI.docs', function (req, res) {
     pathtag: 'JournalESI',
     type: 'doc', contentTag: 'someTag',
     page: 'Journal ESI - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
+    imagepath: './img/journal.jpg',
     tags: [
       "Education", "Journal ESI"
     ]
@@ -398,7 +400,7 @@ app.get('/Research.docs', function (req, res) {
     pathtag: 'Research',
     type: 'doc', contentTag: 'research',
     page: 'Research and Development - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
+    imagepath: './img/rad.jpg',
     tags: [
       "Research","Research and Development"
     ]
@@ -431,7 +433,7 @@ app.get('/CitizenCharter.docs', function (req, res) {
     pathtag: 'CitizenCharter',
     type: 'doc', contentTag: 'public-forum',
     page: 'Citizen Charter - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
+    imagepath: './img/ccr.jpg',
     tags: [
       "Public Forum", "Citizen Charter"
     ]
@@ -449,7 +451,7 @@ app.get('/BodyDonation.docs', function (req, res) {
     pathtag: 'BodyDonation',
     type: 'doc', contentTag: 'public-forum',
     page: 'Body Donation - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
+    imagepath: './img/bd.jpg',
     tags: [
       "Public Forum", "Body Donation"
     ]
@@ -467,7 +469,7 @@ app.get('/RulesRegulation.docs', function (req, res) {
     pathtag: 'RulesRegulation',
     type: 'doc', contentTag: 'public-forum',
     page: 'Rules and Regulation - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
+    imagepath: './img/rar.jpg',
     tags: [
       "Public Forum", "Rules and Regulation"
     ]
@@ -485,7 +487,7 @@ app.get('/BioWasteManagement.docs', function (req, res) {
     pathtag: 'BioWasteManagement',
     type: 'doc', contentTag: 'public-forum',
     page: 'Bio Medical Waste Management - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
+    imagepath: './img/admimg.jpg',
     tags: [
       "Public Forum", "Bio Medical Waste Management"
     ]
@@ -521,7 +523,7 @@ app.get('/Administration.docs', function (req, res) {
     pathtag: 'Administrations',
     type: 'doc', contentTag: 'about',
     page: 'Administrations - ESIC Hyderabad',
-    imagepath: './img/admimg.jpg',
+    imagepath: './img/adminis.jpg',
     tags: [
       "About", "Administration"
     ]
@@ -539,7 +541,7 @@ app.get('/Awards.docs', function (req, res) {
     pathtag: 'Awards',
     type: 'doc', contentTag: 'about',
     page: 'Awards and honors - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
+    imagepath: './img/award.jpg',
     tags: [
       "About", "Awards and honors"
     ]
@@ -575,7 +577,7 @@ app.get('/Events.docs', function (req, res) {
     pathtag: 'Events',
     type: 'doc', contentTag: 'someTag',
     page: 'Upcoming Events - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
+    imagepath: './img/ue.jpg',
     tags: [
       "Education", "Upcoming Events"
     ]
@@ -593,7 +595,7 @@ app.get('/Publication.docs', function (req, res) {
     pathtag: 'Publication',
     type: 'doc', contentTag: 'research',
     page: 'Publication - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
+    imagepath: './img/rad.jpg',
     tags: [
       "Research", "Publication"
     ]
