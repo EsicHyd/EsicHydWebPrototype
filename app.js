@@ -133,7 +133,6 @@ app.get('/RecruitAdv.docs', function (req, res) {
     type: 'doc', contentTag: 'education',
     page: 'Advertising of Recruitment - ESIC Hyderabad',
     imagepath: './img/page-background.jpg',
->>>>>>> master
     tags: [
       "Education", "Advertising of Recruitment"
     ]
@@ -165,7 +164,6 @@ app.get('/StudentResults.docs', function (req, res) {
     type: 'doc', contentTag: 'education',
     page: 'Results - ESIC Hyderabad',
     imagepath: './img/page-background.jpg',
->>>>>>> master
     tags: [
       "Education", "Student Zone", "Results"
     ]
