@@ -307,7 +307,7 @@ app.get('/Admission.docs', function (req, res) {
     pathtag: 'Admission',
     type: 'doc', contentTag: 'someTag',
     page: 'Admission - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
+    imagepath: './img/admission.jpg',
     tags: [
       "Education", "Admission"
     ]
@@ -415,7 +415,7 @@ app.get('/ResearchProg.docs', function (req, res) {
     pathtag: 'OrganisedResearchProgram',
     type: 'doc', contentTag: 'research',
     page: 'Organised Research Program - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
+    imagepath: './img/rad.jpg',
     tags: [
       "Research","Organised Research Program"
     ]
@@ -505,7 +505,7 @@ app.get('/RTI.docs', function (req, res) {
     pathtag: 'RTI',
     type: 'doc', contentTag: 'public-forum',
     page: 'RTI - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
+    imagepath: './img/res.jpg',
     tags: [
       "Public Forum", "RTI"
     ]
