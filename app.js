@@ -1,5 +1,6 @@
 var { env } = require('./config/config');
 var fs = require('fs');
+var http = require('http');
 var https = require('https');
 var express = require('express');
 var app = express();
@@ -967,6 +968,12 @@ if (env == 'production') {
   let serverHttps = https.createServer(sslOptions, app).listen(app.get('port'), function () {
     log(`Node Server running at port: ${app.get('port')} env: ${env}`);
   });
+
+  http.createServer(function (req, res) {
+    res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
+    res.end();
+  }).listen(80);
+
 } else {
   app.listen(app.get('port'), process.env.IP, function () {
     log(`Node Server running at port: ${app.get('port')} env: ${env}`);
