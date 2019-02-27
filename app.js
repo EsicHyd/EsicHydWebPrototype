@@ -1,5 +1,6 @@
 var { env } = require('./config/config');
-
+var fs = require('fs');
+var https = require('https');
 var express = require('express');
 var app = express();
 const sgMail = require('@sendgrid/mail');
@@ -402,7 +403,7 @@ app.get('/Research.docs', function (req, res) {
     page: 'Research and Development - ESIC Hyderabad',
     imagepath: './img/rad.jpg',
     tags: [
-      "Research","Research and Development"
+      "Research", "Research and Development"
     ]
   }
   res.render("pages/data-template", data);
@@ -417,7 +418,7 @@ app.get('/ResearchProg.docs', function (req, res) {
     page: 'Organised Research Program - ESIC Hyderabad',
     imagepath: './img/page-background.jpg',
     tags: [
-      "Research","Organised Research Program"
+      "Research", "Organised Research Program"
     ]
   }
   res.render("pages/data-template", data);
@@ -649,7 +650,7 @@ app.get('/student_zone', function (req, res) {
   res.render('pages/student_zone.ejs');
   log("", getIp(req), req.method, req.route.path);
 });
-app.get('/listOfCandidate',function(req,res){
+app.get('/listOfCandidate', function (req, res) {
   res.render('pages/candidateList.ejs');
   log("", getIp(req), req.method, req.route.path);
 });
@@ -956,12 +957,18 @@ app.get('*', function (req, res) {
 
 
 app.use(errLog);
-app.listen(app.get('port'), process.env.IP, function () {
 
-  // const { address: ip } = lookup(os.hostname());
-  // var networkAddress = `http://${os.networkInterfaces()}:${app.get('port')}`;
-  // var networkAddress = `http://${os.hostname()}:${app.get('port')}`;
-  log("Node Server running at port:" + app.get('port'));
-  // log("hello error", "", "", "", 'error');
+if (env == 'production') {
+  let sslOptions = {
+    key: readFileSync('./privkey.pem'),
+    cert: readFileSync('./cert.pem')
+  };
 
-});
+  let serverHttps = https.createServer(sslOptions, app).listen(app.get('port'), function () {
+    log(`Node Server running at port: ${app.get('port')} env: ${env}`);
+  });
+} else {
+  app.listen(app.get('port'), process.env.IP, function () {
+    log(`Node Server running at port: ${app.get('port')} env: ${env}`);
+  });
+}
