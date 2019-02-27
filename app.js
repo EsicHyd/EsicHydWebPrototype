@@ -960,8 +960,8 @@ app.use(errLog);
 
 if (env == 'production') {
   let sslOptions = {
-    key: readFileSync('./privkey.pem'),
-    cert: readFileSync('./cert.pem')
+    key: fs.readFileSync('./privkey.pem'),
+    cert: fs.readFileSync('./cert.pem')
   };
 
   let serverHttps = https.createServer(sslOptions, app).listen(app.get('port'), function () {
