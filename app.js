@@ -28,13 +28,13 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 app.use(methodOverride());
 
-app.use (function (req, res, next) {
+app.use(function (req, res, next) {
   if (req.secure) {
-          // request was via https, so do no special handling
-          next();
+    // request was via https, so do no special handling
+    next();
   } else {
-          // request was via http, so redirect to https
-          res.redirect('https://' + req.headers.host + req.url);
+    // request was via http, so redirect to https
+    res.redirect('https://' + req.headers.host + req.url);
   }
 });
 
@@ -975,6 +975,11 @@ if (env == 'production') {
   let serverHttps = https.createServer(sslOptions, app).listen(app.get('port'), function () {
     log(`Node Server running at port: ${app.get('port')} env: ${env}`);
   });
+
+  http.createServer(function (req, res) {
+    res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
+    res.end();
+  }).listen(80);
 
 } else {
   app.listen(app.get('port'), process.env.IP, function () {
