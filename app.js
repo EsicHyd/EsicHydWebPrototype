@@ -1,5 +1,7 @@
 var { env } = require('./config/config');
-
+var fs = require('fs');
+var http = require('http');
+var https = require('https');
 var express = require('express');
 var app = express();
 const sgMail = require('@sendgrid/mail');
@@ -26,8 +28,15 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 app.use(methodOverride());
 
-
-
+app.use(function (req, res, next) {
+  if (req.secure) {
+    // request was via https, so do no special handling
+    next();
+  } else {
+    // request was via http, so redirect to https
+    res.redirect('https://' + req.headers.host + req.url);
+  }
+});
 
 app.use(cors({ origin: true }));
 
@@ -307,7 +316,7 @@ app.get('/Admission.docs', function (req, res) {
     pathtag: 'Admission',
     type: 'doc', contentTag: 'someTag',
     page: 'Admission - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
+    imagepath: './img/admission.jpg',
     tags: [
       "Education", "Admission"
     ]
@@ -402,7 +411,7 @@ app.get('/Research.docs', function (req, res) {
     page: 'Research and Development - ESIC Hyderabad',
     imagepath: './img/rad.jpg',
     tags: [
-      "Research","Research and Development"
+      "Research", "Research and Development"
     ]
   }
   res.render("pages/data-template", data);
@@ -415,9 +424,9 @@ app.get('/ResearchProg.docs', function (req, res) {
     pathtag: 'OrganisedResearchProgram',
     type: 'doc', contentTag: 'research',
     page: 'Organised Research Program - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
+    imagepath: './img/rad.jpg',
     tags: [
-      "Research","Organised Research Program"
+      "Research", "Organised Research Program"
     ]
   }
   res.render("pages/data-template", data);
@@ -505,7 +514,7 @@ app.get('/RTI.docs', function (req, res) {
     pathtag: 'RTI',
     type: 'doc', contentTag: 'public-forum',
     page: 'RTI - ESIC Hyderabad',
-    imagepath: './img/page-background.jpg',
+    imagepath: './img/res.jpg',
     tags: [
       "Public Forum", "RTI"
     ]
@@ -649,7 +658,7 @@ app.get('/student_zone', function (req, res) {
   res.render('pages/student_zone.ejs');
   log("", getIp(req), req.method, req.route.path);
 });
-app.get('/listOfCandidate',function(req,res){
+app.get('/listOfCandidate', function (req, res) {
   res.render('pages/candidateList.ejs');
   log("", getIp(req), req.method, req.route.path);
 });
@@ -956,12 +965,24 @@ app.get('*', function (req, res) {
 
 
 app.use(errLog);
-app.listen(app.get('port'), process.env.IP, function () {
 
-  // const { address: ip } = lookup(os.hostname());
-  // var networkAddress = `http://${os.networkInterfaces()}:${app.get('port')}`;
-  // var networkAddress = `http://${os.hostname()}:${app.get('port')}`;
-  log("Node Server running at port:" + app.get('port'));
-  // log("hello error", "", "", "", 'error');
+if (env == 'production') {
+  let sslOptions = {
+    key: fs.readFileSync('./privkey.pem'),
+    cert: fs.readFileSync('./cert.pem')
+  };
 
-});
+  let serverHttps = https.createServer(sslOptions, app).listen(app.get('port'), function () {
+    log(`Node Server running at port: ${app.get('port')} env: ${env}`);
+  });
+
+  http.createServer(function (req, res) {
+    res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
+    res.end();
+  }).listen(80);
+
+} else {
+  app.listen(app.get('port'), process.env.IP, function () {
+    log(`Node Server running at port: ${app.get('port')} env: ${env}`);
+  });
+}
